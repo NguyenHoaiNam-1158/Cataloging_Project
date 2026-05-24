@@ -1,0 +1,76 @@
+services:
+  # 1. DATABASE MODULE
+  db:
+    image: postgres:15-alpine
+    container_name: project_db
+    restart: always
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-admin}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-secretpassword}
+      - POSTGRES_DB=${POSTGRES_DB:-app_database}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - project_network
+
+  # 2. BACKEND MODULE
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: project_backend
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - project_network
+
+  # 3. AI AGENT MODULE
+  ai-agent:
+    build:
+      context: ./ai-agent
+      dockerfile: Dockerfile
+    container_name: project_ai_agent
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8001:8001"
+    depends_on:
+      - backend
+      - db
+    networks:
+      - project_network
+
+  # 4. FRONTEND MODULE (Ví dụ dùng Node/React/Vue)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: project_frontend
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - project_network
+
+# Định nghĩa Volume lưu trữ cứng cho Database
+volumes:
+  postgres_data:
+
+# Định nghĩa mạng nội bộ để các container gọi nhau bằng tên service (VD: http://backend:8000)
+networks:
+  project_network:
+    driver: bridge
