@@ -1,119 +1,66 @@
-# Hướng Dẫn Cài Đặt & Vận Hành Hệ Thống
+# Hướng Dẫn Cài Đặt & Vận Hành Hệ Thống (Build Guide)
 
-Tài liệu này cung cấp các bước chi tiết để khởi tạo môi trường, cài đặt dependencies và vận hành hệ thống thông qua Docker. Kiến trúc dự án được thiết kế theo mô hình phân tán, chia thành các module độc lập: Frontend (UI), Backend (API/Services/Models), AI Agent và Database.
+Tài liệu này hướng dẫn chi tiết các bước thiết lập, xây dựng cấu hình và khởi chạy toàn bộ 4 phân hệ dịch vụ của dự án trên môi trường Local (Khuyến nghị sử dụng **Linux** hoặc **WSL**).
 
-## 1. Yêu cầu tiền quyết (Prerequisites)
+## 1. Chuẩn Bị Biến Môi Trường (.env)
 
-Hệ thống được tối ưu để chạy ổn định nhất trên môi trường **Linux** hoặc **WSL (Windows Subsystem for Linux)**. Trước khi bắt đầu, hãy đảm bảo hệ thống của bạn đã cài đặt sẵn các công cụ sau:
-
-* **Docker & Docker Compose:** Nền tảng cốt lõi để build và chạy các container.
-* **Git:** Để quản lý mã nguồn và luồng làm việc trên các nhánh (branches).
-* **uv (Tùy chọn):** Khuyến nghị cài đặt để quản lý môi trường và test code Backend/AI Agent nhanh ở local trước khi đưa vào Docker.
-
----
-
-## 2. Thiết lập dự án ban đầu
-
-### Bước 2.1: Clone mã nguồn
-Tải repository về máy local và di chuyển vào thư mục gốc của dự án:
-```bash
-git clone <URL_CUA_REPO>
-cd project
-```
-
-**Chiến lược rẽ nhánh (Git Branching):**
-Dự án áp dụng mô hình phát triển tách biệt theo module. Vui lòng `checkout` sang đúng nhánh làm việc tương ứng trước khi tiến hành code:
-* `feature/ui`: Nhánh phát triển giao diện (Frontend).
-* `feature/backend`: Nhánh phát triển logic server (Models, Services, Prompts).
-* `feature/ai-agent`: Nhánh phát triển các tác vụ AI độc lập.
-* `feature/database`: Nhánh quản lý schema cơ sở dữ liệu và cấu hình `docker-compose.yml`.
-
-### Bước 2.2: Cấu hình biến môi trường (.env)
-File `.env` chứa các thông tin bảo mật và cấu hình hệ thống, do đó không được đẩy lên Github (đã nằm trong `.gitignore`). Bạn cần tự khởi tạo file này từ template có sẵn:
-
+Tại thư mục gốc của dự án, tiến hành sao chép file cấu hình mẫu để tạo file cấu hình thực tế:
 ```bash
 cp .env.example .env
 ```
 
-Mở file `.env` và thiết lập các thông số môi trường. Dưới đây là một số cấu hình mẫu:
+Mở file `.env` vừa tạo và kiểm tra/điền các thông số bắt buộc cho luồng xử lý thu thập dữ liệu và thông tin kết nối Cơ sở dữ liệu:
 ```env
-# Database Credentials
+# Cấu hình Cơ sở dữ liệu Postgres
 POSTGRES_USER=admin
 POSTGRES_PASSWORD=secretpassword
 POSTGRES_DB=app_database
 
-# System & Crawling Configuration
-SYSTEM_TIMEOUT=60
+# Biến cấu hình bắt buộc cho luồng xử lý dữ liệu
 CRAWL_CATEGORIES=coffee,restaurant
+SYSTEM_TIMEOUT=60
 ```
 
----
+## 2. Khởi Chạy Hệ Thống Bằng Docker Compose
 
-## 3. Khởi chạy hệ thống với Docker
+Dự án tuân thủ chuẩn mã nguồn Docker Compose V2 mới nhất (Dòng khai báo thuộc tính `version` lỗi thời đã được loại bỏ khỏi file cấu hình để tránh xung đột hệ thống).
 
-Toàn bộ các dịch vụ đã được định nghĩa trong file `docker-compose.yml` tại thư mục gốc. 
-
-### Bước 3.1: Build và chạy các container
-Sử dụng lệnh sau để tiến hành build các image (nếu có thay đổi ở `Dockerfile` hoặc `pyproject.toml`) và chạy các dịch vụ ngầm (detached mode):
-
+Để tiến hành build toàn bộ các Dockerfile và kích hoạt dịch vụ chạy ngầm, thực thi lệnh:
 ```bash
 docker compose up --build -d
 ```
-> **Lưu ý:** Quá trình build lần đầu cho Backend và AI Agent có thể cần thời gian để tải base image (`python:3.12.3-slim`) và phân giải dependencies qua `uv`. Nhờ cơ chế Docker Layer Cache, các lần build tiếp theo khi thay đổi code logic sẽ diễn ra gần như tức thì.
 
-### Bước 3.2: Kiểm tra trạng thái hệ thống
-Để liệt kê danh sách các container đang hoạt động:
+Kiểm tra trạng thái hoạt động của các container để đảm bảo không có phân hệ nào bị crash đột ngột:
 ```bash
 docker compose ps
 ```
+Hệ thống khởi chạy thành công khi tất cả 4 dịch vụ sau đều hiển thị trạng thái `Up`:
+* `project_db` (PostgreSQL - Cổng `5432`)
+* `project_backend` (FastAPI Server - Cổng `8000`)
+* `project_ai_agent` (AI Process Loop - Cổng `8001`)
+* `project_frontend` (UI Stub Node - Cổng `3000`)
 
-Để theo dõi log của hệ thống nhằm kiểm tra lỗi hoặc tiến trình:
+## 3. Cài Đặt Trình Duyệt Phụ Trợ Cho Luồng Cào Dữ Liệu
+
+Vì Module Backend chịu trách nhiệm thực thi các đường ống thu thập dữ liệu tự động (Scraping/Crawling Pipelines) sử dụng thư viện Playwright, bạn cần cài đặt thêm nhân trình duyệt Chromium trực tiếp vào bên trong container sau khi hệ thống đã ở trạng thái chạy ổn định (`Up`):
+
 ```bash
-# Xem log của toàn bộ các service
-docker compose logs -f
-
-# Xem log riêng lẻ của một service (ví dụ: backend)
-docker compose logs -f backend_service
+docker compose exec backend uv run playwright install chromium
 ```
+*Lưu ý: Thao tác này bắt buộc phải thực hiện ở lần đầu tiên thiết lập hệ thống hoặc sau khi xóa hoàn toàn các layer cache của Docker.*
 
----
+## 4. Kiểm Tra Kết Nối API & Điều Hướng Port
 
-## 4. Cấu hình bổ sung bên trong Container
+Sau khi hệ thống khởi chạy, bạn có thể kiểm tra trực tiếp trạng thái phản hồi của API Backend bằng cách truy cập vào giao diện Swagger UI tự động tại địa chỉ:
+👉 **http://localhost:8000/docs**
 
-Đối với các tác vụ thu thập dữ liệu tự động hoặc chạy bot, bạn có thể cần cài đặt thêm các trình duyệt nhân (browser binaries) trực tiếp vào bên trong container sau khi quá trình build hoàn tất. 
+## 5. Dừng Hệ Thống
 
-Thao tác cài đặt qua shell của container Backend (hoặc AI Agent):
+Để tắt các container và giải phóng tài nguyên RAM/CPU cho máy tính:
 ```bash
-# Truy cập vào shell của container
-docker compose exec backend_service /bin/bash
-
-# Thực thi lệnh cài đặt browser engine (ví dụ với Playwright)
-uv run playwright install chromium
-```
-
----
-
-## 5. Quy hoạch Port mạng (Port Mapping)
-
-Khi các container đã chạy thành công, các dịch vụ sẽ giao tiếp nội bộ và mở port ra máy host (`localhost`) theo quy chuẩn sau:
-
-| Module | Tên Service | Cổng Mở (Port) | Chức năng |
-| :--- | :--- | :--- | :--- |
-| **Frontend** | `frontend_service` | `3000` | Cung cấp giao diện người dùng |
-| **Backend** | `backend_service` | `8000` | Xử lý API, Services và tương tác Database Models |
-| **AI Agent** | `ai_agent_service` | `8001` | Chạy logic AI, giao tiếp nội bộ với Backend |
-| **Database** | `db_service` | `5432` / `27017` | Quản lý hệ quản trị CSDL (PostgreSQL / MongoDB) |
-
----
-
-## 6. Dừng và dọn dẹp hệ thống
-
-Khi cần giải phóng tài nguyên CPU/RAM hoặc thiết lập lại từ đầu, hãy sử dụng các lệnh dưới đây.
-
-```bash
-# Tắt hệ thống container (Dữ liệu database vẫn được bảo toàn trong volume)
+# Dừng container (Giữ lại dữ liệu Database trong Volume cứng)
 docker compose down
 
-# Tắt hệ thống và XÓA TOÀN BỘ volumes chứa dữ liệu (Cảnh báo: Dữ liệu DB sẽ mất)
+# Dừng container và XÓA SẠCH toàn bộ dữ liệu Database làm lại từ đầu
 docker compose down -v
 ```
