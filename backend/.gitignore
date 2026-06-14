@@ -8,3 +8,8 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Extract module
+extract_module/paddle markdown/
+extract_module/output/
+extract_module/.env

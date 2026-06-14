@@ -2,5 +2,9 @@ from abc import ABC, abstractmethod
 
 class BaseLLMAdapter(ABC):
     @abstractmethod
-    def extract_data(self, prompt: str) -> str:
+    async def extract_data(self, image_paths, prompt: str) -> str:
+        pass
+
+    @abstractmethod
+    async def extract_text_data(self, text_content: str, prompt: str) -> str:
         pass

@@ -1,127 +1,244 @@
-# Extractor Module
+# Extract Module
 
-Một pipeline Python để trích xuất metadata từ trang bìa PDF bằng AI (Gemini / Qwen).
+Pipeline trích xuất thư mục từ PDF bằng OCR (PaddleOCR) + AI (Gemini / Qwen), xuất ra JSON và MARC21.
 
-## Mục tiêu
-- Chuyển đổi trang bìa PDF thành ảnh
-- Xây dựng prompt cho model dựa trên `doc_type` và `additional_info`
-- Gọi API Gemini trước, fallback sang Qwen nếu cần
-- Parse kết quả text trả về thành JSON theo schema
-- Lưu output vào thư mục `output/YYYY-MM-DD`
+## Kiến trúc
 
-## Cấu trúc chính
-- `main.py` → entrypoint, chạy batch PDF trong `data/`
-- `core/orchestrator.py` → điều phối luồng dữ liệu
-- `modules/preprocessing/prompt_manager.py` → xây prompt + load schema
-- `modules/preprocessing/image_processor.py` → chuyển PDF thành ảnh
-- `modules/llm_adapters/` → adapter Gemini/Qwen
-- `modules/postprocessing/data_parser.py` → parse text thành JSON
-- `config/settings.py` → cấu hình môi trường
-- `config/model_config.py` → cấu hình model/ảnh
+```
+                    ┌─────────────────────────────┐
+                    │     CentralOrchestrator      │
+                    │  (core/orchestrator.py)      │
+                    └──────────┬──────────────────┘
+                               │
+               ┌───────────────┴───────────────┐
+               ▼                               ▼
+   ┌─────────────────────┐       ┌─────────────────────┐
+   │  Image Mode (mặc định) │       │    OCR Mode          │
+   │  PDF → Ảnh → LLM    │       │  PDF → OCR → LLM     │
+   └─────────────────────┘       └─────────────────────┘
+         │                              │
+         ▼                              ▼
+   ┌──────────┐                 ┌──────────────┐
+   │ImageProc │                 │PaddleOCRAdapt│
+   │  essor   │                 │   er         │
+   └──────────┘                 └──────────────┘
+         │                              │
+         ▼                              ▼
+   ┌──────────────────────────────────────────┐
+   │           LLMManager                     │
+   │  ┌──────────┐  ┌──────────┐             │
+   │  │  Gemini  │  │   Qwen   │  (fallback) │
+   │  └──────────┘  └──────────┘             │
+   └──────────────────────────────────────────┘
+                      │
+                      ▼
+   ┌──────────────────────────────────────────┐
+   │           DataParser                     │
+   │       (postprocessing/data_parser.py)    │
+   └──────────────────────────────────────────┘
+                      │
+                      ▼
+   ┌──────────────────────────────────────────┐
+   │           Marc21Mapper                   │
+   │       (postprocessing/marc21_mapper.py)  │
+   └──────────────────────────────────────────┘
+```
+
+## Tính năng
+
+- **2 chế độ trích xuất**: gửi ảnh trực tiếp (mặc định) hoặc OCR qua PaddleOCR
+- **Adapter pattern** cho cả OCR (`BaseOCRAdapter`) và LLM (`BaseLLMAdapter`)
+- **Fallback** Gemini → Qwen nếu API lỗi
+- **Retry** tự động khi API quá tải (429, 503, 500)
+- **Output**: Extraction JSON + MARC21 JSON + MARC21 binary (.mrc)
+- **Batch processing**: tự động xử lý tất cả PDF trong `data/`
+- **Metadata per-file** qua `data/batch_metadata.json`
+
+## Cấu trúc thư mục
+
+```
+extract_module/
+├── main.py                          # Entrypoint CLI
+├── requirements.txt                 # Dependencies
+├── Dockerfile                       # Docker image
+├── config/
+│   ├── settings.py                  # Biến môi trường
+│   └── model_config.py              # Cấu hình model
+├── core/
+│   └── orchestrator.py              # CentralOrchestrator
+├── modules/
+│   ├── ocr_adapters/                # OCR Adapter (mới)
+│   │   ├── __init__.py
+│   │   ├── base_ocr_adapter.py      # Abstract base
+│   │   └── paddle_ocr_adapter.py    # PaddleOCR implementation
+│   ├── llm_adapters/                # LLM Adapter
+│   │   ├── base_adapter.py          # Abstract base
+│   │   ├── gemini_adapter.py        # Gemini
+│   │   ├── qwen_adapter.py          # Qwen/OpenRouter
+│   │   └── llm_manager.py           # Quản lý retry + fallback
+│   ├── preprocessing/
+│   │   ├── image_processor.py       # PDF → Ảnh
+│   │   └── prompt_manager.py        # Xây prompt + schema
+│   └── postprocessing/
+│       ├── data_parser.py           # Parse text → JSON
+│       └── marc21_mapper.py         # JSON → MARC21 (mới)
+├── resources/
+│   ├── prompts/
+│   │   ├── extraction_prompt_v3.md
+│   │   ├── lv_la_promtp.md
+│   │   └── nckh_prompt.md
+│   └── schema/
+│       └── extraction_schema.json
+├── utils/
+│   ├── logger.py
+│   └── exceptions.py
+├── data/                            # PDF đầu vào
+├── output/                          # Kết quả đầu ra
+└── tests/                           # Unit tests (mới)
+    ├── test_adapters.py
+    ├── test_data_parser.py
+    ├── test_ocr_adapter.py
+    └── test_orchestrator.py
+```
 
 ## Cài đặt
-1. Tạo và kích hoạt virtualenv:
 
 ```bash
 python -m venv .venv
-.venv\Scripts\Activate.ps1  # PowerShell
-# hoặc
-.venv\Scripts\activate.bat  # cmd
-```
-
-2. Cài dependencies:
-
-```bash
+.venv\Scripts\Activate.ps1    # PowerShell
 pip install -r requirements.txt
 ```
 
+> **Lưu ý**: Cần có model PaddleOCR trong thư mục `paddle markdown/` (xem phần Model OCR).
+
 ## Cấu hình môi trường
-Tạo file `.env` ở gốc dự án với các biến sau:
+
+Tạo file `.env`:
 
 ```env
 GEMINI_API_KEY=your_gemini_api_key
 QWEN_API_KEY=your_qwen_api_key
 MAX_RETRIES=4
 DEFAULT_EXTRACT_PAGES=1
+USE_OCR=false
+PADDLE_MODEL_SIZE=tiny
 ```
 
-### Giải thích các biến
-- `GEMINI_API_KEY`: API key cho Gemini
-- `QWEN_API_KEY`: API key cho Qwen/OpenRouter
-- `MAX_RETRIES`: số lần thử gọi Gemini trước khi fallback sang Qwen
-- `DEFAULT_EXTRACT_PAGES`: số trang PDF đầu tiên sẽ chuyển sang ảnh
-  - giá trị mặc định là `1` (chỉ trang bìa)
+| Biến | Mô tả |
+|------|-------|
+| `GEMINI_API_KEY` | API key cho Gemini |
+| `QWEN_API_KEY` | API key cho Qwen/OpenRouter |
+| `MAX_RETRIES` | Số lần retry Gemini trước fallback (mặc định: 4) |
+| `DEFAULT_EXTRACT_PAGES` | Số trang PDF đầu chuyển ảnh (mặc định: 1) |
+| `USE_OCR` | `true` để dùng PaddleOCR, `false` để gửi ảnh trực tiếp |
+| `PADDLE_MODEL_SIZE` | Kích thước model OCR: `tiny`, `small`, `medium` |
 
 ## Cách dùng
-1. Đặt PDF vào thư mục `data/`
-2. Nếu cần metadata per-file, tạo `data/batch_metadata.json`
 
-Ví dụ `data/batch_metadata.json`:
+### 1. Chuẩn bị dữ liệu
+
+Đặt PDF vào `data/`. Tạo `data/batch_metadata.json` nếu cần metadata riêng cho từng file:
 
 ```json
 [
   {
-    "path": "data/Mau Bao cao KHCN_Tran Thi Trung Chien.pdf",
+    "path": "data/Mau Bao cao KHCN.pdf",
     "doc_type": "bao_cao_nckh",
-    "additional_info": "Nguồn: Thư viện ĐHYD TP.HCM - Cơ sở 2."
+    "additional_info": "Nguồn: Thư viện ĐHYD TP.HCM"
   },
   {
-    "path": "data/Another_Thesis.pdf",
-    "doc_type": "",
+    "path": "data/Luan van.pdf",
+    "doc_type": "luan_van",
     "additional_info": ""
   }
 ]
 ```
 
-3. Chạy pipeline:
+### 2. Chạy pipeline
 
+**Chế độ ảnh (mặc định):**
 ```bash
 python main.py
 ```
 
-## Output
-- Kết quả JSON được lưu vào thư mục:
-  - `output/YYYY-MM-DD/ket_qua_trich_xuat(<tên file>).json`
+**Chế độ OCR:**
+```bash
+python main.py --use-ocr
+```
 
-## Luồng hoạt động dữ liệu
-1. `main.py` quét tất cả PDF trong `data/`
-2. Nếu `data/batch_metadata.json` tồn tại, mỗi file PDF được gán `doc_type` và `additional_info`
-3. `CentralOrchestrator.handle_request(...)` xử lý từng file:
-   - chuyển trang PDF thành ảnh
-   - tạo prompt
-   - gọi LLM
-   - parse kết quả thành JSON
-4. JSON output được lưu vào thư mục theo ngày
+Hoặc dùng biến môi trường:
+```bash
+$env:USE_OCR = "true"
+python main.py
+```
 
-## Prompt và schema
-- `resources/prompts/nckh_prompt.md`: prompt cho báo cáo khoa học
-- `resources/prompts/lv_la_prompt.md`: prompt cho luận văn/luận án
-- `resources/prompts/extraction_prompt_v3.md`: prompt mặc định khi `doc_type` không xác định
-- `resources/schema/extraction_schema.json`: schema đầu ra
+### 3. Output
 
-## Cấu hình có thể chỉnh sửa
-### `config/settings.py`
-- `GEMINI_API_KEY`
-- `QWEN_API_KEY`
-- `MAX_RETRIES`
-- `DEFAULT_EXTRACT_PAGES`
+Kết quả lưu vào `output/YYYY-MM-DD/`:
 
-### `config/model_config.py`
-- `TEMPERATURE`: độ sáng tạo của model
-- `JPEG_QUALITY`: chất lượng ảnh JPEG đầu vào
-- `IMAGE_DPI`: độ phân giải ảnh từ PDF
+| File | Định dạng | Mô tả |
+|------|-----------|-------|
+| `ket_qua_trich_xuat(...).json` | JSON | Dữ liệu trích xuất gốc |
+| `MARC21_...json` | MARC-in-JSON | Biểu ghi MARC21 dạng JSON |
+| `MARC21_...mrc` | Binary MARC21 | Biểu ghi MARC21 dạng .mrc |
 
-## Ghi chú
-- Nếu `DEFAULT_EXTRACT_PAGES > 1`, pipeline sẽ lấy nhiều trang đầu tiên của PDF.
-- `PromptManager` đang dùng `doc_type` để chọn prompt và thêm `additional_info` nếu có.
-- `LLMManager` ưu tiên Gemini, fallback sang Qwen.
+## Chi tiết luồng xử lý
 
-## Lỗi thường gặp
-- `FileNotFoundError: Không tìm thấy file prompt` → kiểm tra `doc_type` và tên file prompt trong `resources/prompts/`
-- `ValueError` khi thiếu API key → kiểm tra `.env`
+### Image Mode (mặc định)
+```
+PDF → ImageProcessor (PDF → Ảnh)
+    → PromptManager (xây prompt)
+        → LLMManager → Gemini/Qwen (gửi ảnh + prompt)
+            → DataParser (parse response → JSON)
+                → Marc21Mapper (JSON → MARC21)
+```
 
-## Mở rộng
-Khả năng mở rộng:
-- thêm prompt mới vào `resources/prompts/`
-- parse các kiểu trả về LLM khác nhau
-- xử lý nhiều trang PDF bằng cách chỉnh thông số trong `DEFAULT_EXTRACT_PAGES`
+### OCR Mode (`--use-ocr`)
+```
+PDF → PaddleOCRAdapter (PaddleOCR → Markdown)
+    → PromptManager (xây prompt)
+        → LLMManager → Gemini/Qwen (gửi text + prompt)
+            → DataParser (parse response → JSON)
+                → Marc21Mapper (JSON → MARC21)
+```
+
+## Model OCR
+
+PaddleOCRAdapter sử dụng model PP-OCRv6 (tiny/small/medium). Các model file được đặt trong thư mục `paddle markdown/`:
+
+```
+paddle markdown/
+├── PP-OCRv6_tiny_det_safetensors/
+├── PP-OCRv6_tiny_rec_safetensors/
+├── PP-OCRv6_small_det_safetensors/
+├── PP-OCRv6_small_rec_safetensors/
+├── PP-OCRv6_medium_det_safetensors/
+└── PP-OCRv6_medium_rec_safetensors/
+```
+
+## Docker
+
+```bash
+# Build và chạy
+docker-compose up extract-module
+
+# Hoặc run với OCR
+docker-compose run extract-module python main.py --use-ocr
+```
+
+Docker mount:
+- `./OCR/paddle markdown:/app/paddle markdown` — model OCR
+- `./OCR/BC KHCN:/app/data` — PDF đầu vào
+
+## Kiểm thử
+
+```bash
+# Chạy toàn bộ test (18 tests, không cần API key)
+python -m pytest tests/ -v
+```
+
+## API keys
+
+- **Gemini**: lấy free tại https://aistudio.google.com/apikey
+- **Qwen/OpenRouter**: đăng ký tại https://openrouter.ai
+- Có thể set key qua biến môi trường hoặc file `.env`

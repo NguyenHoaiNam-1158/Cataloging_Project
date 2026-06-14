@@ -28,4 +28,22 @@ class LLMManager:
                 logger.error(f"Qwen thất bại: {str(e)}")
         
         raise Exception("Các API AI đều không khả dụng")
+
+    async def get_extraction_text_from_text(self, text_content: str, prompt: str) -> str:
+        for attempt in range(1, self.max_retries + 1):
+            try:
+                logger.info(f"Đang gọi [Gemini text] lần {attempt}/{self.max_retries}")
+                return await self.gemini.extract_text_data(text_content, prompt)
+            except Exception as e:
+                logger.warning(f"Gemini text lỗi lần {attempt}: {str(e)}")
+                if attempt == self.max_retries:
+                    logger.error("Gemini text thất bại")
+        if self.qwen:
+            try:
+                logger.warning("Fallback, switch Qwen text")
+                return await self.qwen.extract_text_data(text_content, prompt)
+            except Exception as e:
+                logger.error(f"Qwen text thất bại: {str(e)}")
+
+        raise Exception("Các API AI đều không khả dụng")
             

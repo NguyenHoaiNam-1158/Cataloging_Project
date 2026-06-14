@@ -39,6 +39,9 @@ yarn-error.log*
 data/
 temp/
 downloads/
+OCR/paddle markdown/
+output/
+backend/extract_module/output/
 
 # ==========================================
 # 5. HỆ ĐIỀU HÀNH & IDE (Linux, WSL, VSCode...)

@@ -53,3 +53,31 @@ class QwenAdapter(BaseLLMAdapter):
 
         logger.info("Trích xuất dữ liệu hoàn tất [Qwen]")
         return response.choices[0].message.content
+
+    async def extract_text_data(self, text_content: str, prompt: str) -> str:
+        logger.info("Đang trích xuất dữ liệu từ text [Qwen]")
+        strict_prompt = f"{prompt}\n\n===== NỘI DUNG OCR =====\n{text_content}\n===== HẾT =====\n\nCRITICAL: You MUST output ONLY the bullet point list (*Key: Value). Do not include any explanations or conversational text"
+
+        response = self.client.chat.completions.create(
+            model="qwen/qwen-2-vl-72b-instruct",
+            messages=[
+                {
+                    "role": "user",
+                    "content": [{"type": "text", "text": strict_prompt}],
+                }
+            ],
+            temperature=AIConfig.TEMPERATURE,
+        )
+
+        usage = getattr(response, "usage", None)
+        if usage:
+            prompt_tokens = getattr(usage, "prompt_tokens", None)
+            completion_tokens = getattr(usage, "completion_tokens", None)
+            total_tokens = getattr(usage, "total_tokens", None)
+            logger.info("Token usage [Qwen text]:"
+                        f" input={prompt_tokens}"
+                        f" output={completion_tokens}"
+                        f" total={total_tokens}")
+
+        logger.info("Trích xuất dữ liệu text hoàn tất [Qwen]")
+        return response.choices[0].message.content

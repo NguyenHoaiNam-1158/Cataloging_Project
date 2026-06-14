@@ -1,19 +1,26 @@
+import argparse
 import asyncio
 import json
 import logging
 import os
 import glob
 from datetime import datetime
+from pathlib import Path
 from utils.logger import setup_logging
 from core.orchestrator import CentralOrchestrator
+from modules.postprocessing.marc21_mapper import Marc21Mapper
 
 async def main():
+    parser = argparse.ArgumentParser(description="Extract Module - Trích xuất thư mục")
+    parser.add_argument("--use-ocr", action="store_true", help="Sử dụng OCR (PaddleOCR) thay vì gửi ảnh trực tiếp")
+    args = parser.parse_args()
+
     # 1. Khởi tạo cấu hình logging
     setup_logging()
     logger = logging.getLogger(__name__)
 
     # 2. Khởi tạo Pipeline
-    orchestrator = CentralOrchestrator()
+    orchestrator = CentralOrchestrator(use_ocr=args.use_ocr)
     
     # 3. Giả lập thao tác người dùng trên UI (mặc định) - sẽ được ghi đè bởi metadata per-file nếu có
     ui_doc_type = "bao_cao_nckh"
@@ -80,11 +87,47 @@ async def main():
             date_str = datetime.now().strftime("%Y-%m-%d")
             output_dir = os.path.join("output", date_str)
             os.makedirs(output_dir, exist_ok=True)
-            filename = f"ket_qua_trich_xuat({os.path.splitext(os.path.basename(sample_pdf_path))[0]}).json"
+            base_name = os.path.splitext(os.path.basename(sample_pdf_path))[0]
+
+            filename = f"ket_qua_trich_xuat({base_name}).json"
             output_path = os.path.join(output_dir, filename)
             with open(output_path, "w", encoding="utf-8") as f:
                 json.dump(response_data, f, indent=4, ensure_ascii=False)
             logger.info(f"Đã lưu dữ liệu thành công vào: {output_path}")
+
+            # Convert to MARC21 và lưu
+            try:
+                mapper = Marc21Mapper(response_data)
+                record = mapper.to_record()
+                marc_records = [record.as_dict()]
+
+                marc_json_path = os.path.join(output_dir, f"MARC21_{base_name}.json")
+                with open(marc_json_path, "w", encoding="utf-8") as f:
+                    json.dump(marc_records, f, ensure_ascii=False, indent=2)
+                logger.info(f"Đã lưu MARC-in-JSON: {marc_json_path}")
+
+                from pymarc import Record, Field, Subfield, Indicators
+                rec = Record()
+                if "leader" in marc_records[0]:
+                    rec.leader = marc_records[0]["leader"]
+                for field_data in marc_records[0].get("fields", []):
+                    for tag, content in field_data.items():
+                        if tag == "008":
+                            rec.add_ordered_field(Field(tag="008", data=content))
+                        elif isinstance(content, dict):
+                            ind1 = content.get("ind1", " ")
+                            ind2 = content.get("ind2", " ")
+                            subfields = []
+                            for sf in content.get("subfields", []):
+                                for c, v in sf.items():
+                                    subfields.append(Subfield(c, v))
+                            rec.add_ordered_field(Field(tag=tag, indicators=Indicators(ind1, ind2), subfields=subfields))
+                marc_bin_path = os.path.join(output_dir, f"MARC21_{base_name}.mrc")
+                with open(marc_bin_path, "wb") as f:
+                    f.write(rec.as_marc())
+                logger.info(f"Đã lưu binary .mrc: {marc_bin_path}")
+            except Exception as e:
+                logger.error(f"Lỗi chuyển đổi MARC21: {e}")
         else:
             logger.error(f"Trích xuất thất bại. Chi tiết: {response_data}")
 
