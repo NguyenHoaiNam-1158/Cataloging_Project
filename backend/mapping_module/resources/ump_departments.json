@@ -1,0 +1,552 @@
+[
+  {
+    "stt": 1,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Chẩn đoán hình ảnh"
+  },
+  {
+    "stt": 2,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Chấn thương chỉnh hình - PHCN"
+  },
+  {
+    "stt": 3,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Da liễu"
+  },
+  {
+    "stt": 4,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Gây mê hồi sức"
+  },
+  {
+    "stt": 5,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Giải phẫu học"
+  },
+  {
+    "stt": 6,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Hóa sinh"
+  },
+  {
+    "stt": 7,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Hồi sức cấp cứu chống độc"
+  },
+  {
+    "stt": 8,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Huyết học"
+  },
+  {
+    "stt": 9,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Lão khoa"
+  },
+  {
+    "stt": 10,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Lao và bệnh phổi"
+  },
+  {
+    "stt": 11,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Mắt"
+  },
+  {
+    "stt": 12,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Mô phôi - Giải phẫu bệnh"
+  },
+  {
+    "stt": 13,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Ngoại Nhi"
+  },
+  {
+    "stt": 14,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Ngoại Thần kinh"
+  },
+  {
+    "stt": 15,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Ngoại tổng quát"
+  },
+  {
+    "stt": 16,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Nhi"
+  },
+  {
+    "stt": 17,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Nhiễm"
+  },
+  {
+    "stt": 18,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Nội tiết"
+  },
+  {
+    "stt": 19,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Nội tổng quát"
+  },
+  {
+    "stt": 20,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Phẫu thuật lồng ngực và tim mạch"
+  },
+  {
+    "stt": 21,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Phụ sản"
+  },
+  {
+    "stt": 22,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Sinh lý - Sinh lý bệnh miễn dịch - Dược lý"
+  },
+  {
+    "stt": 23,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Tai mũi họng"
+  },
+  {
+    "stt": 24,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Tâm thần"
+  },
+  {
+    "stt": 25,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Tạo hình - Thẩm mỹ"
+  },
+  {
+    "stt": 26,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Thần kinh"
+  },
+  {
+    "stt": 27,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Tiết niệu học"
+  },
+  {
+    "stt": 28,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Ung bướu"
+  },
+  {
+    "stt": 29,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Vi sinh - ký sinh"
+  },
+  {
+    "stt": 30,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Bộ môn Y đức - Xã hội học - Chăm sóc giảm nhẹ"
+  },
+  {
+    "stt": 31,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Trung tâm Bác sĩ gia đình"
+  },
+  {
+    "stt": 32,
+    "tenDonViCap1": "Trường Y",
+    "tenDonViCap2": "Trung tâm ACTS"
+  },
+  {
+    "stt": 34,
+    "tenDonViCap1": "Trường Điều dưỡng - Kỹ thuật y học",
+    "tenDonViCap2": "Bộ môn Bệnh học lâm sàng"
+  },
+  {
+    "stt": 35,
+    "tenDonViCap1": "Trường Điều dưỡng - Kỹ thuật y học",
+    "tenDonViCap2": "Bộ môn Điều dưỡng"
+  },
+  {
+    "stt": 36,
+    "tenDonViCap1": "Trường Điều dưỡng - Kỹ thuật y học",
+    "tenDonViCap2": "Bộ môn Gây mê hồi sức"
+  },
+  {
+    "stt": 37,
+    "tenDonViCap1": "Trường Điều dưỡng - Kỹ thuật y học",
+    "tenDonViCap2": "Bộ môn Giải phẫu - Sinh lý"
+  },
+  {
+    "stt": 38,
+    "tenDonViCap1": "Trường Điều dưỡng - Kỹ thuật y học",
+    "tenDonViCap2": "Bộ môn Hộ sinh"
+  },
+  {
+    "stt": 39,
+    "tenDonViCap1": "Trường Điều dưỡng - Kỹ thuật y học",
+    "tenDonViCap2": "Bộ môn Kỹ thuật hình ảnh"
+  },
+  {
+    "stt": 40,
+    "tenDonViCap1": "Trường Điều dưỡng - Kỹ thuật y học",
+    "tenDonViCap2": "Bộ môn Phục hồi chức năng"
+  },
+  {
+    "stt": 41,
+    "tenDonViCap1": "Trường Điều dưỡng - Kỹ thuật y học",
+    "tenDonViCap2": "Bộ môn Xét nghiệm"
+  },
+  {
+    "stt": 43,
+    "tenDonViCap1": "Trường Dược",
+    "tenDonViCap2": "Bộ môn Bào chế"
+  },
+  {
+    "stt": 44,
+    "tenDonViCap1": "Trường Dược",
+    "tenDonViCap2": "Bộ môn Công nghệ thông tin dược"
+  },
+  {
+    "stt": 45,
+    "tenDonViCap1": "Trường Dược",
+    "tenDonViCap2": "Bộ môn Công nghệ dược phẩm"
+  },
+  {
+    "stt": 46,
+    "tenDonViCap1": "Trường Dược",
+    "tenDonViCap2": "Bộ môn Dược liệu - Dược học cổ truyền"
+  },
+  {
+    "stt": 47,
+    "tenDonViCap1": "Trường Dược",
+    "tenDonViCap2": "Bộ môn Dược lý"
+  },
+  {
+    "stt": 48,
+    "tenDonViCap1": "Trường Dược",
+    "tenDonViCap2": "Bộ môn Dược lâm sàng"
+  },
+  {
+    "stt": 49,
+    "tenDonViCap1": "Trường Dược",
+    "tenDonViCap2": "Bộ môn Hoá hữu cơ"
+  },
+  {
+    "stt": 50,
+    "tenDonViCap1": "Trường Dược",
+    "tenDonViCap2": "Bộ môn Hoá dược"
+  },
+  {
+    "stt": 51,
+    "tenDonViCap1": "Trường Dược",
+    "tenDonViCap2": "Bộ môn Hoá sinh"
+  },
+  {
+    "stt": 52,
+    "tenDonViCap1": "Trường Dược",
+    "tenDonViCap2": "Bộ môn Phân tích - Kiểm nghiệm"
+  },
+  {
+    "stt": 53,
+    "tenDonViCap1": "Trường Dược",
+    "tenDonViCap2": "Bộ môn Tổ chức quản lý dược"
+  },
+  {
+    "stt": 54,
+    "tenDonViCap1": "Trường Dược",
+    "tenDonViCap2": "Bộ môn Vi sinh - Ký sinh"
+  },
+  {
+    "stt": 56,
+    "tenDonViCap1": "Khoa Răng Hàm Mặt",
+    "tenDonViCap2": "Bộ môn Nha khoa cơ sở"
+  },
+  {
+    "stt": 57,
+    "tenDonViCap1": "Khoa Răng Hàm Mặt",
+    "tenDonViCap2": "Bộ môn Chẩn đoán hình ảnh Răng Hàm Mặt"
+  },
+  {
+    "stt": 58,
+    "tenDonViCap1": "Khoa Răng Hàm Mặt",
+    "tenDonViCap2": "Bộ môn Bệnh học miệng"
+  },
+  {
+    "stt": 59,
+    "tenDonViCap1": "Khoa Răng Hàm Mặt",
+    "tenDonViCap2": "Bộ môn Phẫu thuật miệng"
+  },
+  {
+    "stt": 60,
+    "tenDonViCap1": "Khoa Răng Hàm Mặt",
+    "tenDonViCap2": "Bộ môn Phẫu thuật hàm mặt"
+  },
+  {
+    "stt": 61,
+    "tenDonViCap1": "Khoa Răng Hàm Mặt",
+    "tenDonViCap2": "Bộ môn Cấy ghép nha khoa"
+  },
+  {
+    "stt": 62,
+    "tenDonViCap1": "Khoa Răng Hàm Mặt",
+    "tenDonViCap2": "Bộ môn Chỉnh hình răng mặt"
+  },
+  {
+    "stt": 63,
+    "tenDonViCap1": "Khoa Răng Hàm Mặt",
+    "tenDonViCap2": "Bộ môn Nha khoa trẻ em"
+  },
+  {
+    "stt": 64,
+    "tenDonViCap1": "Khoa Răng Hàm Mặt",
+    "tenDonViCap2": "Bộ môn Nha khoa công cộng"
+  },
+  {
+    "stt": 65,
+    "tenDonViCap1": "Khoa Răng Hàm Mặt",
+    "tenDonViCap2": "Bộ môn Nha chu"
+  },
+  {
+    "stt": 66,
+    "tenDonViCap1": "Khoa Răng Hàm Mặt",
+    "tenDonViCap2": "Bộ môn Chữa răng - Nội nha"
+  },
+  {
+    "stt": 67,
+    "tenDonViCap1": "Khoa Răng Hàm Mặt",
+    "tenDonViCap2": "Bộ môn Phục hình răng"
+  },
+  {
+    "stt": 68,
+    "tenDonViCap1": "Khoa Răng Hàm Mặt",
+    "tenDonViCap2": "Bộ môn Kỹ thuật phục hình răng"
+  },
+  {
+    "stt": 69,
+    "tenDonViCap1": "Khoa Răng Hàm Mặt",
+    "tenDonViCap2": "Bộ môn Nha khoa tổng quát"
+  },
+  {
+    "stt": 71,
+    "tenDonViCap1": "Khoa Y học cổ truyền",
+    "tenDonViCap2": "Bộ môn Bào chế đông dược"
+  },
+  {
+    "stt": 72,
+    "tenDonViCap1": "Khoa Y học cổ truyền",
+    "tenDonViCap2": "Bộ môn Châm cứu"
+  },
+  {
+    "stt": 73,
+    "tenDonViCap1": "Khoa Y học cổ truyền",
+    "tenDonViCap2": "Bộ môn Dược học cổ truyền"
+  },
+  {
+    "stt": 74,
+    "tenDonViCap1": "Khoa Y học cổ truyền",
+    "tenDonViCap2": "Bộ môn Dưỡng sinh"
+  },
+  {
+    "stt": 75,
+    "tenDonViCap1": "Khoa Y học cổ truyền",
+    "tenDonViCap2": "Bộ môn Nhi khoa Đông y"
+  },
+  {
+    "stt": 76,
+    "tenDonViCap1": "Khoa Y học cổ truyền",
+    "tenDonViCap2": "Bộ môn Nội khoa Đông y"
+  },
+  {
+    "stt": 77,
+    "tenDonViCap1": "Khoa Y học cổ truyền",
+    "tenDonViCap2": "Bộ môn Y học cổ truyền cơ sở"
+  },
+  {
+    "stt": 79,
+    "tenDonViCap1": "Khoa Y tế công cộng",
+    "tenDonViCap2": "Bộ môn Dịch tễ học"
+  },
+  {
+    "stt": 80,
+    "tenDonViCap1": "Khoa Y tế công cộng",
+    "tenDonViCap2": "Bộ môn Dân số học"
+  },
+  {
+    "stt": 81,
+    "tenDonViCap1": "Khoa Y tế công cộng",
+    "tenDonViCap2": "Bộ môn Dinh dưỡng Thực phẩm"
+  },
+  {
+    "stt": 82,
+    "tenDonViCap1": "Khoa Y tế công cộng",
+    "tenDonViCap2": "Bộ môn Giáo dục sức khỏe - Tâm lý Y học"
+  },
+  {
+    "stt": 83,
+    "tenDonViCap1": "Khoa Y tế công cộng",
+    "tenDonViCap2": "Bộ môn Kinh tế Y tế"
+  },
+  {
+    "stt": 84,
+    "tenDonViCap1": "Khoa Y tế công cộng",
+    "tenDonViCap2": "Bộ môn Thống kê y học Tin học"
+  },
+  {
+    "stt": 85,
+    "tenDonViCap1": "Khoa Y tế công cộng",
+    "tenDonViCap2": "Bộ môn Sức khỏe môi trường"
+  },
+  {
+    "stt": 86,
+    "tenDonViCap1": "Khoa Y tế công cộng",
+    "tenDonViCap2": "Bộ môn Sức khỏe Cộng đồng"
+  },
+  {
+    "stt": 87,
+    "tenDonViCap1": "Khoa Y tế công cộng",
+    "tenDonViCap2": "Bộ môn Tổ chức – Quản lý Y tế"
+  },
+  {
+    "stt": 88,
+    "tenDonViCap1": "Khoa Y tế công cộng",
+    "tenDonViCap2": "Bộ môn Y học dự phòng cơ sở"
+  },
+  {
+    "stt": 90,
+    "tenDonViCap1": "Khoa Khoa học cơ bản",
+    "tenDonViCap2": "Bộ môn Giáo dục thể chất"
+  },
+  {
+    "stt": 91,
+    "tenDonViCap1": "Khoa Khoa học cơ bản",
+    "tenDonViCap2": "Bộ môn Hóa học"
+  },
+  {
+    "stt": 92,
+    "tenDonViCap1": "Khoa Khoa học cơ bản",
+    "tenDonViCap2": "Bộ môn Lý luận Chính trị"
+  },
+  {
+    "stt": 93,
+    "tenDonViCap1": "Khoa Khoa học cơ bản",
+    "tenDonViCap2": "Bộ môn Ngoại ngữ"
+  },
+  {
+    "stt": 94,
+    "tenDonViCap1": "Khoa Khoa học cơ bản",
+    "tenDonViCap2": "Bộ môn Sinh học"
+  },
+  {
+    "stt": 95,
+    "tenDonViCap1": "Khoa Khoa học cơ bản",
+    "tenDonViCap2": "Bộ môn Tin học"
+  },
+  {
+    "stt": 96,
+    "tenDonViCap1": "Khoa Khoa học cơ bản",
+    "tenDonViCap2": "Bộ môn Toán"
+  },
+  {
+    "stt": 97,
+    "tenDonViCap1": "Khoa Khoa học cơ bản",
+    "tenDonViCap2": "Bộ môn Vật lý"
+  },
+  {
+    "stt": 99,
+    "tenDonViCap1": "Bệnh viện Đại học Y Dược - Cơ sở 1",
+    "tenDonViCap2": null
+  },
+  {
+    "stt": 100,
+    "tenDonViCap1": "Bệnh viện Đại học Y Dược - Cơ sở 2",
+    "tenDonViCap2": null
+  },
+  {
+    "stt": 101,
+    "tenDonViCap1": "Bệnh viện Đại học Y Dược - Cơ sở 3",
+    "tenDonViCap2": null
+  },
+  {
+    "stt": 102,
+    "tenDonViCap1": "Phòng Hợp tác quốc tế",
+    "tenDonViCap2": null
+  },
+  {
+    "stt": 103,
+    "tenDonViCap1": "Phòng Hành chính tổng hợp",
+    "tenDonViCap2": null
+  },
+  {
+    "stt": 104,
+    "tenDonViCap1": "Phòng Tổ chức cán bộ",
+    "tenDonViCap2": null
+  },
+  {
+    "stt": 105,
+    "tenDonViCap1": "Phòng Thanh tra pháp chế",
+    "tenDonViCap2": null
+  },
+  {
+    "stt": 106,
+    "tenDonViCap1": "Phòng Đào tạo sau đại học",
+    "tenDonViCap2": null
+  },
+  {
+    "stt": 107,
+    "tenDonViCap1": "Phòng Đào tạo đại học",
+    "tenDonViCap2": null
+  },
+  {
+    "stt": 108,
+    "tenDonViCap1": "Phòng Kế hoạch tài chính",
+    "tenDonViCap2": null
+  },
+  {
+    "stt": 109,
+    "tenDonViCap1": "Phòng Khoa học công nghệ",
+    "tenDonViCap2": null
+  },
+  {
+    "stt": 110,
+    "tenDonViCap1": "Phòng Quản trị giáo tài",
+    "tenDonViCap2": null
+  },
+  {
+    "stt": 111,
+    "tenDonViCap1": "Trung tâm Y sinh học phân tử",
+    "tenDonViCap2": null
+  },
+  {
+    "stt": 112,
+    "tenDonViCap1": "Trung tâm Công nghệ thông tin",
+    "tenDonViCap2": null
+  },
+  {
+    "stt": 113,
+    "tenDonViCap1": "Trung tâm Đào tạo nhân lực y tế theo nhu cầu xã hội",
+    "tenDonViCap2": null
+  },
+  {
+    "stt": 114,
+    "tenDonViCap1": "Trung tâm Giáo dục y học",
+    "tenDonViCap2": null
+  },
+  {
+    "stt": 115,
+    "tenDonViCap1": "Trung tâm Khoa học và Công nghệ UMP",
+    "tenDonViCap2": null
+  },
+  {
+    "stt": 116,
+    "tenDonViCap1": "Trung tâm Kiểm chuẩn chất lượng xét nghiệm y học",
+    "tenDonViCap2": null
+  },
+  {
+    "stt": 117,
+    "tenDonViCap1": "Trung tâm Phẫu thuật thực nghiệm",
+    "tenDonViCap2": null
+  }
+]

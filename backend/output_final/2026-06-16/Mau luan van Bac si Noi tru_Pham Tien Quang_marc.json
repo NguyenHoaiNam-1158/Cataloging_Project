@@ -1,0 +1,247 @@
+{
+  "marc21_record": {
+    "leader": "         a22        4500",
+    "fields": [
+      {
+        "tag": "001",
+        "data": "YD2600013"
+      },
+      {
+        "tag": "005",
+        "data": "20260616101852.0"
+      },
+      {
+        "tag": "008",
+        "data": "260616s2020    vm      m                "
+      },
+      {
+        "tag": "040",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "DHYD"
+          },
+          {
+            "code": "b",
+            "value": "vie"
+          },
+          {
+            "code": "c",
+            "value": "DHYD"
+          },
+          {
+            "code": "e",
+            "value": "AACR2"
+          }
+        ]
+      },
+      {
+        "tag": "041",
+        "ind1": "0",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "vie"
+          }
+        ]
+      },
+      {
+        "tag": "050",
+        "ind1": " ",
+        "ind2": "0",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Z1037"
+          },
+          {
+            "code": "b",
+            "value": ".2"
+          }
+        ]
+      },
+      {
+        "tag": "060",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "WM 145.5"
+          }
+        ]
+      },
+      {
+        "tag": "100",
+        "ind1": "1",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Quang, Phạm Tiến."
+          }
+        ]
+      },
+      {
+        "tag": "245",
+        "ind1": "1",
+        "ind2": "0",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Nghiên cứu biến chứng rò tụy sau mổ cắt khối tá tụy, nối tụy – hồng tràng theo Blumgart cải biên /"
+          },
+          {
+            "code": "c",
+            "value": "Phạm Tiến Quang."
+          }
+        ]
+      },
+      {
+        "tag": "260",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "TP. Hồ Chí Minh"
+          },
+          {
+            "code": "c",
+            "value": "2020"
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "S1C90-11357."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "WT."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "980."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "PKA."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "2020."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "C.1."
+          }
+        ]
+      },
+      {
+        "tag": "502",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Luận văn (Ngoại khoa) -- Bộ Giáo dục và Đào tạo, Đại học Y Dược TP Hồ Chí Minh, Bộ Y tế, 2020."
+          }
+        ]
+      },
+      {
+        "tag": "541",
+        "ind1": "0",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "1 bản in + TT + 1 file (25/11/2020)."
+          }
+        ]
+      },
+      {
+        "tag": "710",
+        "ind1": "2",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Bộ Giáo dục và Đào tạo, Đại học Y Dược TP Hồ Chí Minh, Bộ Y tế."
+          }
+        ]
+      },
+      {
+        "tag": "915",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Ngoại Khoa"
+          },
+          {
+            "code": "c",
+            "value": "Bác Sĩ Nội Trú"
+          },
+          {
+            "code": "f",
+            "value": "TS. Trần Công Duy Long"
+          }
+        ]
+      },
+      {
+        "tag": "927",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          "LA"
+        ]
+      }
+    ]
+  },
+  "ai_evaluation_metrics": {}
+}

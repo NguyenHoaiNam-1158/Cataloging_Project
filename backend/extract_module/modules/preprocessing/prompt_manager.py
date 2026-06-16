@@ -6,9 +6,11 @@ from typing import Tuple
 logger = logging.getLogger(__name__)
 
 class PromptManager:
-    def __init__(self, resource_dir: str = "resources"):
-        self.prompt_dir = os.path.join(resource_dir, "prompts")
-        self.schema_path = os.path.join(resource_dir, "schema", "extraction_schema.json")
+    def __init__(self, resource_dir: str = "None"):
+        base_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+
+        self.prompt_dir = os.path.join(base_path, "extract_module", "resources", "prompts")
+        self.schema_path = os.path.join(base_path, "extract_module", "resources", "schema", "extraction_schema.json")
         self.schema_dict = self._load_schema()
     
     def _load_schema(self) -> dict:

@@ -1,0 +1,284 @@
+{
+  "marc21_record": {
+    "leader": "         a22        4500",
+    "fields": [
+      {
+        "tag": "001",
+        "data": "YD2600001"
+      },
+      {
+        "tag": "005",
+        "data": "20260616123150.0"
+      },
+      {
+        "tag": "008",
+        "data": "260616s2024    vm      t                "
+      },
+      {
+        "tag": "040",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "DHYD"
+          },
+          {
+            "code": "b",
+            "value": "vie"
+          },
+          {
+            "code": "c",
+            "value": "DHYD"
+          },
+          {
+            "code": "e",
+            "value": "AACR2"
+          }
+        ]
+      },
+      {
+        "tag": "041",
+        "ind1": "0",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "vie"
+          }
+        ]
+      },
+      {
+        "tag": "050",
+        "ind1": " ",
+        "ind2": "0",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "PVR"
+          }
+        ]
+      },
+      {
+        "tag": "060",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "WL 348"
+          }
+        ]
+      },
+      {
+        "tag": "100",
+        "ind1": "1",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Thắng, Trần Công,"
+          },
+          {
+            "code": "e",
+            "value": "TS., chủ trì nhiệm vụ."
+          }
+        ]
+      },
+      {
+        "tag": "245",
+        "ind1": "1",
+        "ind2": "0",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Đặc điểm lâm sàng và hình ảnh học của người bệnh Alzheimer có bất thường di truyền /"
+          },
+          {
+            "code": "c",
+            "value": "Trần Công Thắng."
+          }
+        ]
+      },
+      {
+        "tag": "260",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Tp. Hồ Chí Minh"
+          },
+          {
+            "code": "b",
+            "value": "Đại học Y Dược Tp. Hồ Chí Minh"
+          },
+          {
+            "code": "c",
+            "value": "2024"
+          }
+        ]
+      },
+      {
+        "tag": "300",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "viii, 144 tr."
+          },
+          {
+            "code": "b",
+            "value": "minh họa ; 30 cm + 01 file (.pdf)"
+          },
+          {
+            "code": "c",
+            "value": "30 cm"
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Chuyên ngành: Thần kinh."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Lĩnh vực: Y học lâm sàng."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Thời gian thực hiện: Từ tháng 01/2023 đến tháng 06/2024."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "nộp lưu chiểu."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Có Giấy thỏa thuận cho phép số hóa."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "công khai toàn văn (07/01/2025)."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "133."
+          }
+        ]
+      },
+      {
+        "tag": "504",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Gồm thư mục tham khảo."
+          }
+        ]
+      },
+      {
+        "tag": "650",
+        "ind1": "1",
+        "ind2": "4",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Alzheimer Disease diagnostic imaging"
+          }
+        ]
+      },
+      {
+        "tag": "650",
+        "ind1": "1",
+        "ind2": "4",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Alzheimer Disease genetics"
+          }
+        ]
+      },
+      {
+        "tag": "650",
+        "ind1": "1",
+        "ind2": "4",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Mutation"
+          }
+        ]
+      },
+      {
+        "tag": "710",
+        "ind1": "2",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Đại học Y Dược Tp. Hồ Chí Minh."
+          }
+        ]
+      },
+      {
+        "tag": "927",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          "NCKH"
+        ]
+      }
+    ]
+  },
+  "ai_evaluation_metrics": {}
+}

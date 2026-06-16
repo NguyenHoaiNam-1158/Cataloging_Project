@@ -1,7 +1,7 @@
 import logging
-from config.settings import config
-from .gemini_adapter import GeminiAdapter
-from .qwen_adapter import QwenAdapter
+from extract_module.config.settings import config
+from extract_module.modules.llm_adapters.gemini_adapter import GeminiAdapter
+from extract_module.modules.llm_adapters.qwen_adapter import QwenAdapter
 
 logger = logging.getLogger(__name__)
 

@@ -1,0 +1,8 @@
+pymarc>=3.0.0
+pydantic>=2.0
+
+# Optional: Para sa RAG integration (LCC/NLM classification + subject indexing)
+# Uncomment kung gumagamit ang RAGFieldMapper o RAGEnrichedFieldMapper
+sentence-transformers>=2.2.2
+faiss-cpu>=1.8.0
+google-generativeai>=0.3.0

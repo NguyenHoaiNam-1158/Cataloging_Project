@@ -1,9 +1,4 @@
 #!/usr/bin/env python3
-"""
-Mapper chuyển đổi dữ liệu JSON trích xuất từ tài liệu sang định dạng MARC21 (.mrc)
-Tuân thủ quy chuẩn biên mục của Thư viện Đại học Y Dược TP. Hồ Chí Minh (DHYD).
-"""
-
 import json
 import re
 import os

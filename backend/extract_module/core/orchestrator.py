@@ -1,11 +1,11 @@
 import logging
 from typing import Dict, Any, Tuple
-from config.settings import config
-from modules.preprocessing.image_processor import ImageProcessor
-from modules.preprocessing.prompt_manager import PromptManager
-from modules.llm_adapters.llm_manager import LLMManager
-from modules.ocr_adapters.paddle_ocr_adapter import PaddleOCRAdapter
-from modules.postprocessing.data_parser import DataParser
+from extract_module.config.settings import config
+from extract_module.modules.preprocessing.image_processor import ImageProcessor
+from extract_module.modules.preprocessing.prompt_manager import PromptManager
+from extract_module.modules.llm_adapters.llm_manager import LLMManager
+from extract_module.modules.ocr_adapters.paddle_ocr_adapter import PaddleOCRAdapter
+from extract_module.modules.postprocessing.data_parser import DataParser
 
 logger = logging.getLogger(__name__)
 

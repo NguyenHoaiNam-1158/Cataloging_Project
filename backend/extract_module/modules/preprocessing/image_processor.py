@@ -2,7 +2,7 @@ import os
 import logging
 import fitz # PyMuPDF
 from PIL import Image
-from config.model_config import AIConfig
+from extract_module.config.model_config import AIConfig
 
 logger = logging.getLogger(__name__)
 

@@ -2,9 +2,9 @@ import time
 import logging
 from google import genai
 from google.genai import types
-from config.settings import config
-from config.model_config import AIConfig
-from .base_adapter import BaseLLMAdapter
+from extract_module.config.settings import config
+from extract_module.config.model_config import AIConfig
+from extract_module.modules.llm_adapters.base_adapter import BaseLLMAdapter
 
 logger = logging.getLogger(__name__)
 

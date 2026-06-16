@@ -1,0 +1,206 @@
+{
+  "marc21_record": {
+    "leader": "         a22        4500",
+    "fields": [
+      {
+        "tag": "001",
+        "data": "YD2600005"
+      },
+      {
+        "tag": "005",
+        "data": "20260616100249.0"
+      },
+      {
+        "tag": "008",
+        "data": "260616s2020    vm      m                "
+      },
+      {
+        "tag": "040",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "DHYD"
+          },
+          {
+            "code": "b",
+            "value": "vie"
+          },
+          {
+            "code": "c",
+            "value": "DHYD"
+          },
+          {
+            "code": "e",
+            "value": "AACR2"
+          }
+        ]
+      },
+      {
+        "tag": "041",
+        "ind1": "0",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "vie"
+          }
+        ]
+      },
+      {
+        "tag": "050",
+        "ind1": " ",
+        "ind2": "0",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "KN"
+          }
+        ]
+      },
+      {
+        "tag": "060",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "WU 317"
+          }
+        ]
+      },
+      {
+        "tag": "100",
+        "ind1": "1",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Phát, Nguyễn Đình."
+          }
+        ]
+      },
+      {
+        "tag": "245",
+        "ind1": "1",
+        "ind2": "0",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "ĐÁNH GIÁ KẾT QUẢ SỚM PHẪU THUẬT HẸP ĐỘNG MẠCH CẢNH NGOÀI SỌ DO XƠ VỮA BẰNG PHƯƠNG PHÁP LỘN NỘI MẠC."
+          }
+        ]
+      },
+      {
+        "tag": "260",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "THÀNH PHỐ HỒ CHÍ MINH"
+          },
+          {
+            "code": "c",
+            "value": "2020"
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "0109011371."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "W/L 357 NGU 2020 c1."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "+ TT + 1 file."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "(21/11/2020)."
+          }
+        ]
+      },
+      {
+        "tag": "502",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Mã số: 8720104."
+          }
+        ]
+      },
+      {
+        "tag": "710",
+        "ind1": "2",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "BỘ GIÁO DỤC VÀ ĐÀO TẠO, ĐẠI HỌC Y DƯỢC TP HỒ CHÍ MINH."
+          }
+        ]
+      },
+      {
+        "tag": "915",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Ngoại Khoa (Ngoại Lồng Ngực)"
+          },
+          {
+            "code": "c",
+            "value": "Thạc Sĩ Y Học"
+          },
+          {
+            "code": "f",
+            "value": "PGS.TS.BS Nguyễn Hoàng Định"
+          }
+        ]
+      },
+      {
+        "tag": "927",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          "LA"
+        ]
+      }
+    ]
+  },
+  "ai_evaluation_metrics": {}
+}

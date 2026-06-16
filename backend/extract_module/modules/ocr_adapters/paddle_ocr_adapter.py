@@ -4,7 +4,7 @@ import os
 import tempfile
 from pathlib import Path
 
-from .base_ocr_adapter import BaseOCRAdapter
+from extract_module.modules.ocr_adapters.base_ocr_adapter import BaseOCRAdapter
 
 logger = logging.getLogger(__name__)
 
