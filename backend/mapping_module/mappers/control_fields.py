@@ -15,6 +15,7 @@ from mapping_module.config.settings import Settings
 class ControlFieldMapper(BaseFieldMapper):
 
     _counter_lock = threading.Lock()
+
     def can_handle(self, raw_data: RawExtractionData) -> bool:
         return True
 
@@ -36,7 +37,6 @@ class ControlFieldMapper(BaseFieldMapper):
                     Subfield("a", "vie")
                 ])
         ]
-    
 
     def _create_control_number(self, raw_data: RawExtractionData) -> str:
         prefix = "YD"
@@ -56,37 +56,46 @@ class ControlFieldMapper(BaseFieldMapper):
                     data = json.loads(counter_path.read_text(encoding="utf-8"))
                 except (json.JSONDecodeError, OSError):
                     data = {}
- 
-            current = int(data.get(year_prefix, 0)) + 1 
+
+            current = int(data.get(year_prefix, 0)) + 1
             data[year_prefix] = current
- 
+
             counter_path.parent.mkdir(parents=True, exist_ok=True)
             counter_path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
             return current
-        
+
     def _current_transaction_date(self) -> str:
         return datetime.datetime.utcnow().strftime("%Y%m%d%H%M%S.0")
 
     def _build_fixed_length_field(self, raw_data: RawExtractionData) -> str:
-        date_entered = datetime.datetime.utcnow().strftime("%y%m%d")
-        date_type = "s"
-        date1 = raw_data.publication_year or "    "
+        date_entered = datetime.datetime.utcnow().strftime("%y%m%d")  
+        date_type = "s"                                               
+
+        date1 = raw_data.publication_year or "    "                   
         if date1 and len(date1) >= 4:
             date1 = date1[:4]
         else:
             date1 = "    "
 
-        place_code = Settings.DEFAULT_COUNTRY_CODE.strip().ljust(3)
+        date2 = "    "                                                
+        place_code = Settings.DEFAULT_COUNTRY_CODE.strip().ljust(3)[:3]  
 
-        fixed = f"{date_entered}{date_type}{date1}{'    '}{place_code}{' '*22}"
-        fixed = fixed[:40].ljust(40)
-
+        material = list(" " * 17)
         doc_type_code = self._resolve_doc_type_code(raw_data)
         if doc_type_code:
-            # chèn vào các vị trí 23-26 của field 008
-            fixed = fixed[:23] + doc_type_code + fixed[27:]
+            for i, ch in enumerate(doc_type_code[:4]):
+                material[5 + i] = ch
+        material = "".join(material)
 
-        return fixed
+        language = getattr(Settings, "DEFAULT_LANGUAGE_CODE", "vie").strip().ljust(3)[:3] 
+        modified_record = " "                                         
+        cataloging_source = "d"                                       
+
+        fixed = (
+            date_entered + date_type + date1 + date2 + place_code
+            + material + language + modified_record + cataloging_source
+        )
+        return fixed[:40].ljust(40)
 
     def _resolve_doc_type_code(self, raw_data: RawExtractionData) -> str:
         if raw_data.document_type:

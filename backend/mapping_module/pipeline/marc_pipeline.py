@@ -17,6 +17,7 @@ from mapping_module.mappers import (
     RAGFieldMapper,
     TitleMapper,
     ControlFieldMapper,
+    LocalFieldMapper,
 )
 
 
@@ -31,6 +32,7 @@ class MarcPipeline:
             NoteMapper(),
             RAGFieldMapper(),
             RAGEnrichedFieldMapper(),
+            LocalFieldMapper(),
         ]
 
     def build_record(self, raw_data: Dict[str, Any]) -> Record:

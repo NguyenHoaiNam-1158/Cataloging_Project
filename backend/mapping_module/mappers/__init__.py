@@ -7,6 +7,7 @@ from .author_fields import AuthorCorporateMapper
 from .pub_phys_fields import PublicationPhysicalMapper
 from .note_fields import NoteMapper
 from .rag_fields import RAGFieldMapper, RAGEnrichedFieldMapper
+from .local_field import LocalFieldMapper
 
 __all__ = [
     "ControlFieldMapper",
@@ -17,4 +18,5 @@ __all__ = [
     "NoteMapper",
     "RAGFieldMapper",
     "RAGEnrichedFieldMapper",
+    "LocalFieldMapper",
 ]

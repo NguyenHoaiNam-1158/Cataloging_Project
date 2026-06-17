@@ -1,12 +1,14 @@
+import re
 import unicodedata
 import json
-from typing import List, Optional
+from typing import List, Optional, Tuple
 from pymarc import Field, Subfield
 
 from mapping_module.config.settings import Settings
 from mapping_module.core.base_mapper import BaseFieldMapper
 from mapping_module.core.models import RawExtractionData
 from mapping_module.utils.marc_punctuation import add_end_period
+
 
 class NoteMapper(BaseFieldMapper):
     def can_handle(self, raw_data: RawExtractionData) -> bool:
@@ -25,15 +27,26 @@ class NoteMapper(BaseFieldMapper):
     def map_field(self, raw_data: RawExtractionData) -> List[Field]:
         fields: List[Field] = []
 
+        holding_subfields: List[Subfield] = []
         for note in raw_data.general_notes or []:
-            if note and note.strip():
+            if not (note and note.strip()):
+                continue
+            tag, code, value = self._route_note(note.strip())
+            if tag == "852":
+                holding_subfields.append(Subfield(code, value))
+            else:
                 fields.append(
                     Field(
                         tag="500",
                         indicators=[" ", " "],
-                        subfields=[Subfield("a", add_end_period(note))],
+                        subfields=[Subfield("a", add_end_period(value))],
                     )
                 )
+
+        if holding_subfields:
+            fields.append(
+                Field(tag="852", indicators=[" ", " "], subfields=holding_subfields)
+            )
 
         if raw_data.dissertation_note:
             fields.append(
@@ -48,14 +61,15 @@ class NoteMapper(BaseFieldMapper):
             if raw_data.major:
                 parts.append(f"({raw_data.major.strip()})")
             if raw_data.corporate_name:
-                parts.append(f"-- {raw_data.corporate_name.strip()}")
-            
+                corp_clean = raw_data.corporate_name.replace("|", "-").strip()
+                parts.append(f"-- {corp_clean}")
+
             pub_year = raw_data.publication_year
             if pub_year and len(parts) > 1:
                 parts[-1] = f"{parts[-1]}, {pub_year.strip()}"
             elif pub_year:
                 parts.append(pub_year.strip())
-                
+
             note_text = " ".join(parts) + "."
             fields.append(Field(tag="502", indicators=[" ", " "], subfields=[Subfield("a", note_text)]))
 
@@ -106,6 +120,21 @@ class NoteMapper(BaseFieldMapper):
             )
 
         return fields
+
+    def _route_note(self, text: str) -> Tuple[str, str, str]:
+        if re.fullmatch(r'C\.?\s*\d+', text, re.IGNORECASE):
+            return ("852", "t", text)
+        
+        if re.fullmatch(r'[A-Za-z0-9]+-\d+', text):
+            return ("852", "p", text)
+        
+        if any(k in text.lower() for k in ["bản in", "bản", "file", "đĩa", "cd", "tt"]):
+            return ("852", "z", text)
+        
+        if len(text) <= 4 and " " not in text:
+            return ("852", "k", text)
+        
+        return ("500", "a", text)
 
     def _resolve_material_code(self, raw_data: RawExtractionData) -> Optional[str]:
         def normalize(text: str) -> str:
