@@ -4,15 +4,15 @@
     "fields": [
       {
         "tag": "001",
-        "data": "YD2600036"
+        "data": "YD2600035"
       },
       {
         "tag": "005",
-        "data": "20260617141523.0"
+        "data": "20260617111951.0"
       },
       {
         "tag": "008",
-        "data": "260617s2020    vm      m           vie d"
+        "data": "260617s2025    vm      m           vie d"
       },
       {
         "tag": "040",
@@ -55,11 +55,7 @@
         "subfields": [
           {
             "code": "a",
-            "value": "Z1037"
-          },
-          {
-            "code": "b",
-            "value": ".2"
+            "value": "AKK"
           }
         ]
       },
@@ -70,7 +66,7 @@
         "subfields": [
           {
             "code": "a",
-            "value": "WM 145.5"
+            "value": "WU 317"
           }
         ]
       },
@@ -81,11 +77,11 @@
         "subfields": [
           {
             "code": "a",
-            "value": "WM 145.5"
+            "value": "WU 317"
           },
           {
             "code": "b",
-            "value": "PHẠ 2020"
+            "value": "NGU 2025"
           }
         ]
       },
@@ -96,11 +92,7 @@
         "subfields": [
           {
             "code": "a",
-            "value": "Phạm Tiến Quang,"
-          },
-          {
-            "code": "c",
-            "value": "Bác sĩ nội trú."
+            "value": "Nguyễn Hoàng Tùng."
           }
         ]
       },
@@ -111,11 +103,11 @@
         "subfields": [
           {
             "code": "a",
-            "value": "NGHIÊN CỨU BIẾN CHỨNG RÒ TỤY SAU MỔ CẮT KHỐI TÁ TỤY, NỐI TỤY – HỒNG TRÀNG THEO BLUMGART CẢI BIÊN /"
+            "value": "KHẢO SÁT ĐẶC ĐIỂM NỒNG ĐỘ HBcrAg HUYẾT THANH TRÊN BỆNH NHÂN VIÊM GAN B MẠN TÍNH /"
           },
           {
             "code": "c",
-            "value": "PHẠM TIẾN QUANG."
+            "value": "NGUYỄN HOÀNG TÙNG."
           }
         ]
       },
@@ -126,15 +118,15 @@
         "subfields": [
           {
             "code": "a",
-            "value": "TP. HỒ CHÍ MINH"
+            "value": "THÀNH PHỐ HỒ CHÍ MINH"
           },
           {
             "code": "b",
-            "value": "ĐẠI HỌC Y DƯỢC TP HỒ CHÍ MINH"
+            "value": "ĐẠI HỌC Y DƯỢC THÀNH PHỐ HỒ CHÍ MINH"
           },
           {
             "code": "c",
-            "value": "2020"
+            "value": "2025"
           }
         ]
       },
@@ -145,18 +137,7 @@
         "subfields": [
           {
             "code": "a",
-            "value": "LUẬN VĂN TỐT NGHIỆP BÁC SĨ NỘI TRÚ."
-          }
-        ]
-      },
-      {
-        "tag": "520",
-        "ind1": "3",
-        "ind2": " ",
-        "subfields": [
-          {
-            "code": "a",
-            "value": "LUẬN VĂN TỐT NGHIỆP BÁC SĨ NỘI TRÚ."
+            "value": "LUẬN VĂN THẠC SĨ KỸ THUẬT Y HỌC."
           }
         ]
       },
@@ -167,7 +148,7 @@
         "subfields": [
           {
             "code": "a",
-            "value": "ĐẠI HỌC Y DƯỢC TP HỒ CHÍ MINH."
+            "value": "ĐẠI HỌC Y DƯỢC THÀNH PHỐ HỒ CHÍ MINH."
           }
         ]
       },
@@ -178,15 +159,15 @@
         "subfields": [
           {
             "code": "a",
-            "value": "Ngoại Khoa"
+            "value": "Kỹ Thuật Xét Nghiệm Y Học"
           },
           {
             "code": "c",
-            "value": "Bác Sĩ Nội Trú"
+            "value": "Thạc Sĩ"
           },
           {
             "code": "f",
-            "value": "TS. Trần Công Duy Long"
+            "value": "PGS. TS. Nguyễn Thị Bằng Sương"
           }
         ]
       },

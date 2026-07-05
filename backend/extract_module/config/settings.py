@@ -8,7 +8,7 @@ class Settings:
     QWEN_API_KEY = os.getenv("QWEN_API_KEY")
 
     MAX_RETRIES: int = int(os.getenv("MAX_RETRIES", 4))
-    DEFAULT_EXTRACT_PAGES: int = int(os.getenv("DEFAULT_EXTRACT_PAGES", 1))
+    DEFAULT_EXTRACT_PAGES: int = int(os.getenv("DEFAULT_EXTRACT_PAGES", "10"))
 
     USE_OCR: bool = os.getenv("USE_OCR", "false").lower() == "true"
     PADDLE_MODEL_SIZE: str = os.getenv("PADDLE_MODEL_SIZE", "tiny")
@@ -21,4 +21,3 @@ class Settings:
             raise ValueError("Lỗi không tìm thấy API Key của Qwen.")
     
 config = Settings()
-config.validate()

@@ -4,15 +4,15 @@
     "fields": [
       {
         "tag": "001",
-        "data": "YD2600004"
+        "data": "YD2600038"
       },
       {
         "tag": "005",
-        "data": "20260617054509.0"
+        "data": "20260618065705.0"
       },
       {
         "tag": "008",
-        "data": "260617s2024    vm      m                "
+        "data": "260618s2012    vm                  vie d"
       },
       {
         "tag": "040",
@@ -55,7 +55,7 @@
         "subfields": [
           {
             "code": "a",
-            "value": "IU"
+            "value": "KKI"
           }
         ]
       },
@@ -66,33 +66,29 @@
         "subfields": [
           {
             "code": "a",
-            "value": "WM 145.5"
+            "value": "WF 310"
           }
         ]
       },
       {
-        "tag": "100",
-        "ind1": "1",
+        "tag": "110",
+        "ind1": "2",
         "ind2": " ",
         "subfields": [
           {
             "code": "a",
-            "value": "An, Lê Thị Kim."
+            "value": "HỘI VĂN NGHỆ DÂN GIAN VIỆT NAM."
           }
         ]
       },
       {
         "tag": "245",
-        "ind1": "1",
+        "ind1": "0",
         "ind2": "0",
         "subfields": [
           {
             "code": "a",
-            "value": "VAI TRÒ CỦA SIÊU ÂM PHỔI TRONG CHẨN ĐOÁN BỆNH PHỔI MÔ KẼ Ở BỆNH NHÂN XƠ CỨNG BÌ HỆ THỐNG /"
-          },
-          {
-            "code": "c",
-            "value": "LÊ THỊ KIM AN."
+            "value": "NGHỀ CỔ TRUYỀN."
           }
         ]
       },
@@ -102,53 +98,67 @@
         "ind2": " ",
         "subfields": [
           {
-            "code": "a",
-            "value": "THÀNH PHỐ HỒ CHÍ MINH"
+            "code": "b",
+            "value": "NHÀ XUẤT BẢN THỜI ĐẠI"
           },
           {
             "code": "c",
-            "value": "2024"
+            "value": "2012"
           }
         ]
       },
       {
-        "tag": "502",
+        "tag": "500",
         "ind1": " ",
         "ind2": " ",
         "subfields": [
           {
             "code": "a",
-            "value": "MÃ SỐ: CK 62 72 20 05."
+            "value": "THƯ VIỆN TỈNH TRÀ VINH."
           }
         ]
       },
       {
-        "tag": "710",
-        "ind1": "2",
-        "ind2": " ",
-        "subfields": [
-          {
-            "code": "a",
-            "value": "BỘ GIÁO DỤC ĐÀO TẠO | BỘ Y TẾ | ĐẠI HỌC Y DƯỢC THÀNH PHỐ HỒ CHÍ MINH."
-          }
-        ]
-      },
-      {
-        "tag": "915",
+        "tag": "500",
         "ind1": " ",
         "ind2": " ",
         "subfields": [
           {
             "code": "a",
-            "value": "Nội – Hô Hấp"
-          },
+            "value": "SÁCH PHÒNG MƯỢN."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
           {
-            "code": "c",
-            "value": "Cấp Ii"
-          },
+            "code": "a",
+            "value": "NGH250e."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
           {
-            "code": "f",
-            "value": "PGS. TS. BS Lê Thượng Vũ"
+            "code": "a",
+            "value": "067152."
+          }
+        ]
+      },
+      {
+        "tag": "852",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "k",
+            "value": "680"
           }
         ]
       },
@@ -157,7 +167,7 @@
         "ind1": " ",
         "ind2": " ",
         "subfields": [
-          "LA"
+          "CK"
         ]
       }
     ]

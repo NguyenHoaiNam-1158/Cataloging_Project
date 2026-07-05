@@ -8,7 +8,7 @@ logger = logging.getLogger("MAPPING_MODULE")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
 class Settings:
-    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AQ.Ab8RN6LA5PGzWA-ySKfXoocYZ1pZieloqU56g2_n2EKzXaZfNg")
+    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
     
     DEFAULT_ORG_CODE = "DHYD"
     DEFAULT_LANGUAGE = "vie"

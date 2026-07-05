@@ -4,15 +4,15 @@
     "fields": [
       {
         "tag": "001",
-        "data": "YD2600002"
+        "data": "YD2600034"
       },
       {
         "tag": "005",
-        "data": "20260616123755.0"
+        "data": "20260617111927.0"
       },
       {
         "tag": "008",
-        "data": "260616s2024    vm      m                "
+        "data": "260617s2024    vm      m           vie d"
       },
       {
         "tag": "040",
@@ -71,13 +71,28 @@
         ]
       },
       {
+        "tag": "090",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "WA 240"
+          },
+          {
+            "code": "b",
+            "value": "HUỲ 2024"
+          }
+        ]
+      },
+      {
         "tag": "100",
         "ind1": "1",
         "ind2": " ",
         "subfields": [
           {
             "code": "a",
-            "value": "Khoa, Huỳnh Văn."
+            "value": "Huỳnh Văn Khoa."
           }
         ]
       },
@@ -118,7 +133,18 @@
         "subfields": [
           {
             "code": "a",
-            "value": "Luận văn Thạc sĩ."
+            "value": "Luận văn (Điều dưỡng) -- ĐẠI HỌC Y DƯỢC THÀNH PHỐ HỒ CHÍ MINH, 2024."
+          }
+        ]
+      },
+      {
+        "tag": "520",
+        "ind1": "3",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "LUẬN VĂN THẠC SĨ ĐIỀU DƯỠNG."
           }
         ]
       },
