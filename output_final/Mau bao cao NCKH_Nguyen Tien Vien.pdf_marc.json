@@ -1,0 +1,184 @@
+{
+  "marc21_record": {
+    "leader": "         a22        4500",
+    "fields": [
+      {
+        "tag": "001",
+        "data": "YD2600039"
+      },
+      {
+        "tag": "005",
+        "data": "20260707033355.0"
+      },
+      {
+        "tag": "008",
+        "data": "260707s2023    vm                  vie d"
+      },
+      {
+        "tag": "040",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "DHYD"
+          },
+          {
+            "code": "b",
+            "value": "vie"
+          },
+          {
+            "code": "c",
+            "value": "DHYD"
+          },
+          {
+            "code": "e",
+            "value": "AACR2"
+          }
+        ]
+      },
+      {
+        "tag": "041",
+        "ind1": "0",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "vie"
+          }
+        ]
+      },
+      {
+        "tag": "050",
+        "ind1": " ",
+        "ind2": "0",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "COR"
+          }
+        ]
+      },
+      {
+        "tag": "060",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "QS 124"
+          }
+        ]
+      },
+      {
+        "tag": "090",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "QS 124"
+          },
+          {
+            "code": "b",
+            "value": "NGU 2023"
+          }
+        ]
+      },
+      {
+        "tag": "100",
+        "ind1": "1",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Nguyễn Tiến Viễn,"
+          },
+          {
+            "code": "e",
+            "value": "Chủ trì nhiệm vụ."
+          }
+        ]
+      },
+      {
+        "tag": "245",
+        "ind1": "1",
+        "ind2": "0",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "CHUẨN HOÁ QUY TRÌNH SẢN XUẤT VÀ ĐÁNH GIÁ TÍNH ĐỒNG NHẤT – ĐỘ ỔN ĐỊNH MẪU NƯỚC TIỂU CHỨA HCG ỨNG DỤNG TRONG CHƯƠNG TRÌNH NGOẠI KIỂM TỔNG PHÂN TÍCH NƯỚC TIỂU /"
+          },
+          {
+            "code": "c",
+            "value": "Nguyễn Tiến Viễn."
+          }
+        ]
+      },
+      {
+        "tag": "260",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "THÀNH PHỐ HỒ CHÍ MINH"
+          },
+          {
+            "code": "b",
+            "value": "ĐẠI HỌC Y DƯỢC THÀNH PHỐ HỒ CHÍ MINH"
+          },
+          {
+            "code": "c",
+            "value": "2023"
+          }
+        ]
+      },
+      {
+        "tag": "490",
+        "ind1": "0",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "CHƯƠNG TRÌNH KHOA HỌC VÀ CÔNG NGHỆ CẤP CƠ SỞ"
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Đã chỉnh sửa theo kết luận của Hội đồng nghiệm thu ngày 28/11/2023."
+          }
+        ]
+      },
+      {
+        "tag": "520",
+        "ind1": "3",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "BÁO CÁO TỔNG HỢP KẾT QUẢ NHIỆM VỤ NGHIÊN CỨU KHOA HỌC VÀ CÔNG NGHỆ CẤP CƠ SỞ."
+          }
+        ]
+      },
+      {
+        "tag": "710",
+        "ind1": "2",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "ĐẠI HỌC Y DƯỢC THÀNH PHỐ HỒ CHÍ MINH."
+          }
+        ]
+      }
+    ]
+  },
+  "ai_evaluation_metrics": {}
+}
