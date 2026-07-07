@@ -50,7 +50,24 @@ services:
     networks:
       - project_network
 
-  # 4. FRONTEND MODULE (Ví dụ dùng Node/React/Vue)
+  # 4. EXTRACT MODULE (OCR + AI Extraction)
+  extract-module:
+    build:
+      context: ./backend/extract_module
+      dockerfile: Dockerfile
+    container_name: project_extract_module
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./OCR/paddle markdown:/app/paddle markdown
+      - ./OCR/BC KHCN:/app/data
+    depends_on:
+      - db
+    networks:
+      - project_network
+
+  # 5. FRONTEND MODULE (Ví dụ dùng Node/React/Vue)
   frontend:
     build:
       context: ./frontend
