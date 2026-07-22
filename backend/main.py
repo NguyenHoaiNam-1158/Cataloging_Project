@@ -2,9 +2,11 @@ import os
 import sys
 import glob
 import json
+import uuid
 import argparse
 import asyncio
 import logging
+import tempfile
 import uvicorn
 from datetime import datetime
 from fastapi import FastAPI, UploadFile, File, Form
@@ -14,7 +16,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from extract_module.core.orchestrator import CentralOrchestrator
 from mapping_module.core.converters import DocumentConverter
-from dublin_core_module import DublinCoreConverter          
+from dublin_core_module import DublinCoreConverter  
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)-8s | %(message)s")
 logger = logging.getLogger("BACKEND_MAIN")
@@ -23,7 +25,18 @@ app = FastAPI(title="Hệ thống Biên mục Tự động")
 
 orchestrator = CentralOrchestrator(use_ocr=False)
 converter = DocumentConverter()
-dc_converter = DublinCoreConverter()     
+dc_converter = DublinCoreConverter()                        # [DC] khởi tạo 1 lần, dùng lại
+
+TEMP_UPLOAD_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "temp_uploads")
+os.makedirs(TEMP_UPLOAD_DIR, exist_ok=True)
+
+
+def _safe_stem(filename: str) -> str:
+    """Lấy tên file an toàn để đặt tên output (chống path traversal '../')."""
+    base = os.path.basename(filename or "document")   # bỏ mọi thành phần thư mục
+    stem = os.path.splitext(base)[0] or "document"
+    return "".join(ch if ch.isalnum() or ch in "-_." else "_" for ch in stem)
+
 
 @app.post("/api/v1/process-document")
 async def process_document(
@@ -31,9 +44,11 @@ async def process_document(
     doc_type: str = Form(None),
     additional_info: str = Form(None)
 ):
-    temp_pdf_path = f"temp_{file.filename}"
+    temp_pdf_path = os.path.join(TEMP_UPLOAD_DIR, f"{uuid.uuid4().hex}.pdf")
     with open(temp_pdf_path, "wb") as f:
         f.write(await file.read())
+
+    safe_stem = _safe_stem(file.filename)
 
     try:
         status_code, extracted_json = await orchestrator.handle_request(
@@ -46,34 +61,50 @@ async def process_document(
             return JSONResponse(status_code=400, content={"error": "Lỗi trích xuất", "details": extracted_json})
 
         os.makedirs("output_final", exist_ok=True)
-        output_mrc_path = f"output_final/{file.filename}.mrc"
-        output_json_path = f"output_final/{file.filename}_marc.json"
-        output_dc_path = f"output_final/{file.filename}_dc.json"     
+        output_mrc_path = f"output_final/{safe_stem}.mrc"
+        output_json_path = f"output_final/{safe_stem}_marc.json"
+        output_dc_path = f"output_final/{safe_stem}_dc.json"
 
-        final_marc_dict = converter.process_raw_dict(
-            raw_data=extracted_json,
-            output_mrc=output_mrc_path,
-            output_json=output_json_path
-        )
+        final_marc_dict = None
+        marc_error = None
+        try:
+            final_marc_dict = converter.process_raw_dict(
+                raw_data=extracted_json,
+                output_mrc=output_mrc_path,
+                output_json=output_json_path
+            )
+        except Exception as marc_err:
+            marc_error = str(marc_err)
+            logger.exception("[MARC] Lỗi ánh xạ MARC21")
 
         dublin_core_dict = None
+        dc_error = None
         try:
             dublin_core_dict = dc_converter.process_raw_dict(
                 raw_data=extracted_json,
                 output_json=output_dc_path,
             )
         except Exception as dc_err:
-            logger.error(f"[DC] Lỗi ánh xạ Dublin Core: {dc_err}")
+            dc_error = str(dc_err)
+            logger.exception("[DC] Lỗi ánh xạ Dublin Core")
+
+        if final_marc_dict is None and dublin_core_dict is None:
+            return JSONResponse(
+                status_code=500,
+                content={"error": "Ánh xạ thất bại", "marc_error": marc_error, "dc_error": dc_error},
+            )
 
         return {
             "status": "success",
             "extracted_raw_data": extracted_json,
             "marc21_record": final_marc_dict,
-            "dublin_core_record": dublin_core_dict,  
+            "marc_error": marc_error,                          
+            "dublin_core_record": dublin_core_dict,
+            "dc_error": dc_error,
             "file_paths": {
-                "mrc_file": output_mrc_path,
-                "json_file": output_json_path,
-                "dc_file": output_dc_path,                          
+                "mrc_file": output_mrc_path if final_marc_dict is not None else None,
+                "json_file": output_json_path if final_marc_dict is not None else None,
+                "dc_file": output_dc_path if dublin_core_dict is not None else None,
             }
         }
 
@@ -133,11 +164,15 @@ async def run_batch_processing(use_ocr: bool):
             out_mrc = os.path.join(output_base_dir, f"{base_name}.mrc")
             out_json = os.path.join(output_base_dir, f"{base_name}_marc.json")
             out_dc = os.path.join(output_base_dir, f"{base_name}_dc.json")
-            converter.process_raw_dict(
-                raw_data=response_data,
-                output_mrc=out_mrc,
-                output_json=out_json
-            )
+
+            try:
+                converter.process_raw_dict(
+                    raw_data=response_data,
+                    output_mrc=out_mrc,
+                    output_json=out_json
+                )
+            except Exception as marc_err:
+                logger.error(f"[MARC] Lỗi map MARC cho {name}: {marc_err}")
 
             try:
                 dc_converter.process_raw_dict(
@@ -145,9 +180,9 @@ async def run_batch_processing(use_ocr: bool):
                     output_json=out_dc,
                 )
             except Exception as dc_err:
-                logger.error(f"[DC] Lỗi ánh xạ Dublin Core cho {name}: {dc_err}")
+                logger.error(f"[DC] Lỗi map Dublin Core cho {name}: {dc_err}")
 
-            logger.info(f" Biên mục thành công file {name} -> Lưu tại {output_base_dir}")
+            logger.info(f" Biên mục xong file {name} -> Lưu tại {output_base_dir}")
         else:
             logger.error(f" Thất bại khi xử lý file {name}: {response_data}")
 

@@ -64,7 +64,53 @@ class RawExtractionData(BaseModel):
     extraction_metadata: Optional[ExtractionMetadataModel] = None
     summary: Optional[str] = None
 
-    @field_validator('isbn', 'title_variant', 'general_notes', 'subject_terms', mode='before')
+    # ------------------------------------------------------------------
+    # [VÁ L01] Chấp nhận isbn ở nhiều dạng đầu ra của extract_module:
+    #   - None                              -> []
+    #   - ["9786040078231", ...]  (chuỗi)    -> [{isbn_number: ...}]
+    #   - [{"isbn_number": ..., "price": ...}] (object) -> giữ nguyên
+    #   - "9786040078231" (chuỗi đơn)        -> [{isbn_number: ...}]
+    # Nhờ vậy IdentifierMapper (đọc isbn.isbn_number) luôn hoạt động,
+    # không phải sửa DataParser bên extract_module.
+    # ------------------------------------------------------------------
+    @field_validator('isbn', mode='before')
+    @classmethod
+    def coerce_isbn(cls, value: Any) -> List[Any]:
+        if value is None:
+            return []
+        if not isinstance(value, list):
+            value = [value]
+        coerced: List[Any] = []
+        for item in value:
+            if item is None:
+                continue
+            if isinstance(item, str):
+                text = item.strip()
+                if text:
+                    coerced.append({"isbn_number": text})
+            else:
+                # dict hoặc IsbnModel -> để pydantic tự validate tiếp
+                coerced.append(item)
+        return coerced
+
+    # ------------------------------------------------------------------
+    # [VÁ L02] Ép các trường boolean một cách khoan dung. DataParser có thể
+    # trả về chuỗi ("true"/"Có"/...) hoặc None. Giá trị không nhận diện
+    # được -> None (thay vì ném ValidationError làm sập cả pipeline).
+    # ------------------------------------------------------------------
+    @field_validator('has_illustrations', 'has_index', mode='before')
+    @classmethod
+    def coerce_bool(cls, value: Any) -> Optional[bool]:
+        if value is None or isinstance(value, bool):
+            return value
+        text = str(value).strip().lower()
+        if text in ('true', '1', 'yes', 'y', 'có', 'co', 'x'):
+            return True
+        if text in ('false', '0', 'no', 'n', 'không', 'khong'):
+            return False
+        return None
+
+    @field_validator('title_variant', 'general_notes', 'subject_terms', mode='before')
     @classmethod
     def convert_none_to_empty_list(cls, value: Any) -> List[Any]:
         return value if value is not None else []

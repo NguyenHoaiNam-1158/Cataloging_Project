@@ -1,8 +1,8 @@
-# pipeline/marc_pipeline.py - Sửa lỗi
+# pipeline/marc_pipeline.py
 
 import json
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Optional, Tuple
 
 from pymarc import MARCWriter, Record
 
@@ -16,7 +16,6 @@ from mapping_module.mappers import (
     RAGEnrichedFieldMapper,
     RAGFieldMapper,
     TitleMapper,
-    ControlFieldMapper,
     LocalFieldMapper,
 )
 
@@ -35,7 +34,13 @@ class MarcPipeline:
             LocalFieldMapper(),
         ]
 
-    def build_record(self, raw_data: Dict[str, Any]) -> Record:
+    def build_record_with_data(self, raw_data: Dict[str, Any]) -> Tuple[Record, RawExtractionData]:
+        """Dựng biểu ghi VÀ trả về luôn object dữ liệu đã được các mapper làm giàu.
+
+        [VÁ M12] RAGEnrichedFieldMapper gán lcc_classification/nlm_classification
+        (kèm confidence) vào chính object `data` trong lúc chạy. Trước đây object
+        này bị bỏ đi -> confidence không lấy lại được. Nay trả về cùng record.
+        """
         data = RawExtractionData(**raw_data)
         record = Record()
         fields = []
@@ -48,6 +53,11 @@ class MarcPipeline:
         for field in fields:
             record.add_field(field)
 
+        return record, data
+
+    def build_record(self, raw_data: Dict[str, Any]) -> Record:
+        """Giữ nguyên chữ ký cũ cho nơi nào chỉ cần Record."""
+        record, _ = self.build_record_with_data(raw_data)
         return record
 
     @staticmethod
@@ -71,7 +81,7 @@ class MarcPipeline:
         """Ghi record thành MARC21 (nhị phân)."""
         output_path = Path(path)
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        with output_path.open("wb") as handle:  # ✅ "wb" = binary write
+        with output_path.open("wb") as handle:
             writer = MARCWriter(handle)
             writer.write(record)
             writer.close()
@@ -81,10 +91,11 @@ class MarcPipeline:
         """Ghi record thành MARCXML (text)."""
         output_path = Path(path)
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        
+
         try:
             with output_path.open("w", encoding="utf-8") as handle:
                 handle.write(record.as_marcxml())
         except AttributeError:
+            # [dọn M16] fallback nhị phân phải mở ở chế độ 'wb'
             with output_path.open("wb") as handle:
                 handle.write(record.as_marc())

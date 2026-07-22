@@ -11,6 +11,13 @@ from mapping_module.utils.marc_punctuation import add_end_period
 
 
 class NoteMapper(BaseFieldMapper):
+    # [VÁ M05] Nhãn 502 theo đúng loại tài liệu, không còn cứng "Luận văn".
+    DISSERTATION_LABELS = {
+        "luan_van": "Luận văn",
+        "luan_an": "Luận án",
+        "khoa_luan": "Khóa luận",
+    }
+
     def can_handle(self, raw_data: RawExtractionData) -> bool:
         return bool(
             raw_data.general_notes
@@ -56,8 +63,9 @@ class NoteMapper(BaseFieldMapper):
                     subfields=[Subfield("a", add_end_period(raw_data.dissertation_note))],
                 )
             )
-        elif raw_data.document_type in ["luan_an", "luan_van", "khoa_luan"]:
-            parts = ["Luận văn"]
+        elif raw_data.document_type in self.DISSERTATION_LABELS:
+            # [VÁ M05] lấy nhãn đúng theo loại (Luận văn / Luận án / Khóa luận)
+            parts = [self.DISSERTATION_LABELS[raw_data.document_type]]
             if raw_data.major:
                 parts.append(f"({raw_data.major.strip()})")
             if raw_data.corporate_name:
@@ -124,16 +132,16 @@ class NoteMapper(BaseFieldMapper):
     def _route_note(self, text: str) -> Tuple[str, str, str]:
         if re.fullmatch(r'C\.?\s*\d+', text, re.IGNORECASE):
             return ("852", "t", text)
-        
+
         if re.fullmatch(r'[A-Za-z0-9]+-\d+', text):
             return ("852", "p", text)
-        
+
         if any(k in text.lower() for k in ["bản in", "bản", "file", "đĩa", "cd", "tt"]):
             return ("852", "z", text)
-        
+
         if len(text) <= 4 and " " not in text:
             return ("852", "k", text)
-        
+
         return ("500", "a", text)
 
     def _resolve_material_code(self, raw_data: RawExtractionData) -> Optional[str]:
