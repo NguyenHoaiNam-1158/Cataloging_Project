@@ -1,0 +1,328 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "RawDocumentExtractionOutput",
+    "description": "Schema dữ liệu thô trích xuất từ hình ảnh tài liệu thư viện (sách, luận văn, luận án, NCKH). Không ràng buộc chuẩn MARC21 – chỉ lưu văn bản thô được nhận diện từ ảnh.",
+    "type": "object",
+    "properties": {
+
+        "document_type": {
+            "description": "Loại tài liệu xác định được từ trang bìa. Dùng để điều phối logic trích xuất các trường khác.",
+            "type": ["string", "null"],
+            "enum": ["luan_van", "luan_an", "khoa_luan", "bao_cao_nckh", "sach", "tap_chi", null],
+            "examples": ["luan_van", "sach"]
+        },
+
+        "document_part_info": {
+            "description": "Thông tin phân kỳ/tập/phần của tài liệu (ví dụ: Tập 1, Phần 2, Vol. 3). Lấy từ trang bìa trước. Để null nếu không có.",
+            "type": ["string", "null"],
+            "examples": ["Tập 1", "Vol. 2", null]
+        },
+
+        "publication_year": {
+            "description": "Năm xuất bản chính. Trích từ trang bìa (LV/LA/NCKH) hoặc trang bìa trong / trang bản quyền (sách). Chỉ lấy 4 chữ số.",
+            "type": ["string", "null"],
+            "pattern": "^[0-9]{4}$",
+            "examples": ["2023", null]
+        },
+
+        "copyright_year": {
+            "description": "Năm bản quyền (copyright year) nếu khác với năm xuất bản. Chỉ có ở tài liệu dạng sách, lấy từ trang bản quyền. Để null nếu không có hoặc trùng với năm xuất bản.",
+            "type": ["string", "null"],
+            "pattern": "^[0-9]{4}$",
+            "examples": ["2022", null]
+        },
+
+        "country_of_publication": {
+            "description": "Tên nước xuất bản (văn bản thô, ví dụ: 'Việt Nam', 'Hà Nội'). Lấy từ trang bìa hoặc trang bản quyền.",
+            "type": ["string", "null"],
+            "examples": ["Việt Nam", null]
+        },
+
+        "has_illustrations": {
+            "description": "Tài liệu có danh mục hình ảnh/bảng biểu hay không. Xác định từ trang mục lục (có mục 'Danh mục hình', 'Danh mục bảng',…). true/false/null nếu không xác định được.",
+            "type": ["boolean", "null"]
+        },
+
+        "has_index": {
+            "description": "Tài liệu có bảng tra cứu / chỉ mục / phụ lục ở cuối hay không. Xác định từ trang mục lục. true/false/null nếu không xác định được.",
+            "type": ["boolean", "null"]
+        },
+
+        "nature_of_content": {
+            "description": "Bản chất nội dung tài liệu (văn bản thô từ trang bìa hoặc thông tin bổ sung, ví dụ: 'luận văn', 'luận án', 'sách giáo khoa'). Để null nếu không xác định được.",
+            "type": ["string", "null"],
+            "examples": ["luận văn thạc sĩ", "sách tham khảo", "nhiệm vụ nghiên cứu khoa học " ,null]
+        },
+
+        "isbn": {
+            "description": "Danh sách ISBN trích từ trang bìa sau hoặc trang thông tin. Mỗi phần tử là một ISBN (đã loại bỏ khoảng trắng và dấu gạch ngang).",
+            "type": ["array", "null"],
+            "items": {
+                "type": "object",
+                "properties": {
+                    "isbn_number": {
+                        "description": "Mã ISBN thuần túy (không dấu gạch, không khoảng trắng).",
+                        "type": ["string", "null"],
+                        "examples": ["9786040078231"]
+                    },
+                    "price": {
+                        "description": "Giá tiền in phía dưới mã vạch ISBN trên trang bìa sau (văn bản thô, ví dụ: '85.000đ').",
+                        "type": ["string", "null"],
+                        "examples": ["85.000đ", null]
+                    }
+                }
+            }
+        },
+
+        "issn": {
+            "description": "Mã số ISSN nếu tài liệu là tạp chí định kỳ. Lấy từ trang bìa.",
+            "type": ["string", "null"],
+            "examples": ["1234-5678", null]
+        },
+
+        "author_personal_name": {
+            "description": "Họ và tên tác giả cá nhân chính, trích từ trang bìa trước. Ghi đúng như in trên tài liệu.",
+            "type": ["string", "null"],
+            "examples": ["Nguyễn Văn An", null]
+        },
+
+        "author_role": {
+            "description": "Thứ bậc/vai trò của tác giả nếu có ghi trên trang bìa (ví dụ: 'Chủ biên', 'Biên soạn'). Để null nếu không ghi.",
+            "type": ["string", "null"],
+            "examples": ["Chủ biên", "Biên soạn", null]
+        },
+
+        "corporate_name": {
+            "description": "Tên cơ quan/tổ chức chủ quản hoặc trường đại học ban hành tài liệu. Lấy từ trang bìa trước.",
+            "type": ["string", "null"],
+            "examples": ["Trường Đại học Y Dược TP. Hồ Chí Minh", null]
+        },
+
+        "title_main": {
+            "description": "Nhan đề chính của tài liệu, trích nguyên văn từ trang bìa.",
+            "type": ["string", "null"],
+            "examples": ["Giải phẫu học lâm sàng"]
+        },
+
+        "title_remainder": {
+            "description": "Phần còn lại của nhan đề (phụ đề, thông tin bổ sung sau dấu hai chấm hoặc gạch ngang). Lấy từ trang bìa.",
+            "type": ["string", "null"],
+            "examples": ["dành cho sinh viên y khoa năm thứ ba", null]
+        },
+
+        "statement_of_responsibility": {
+            "description": "Thông tin trách nhiệm (thông tin tác giả/biên soạn/dịch thuật ghi kèm nhan đề trên trang bìa, ví dụ: 'PGS.TS. Trần Văn B (chủ biên)').",
+            "type": ["string", "null"],
+            "examples": ["PGS.TS. Trần Văn B (chủ biên)", null]
+        },
+
+        "title_variant": {
+            "description": "Các dạng nhan đề khác (chỉ áp dụng cho sách, khi trang bìa ngoài và trang bìa trong có nhan đề khác nhau). Để null nếu không có.",
+            "type": ["array", "null"],
+            "items": {
+                "type": "string"
+            },
+            "examples": [["Clinical Anatomy"], null]
+        },
+
+        "edition_statement": {
+            "description": "Thông tin lần xuất bản / tái bản (chỉ có ở sách, lấy từ trang bìa trong hoặc trang bản quyền). Ghi nguyên văn, ví dụ: 'Tái bản lần thứ 3'. Để null cho LV/LA.",
+            "type": ["string", "null"],
+            "examples": ["Tái bản lần thứ 3", "3rd edition", null]
+        },
+
+        "place_of_publication": {
+            "description": "Nơi xuất bản (tên thành phố hoặc địa điểm). Lấy từ trang bìa (LV/LA) hoặc trang bản quyền/bìa trong (sách).",
+            "type": ["string", "null"],
+            "examples": ["TP. Hồ Chí Minh", "Hà Nội", null]
+        },
+
+        "publisher_name": {
+            "description": "Tên nhà xuất bản. Đối với tài liệu Luận văn, luận án thì đó là tên trường đại học và được lấy ở trang bìa, đối với tài liệu sách thì đó là tên nhà xuất bản và được lấy ở trang bìa, trang bản quyền hoặc bìa trong",
+            "type": ["string", "null"],
+            "examples": ["Nhà xuất bản Y học", "NXB Đại học Quốc gia", null]
+        },
+
+        "extent": {
+            "description": "Số trang hoặc dung lượng tài liệu (văn bản thô, ví dụ: '245 trang', 'xii, 310 tr.'). Lấy từ trang thông tin phía sau (sách) hoặc thông tin bổ sung của thư viện (LV/LA).",
+            "type": ["string", "null"],
+            "examples": ["245 trang", "xii, 310 tr.", null]
+        },
+
+        "physical_details": {
+            "description": "Thông tin vật lý khác như hình ảnh màu, bảng biểu (văn bản thô, ví dụ: 'ill. (some col.)'). Lấy từ trang thông tin sách hoặc trang mục lục.",
+            "type": ["string", "null"],
+            "examples": ["minh họa màu", null]
+        },
+
+        "dimensions": {
+            "description": "Kích thước vật lý của tài liệu (ví dụ: '24 cm'). Lấy từ trang thông tin phía sau hoặc thông tin bổ sung.",
+            "type": ["string", "null"],
+            "examples": ["24 cm", null]
+        },
+
+        "series_statement": {
+            "description": "Thông tin tùng thư – tên bộ sách mà quyển này thuộc về. Lấy từ trang bìa trước hoặc trang bìa trong (chỉ áp dụng cho sách).",
+            "type": ["string", "null"],
+            "examples": ["Bộ sách Y học cơ sở", null]
+        },
+
+        "series_volume": {
+            "description": "Số tập/quyển trong bộ tùng thư (nếu có, ví dụ: 'Tập 2').",
+            "type": ["string", "null"],
+            "examples": ["Tập 2", null]
+        },
+
+        "general_notes": {
+            "description": "Các phụ chú chung quan trọng trích từ trang bìa hoặc thông tin bổ sung (ngành, mã số,…). Mỗi phần tử là một phụ chú riêng biệt.",
+            "type": ["array", "null"],
+            "items": {
+                "type": "string"
+            }
+        },
+
+        "dissertation_note": {
+            "description": "Nội dung phụ chú luận văn/luận án lấy từ trang bìa trước (ví dụ: 'Luận văn Bác sĩ nội trú – Trường Đại học Y Dược TP.HCM – 2023'). Chỉ áp dụng cho LV/LA.",
+            "type": ["string", "null"],
+            "examples": ["Luận văn Thạc sĩ Y học – Trường Đại học Y Dược TP.HCM – 2023", null]
+        },
+
+        "bibliography_note": {
+            "description": "Thông tin tài liệu tham khảo ghi trong mục lục (ví dụ: 'Tài liệu tham khảo', 'Danh mục tham khảo'). Ghi nguyên văn tên mục như xuất hiện trong mục lục.",
+            "type": ["string", "null"],
+            "examples": ["Tài liệu tham khảo", null]
+        },
+
+        "number_of_references": {
+            "description": "Số lượng tài liệu tham khảo đếm được (nếu xác định được). Văn bản thô, ví dụ: '85 tài liệu'.",
+            "type": ["string", "null"],
+            "examples": ["85 tài liệu", null]
+        },
+
+        "acquisition_source": {
+            "description": "Nguồn tiếp nhận tài liệu. Lấy từ phần thông tin bổ sung do thư viện cung cấp (nếu được scan kèm).",
+            "type": ["string", "null"],
+            "examples": ["Lưu chiểu", "Mua", null]
+        },
+
+        "subject_terms": {
+            "description": "Danh sách thuật ngữ chủ đề trích xuất từ trang bìa, tiêu đề, mục lục và các trang có văn bản liên quan. Sẽ được RAG xử lý để lấy mã 650/NLM.",
+            "type": ["array", "null"],
+            "items": {
+                "type": "string"
+            },
+            "examples": [["Ung thư", "Điều trị hóa chất", "Nội soi"], null]
+        },
+
+        "lcc_classification": {
+            "description": "Danh sách mã phân loại Library of Congress (LCC) dùng cho trường MARC 050 $a/$b. Được lấy từ RAG engine sau khi xử lý title + subject_terms.",
+            "type": ["array", "null"],
+            "items": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "description": "Mã LCC (ví dụ: 'RC270.8')",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Mô tả tương ứng với mã LCC",
+                        "type": "string"
+                    },
+                    "confidence": {
+                        "description": "Độ tự tin từ RAG (ví dụ: 'Tin cậy tuyệt đối', 'LLM phân xử')",
+                        "type": "string"
+                    }
+                }
+            },
+            "examples": [[{"code": "RC270.8", "description": "Ung thư - Hóa trị", "confidence": "Tin cậy tuyệt đối"}], null]
+        },
+
+        "nlm_classification": {
+            "description": "Danh sách mã phân loại National Library of Medicine (NLM) dùng cho trường MARC 060 $a/$b. Được lấy từ RAG engine sau khi xử lý title + subject_terms.",
+            "type": ["array", "null"],
+            "items": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "description": "Mã NLM (ví dụ: 'QH431')",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Mô tả tương ứng với mã NLM",
+                        "type": "string"
+                    },
+                    "confidence": {
+                        "description": "Độ tự tin từ RAG",
+                        "type": "string"
+                    }
+                }
+            },
+            "examples": [[{"code": "QH431", "description": "Sinh học tế bào", "confidence": "LLM phân xử"}], null]
+        },
+
+        "major": {
+            "description": "Chuyên ngành đào tạo (trường cục bộ DHYD – $a). Lấy từ trang bìa hoặc thông tin bổ sung.",
+            "type": ["string", "null"],
+            "examples": ["Ung Thư", "Nội Khoa", null]
+        },
+
+        "academic_level": {
+            "description": "Bậc học (trường cục bộ DHYD – $c). Ví dụ: 'Bác sĩ nội trú', 'Thạc sĩ'.",
+            "type": ["string", "null"],
+            "examples": ["Bác sĩ nội trú", "Thạc sĩ Y học", null]
+        },
+
+        "advisor_name": {
+            "description": "Họ tên người hướng dẫn (trường cục bộ DHYD – $f). Lấy từ trang bìa.",
+            "type": ["string", "null"],
+            "examples": ["Cung Thị Tuyết Anh", null]
+        },
+
+        "advisor_title": {
+            "description": "Học vị của người hướng dẫn (trường cục bộ DHYD – $g). Lấy từ trang bìa.",
+            "type": ["string", "null"],
+            "examples": ["PGS. TS", "GS. TS", null]
+        },
+
+        "extraction_metadata": {
+            "description": "Thông tin meta về quá trình trích xuất.",
+            "type": "object",
+            "properties": {
+                "source_pages_used": {
+                    "description": "Danh sách các trang ảnh đã được sử dụng để trích xuất dữ liệu.",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "bia_truoc",
+                            "bia_sau",
+                            "bia_trong",
+                            "trang_ban_quyen",
+                            "muc_luc",
+                            "trang_thong_tin_phia_sau",
+                            "thong_tin_bo_sung"
+                        ]
+                    }
+                },
+                "low_confidence_fields": {
+                    "description": "Danh sách tên field mà model không tự tin về độ chính xác khi trích xuất (ví dụ do ảnh mờ, chữ bị che).",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": ["source_pages_used"]
+        }
+    },
+
+    "required": [
+        "document_type",
+        "publication_year",
+        "title_main",
+        "author_personal_name",
+        "place_of_publication",
+        "publisher_name",
+        "extraction_metadata"
+    ]
+}

@@ -1,0 +1,254 @@
+{
+  "marc21_record": {
+    "leader": "         a22        4500",
+    "fields": [
+      {
+        "tag": "001",
+        "data": "YD2600012"
+      },
+      {
+        "tag": "005",
+        "data": "20260616101825.0"
+      },
+      {
+        "tag": "008",
+        "data": "260616s2020    vm      m                "
+      },
+      {
+        "tag": "040",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "DHYD"
+          },
+          {
+            "code": "b",
+            "value": "vie"
+          },
+          {
+            "code": "c",
+            "value": "DHYD"
+          },
+          {
+            "code": "e",
+            "value": "AACR2"
+          }
+        ]
+      },
+      {
+        "tag": "041",
+        "ind1": "0",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "vie"
+          }
+        ]
+      },
+      {
+        "tag": "050",
+        "ind1": " ",
+        "ind2": "0",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "WOR"
+          }
+        ]
+      },
+      {
+        "tag": "060",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "WF 310"
+          }
+        ]
+      },
+      {
+        "tag": "100",
+        "ind1": "1",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Thông, Đặng Quang."
+          }
+        ]
+      },
+      {
+        "tag": "245",
+        "ind1": "1",
+        "ind2": "0",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "KHẢO SÁT SỰ PHÂN BỐ HẠCH VÙNG DI CĂN TRONG UNG THƯ DẠ DÀY /"
+          },
+          {
+            "code": "c",
+            "value": "ĐẶNG QUANG THÔNG."
+          }
+        ]
+      },
+      {
+        "tag": "260",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "TP. HỒ CHÍ MINH"
+          },
+          {
+            "code": "c",
+            "value": "2020"
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "MÃ SỐ: NT 62 72 07 50."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "C1C10-135L."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "BỘ Y TẾ."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "320."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "DÁN."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "1-1."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "+ 79 + 1 file."
+          }
+        ]
+      },
+      {
+        "tag": "500",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "(26/11/2020)."
+          }
+        ]
+      },
+      {
+        "tag": "502",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Luận văn (NGOẠI TỔNG QUÁT) -- BỘ GIÁO DỤC VÀ ĐÀO TẠO | ĐẠI HỌC Y DƯỢC THÀNH PHỐ HỒ CHÍ MINH, 2020."
+          }
+        ]
+      },
+      {
+        "tag": "710",
+        "ind1": "2",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "BỘ GIÁO DỤC VÀ ĐÀO TẠO | ĐẠI HỌC Y DƯỢC THÀNH PHỐ HỒ CHÍ MINH."
+          }
+        ]
+      },
+      {
+        "tag": "915",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Ngoại Tổng Quát"
+          },
+          {
+            "code": "c",
+            "value": "Bác Sĩ Nội Trú"
+          },
+          {
+            "code": "f",
+            "value": "TS. Võ Duy Long"
+          }
+        ]
+      },
+      {
+        "tag": "927",
+        "ind1": " ",
+        "ind2": " ",
+        "subfields": [
+          "LA"
+        ]
+      }
+    ]
+  },
+  "ai_evaluation_metrics": {}
+}

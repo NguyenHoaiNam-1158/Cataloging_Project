@@ -1,0 +1,28 @@
+mapping_module/
+├── config/
+│   ├── __init__.py
+│   └── settings.py          # Cấu hình tĩnh (Mã thư viện DHYD, ngôn ngữ mặc định)
+├── core/
+│   ├── __init__.py
+│   ├── base_mapper.py       # Interface/Abstract Base Class cho mọi Field Mapper
+│   └── models.py            # Pydantic models (Định nghĩa dữ liệu đầu vào)
+├── mappers/                 # Các class xử lý logic cho TỪNG TRƯỜNG MARC21
+│   ├── __init__.py
+│   ├── control_fields.py    # Xử lý Ldr, 001, 005, 008
+│   ├── identifier_fields.py # Xử lý 020, 022
+│   ├── title_fields.py      # Xử lý 245, 246
+│   ├── author_fields.py     # Xử lý 100, 110, 700, 710 (Logic phức tạp liên kết nhau)
+│   ├── pub_phys_fields.py   # Xử lý 250, 260, 300
+│   └── note_fields.py       # Xử lý 500, 502, 504, 505, 520
+├── pipeline/
+│   ├── __init__.py
+│   └── marc_pipeline.py     # Bộ điều phối (Orchestrator) thực hiện Dependency Injection
+├── resources/
+│   └── ump_departments.json # Dữ liệu JSON chuẩn hóa từ Phụ lục 6 (Danh mục Khoa/Phòng)
+├── utils/
+│   ├── __init__.py
+│   ├── marc_punctuation.py  # Xử lý quy tắc dấu câu cực kỳ khắt khe của AACR2
+│   └── string_utils.py      # Xử lý đảo họ tên, viết hoa, regex
+├── main.py                  # Entry point
+├── requirements.txt         # Thư viện: pymarc, pydantic
+└── README.md

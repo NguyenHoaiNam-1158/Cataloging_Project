@@ -1,0 +1,4664 @@
+{
+    "QS": {
+        "schedule_code": "QS",
+        "schedule_name": "Human Anatomy",
+        "url": "https://classification.nlm.nih.gov/schedules/QS",
+        "total_entries": 13,
+        "entries": [
+            {
+                "code": "QS 504",
+                "name": "-539 ) and under Embryology ( QS 604-681 ).",
+                "notes": "",
+                "section": "Anatomy",
+                "unused": false
+            },
+            {
+                "code": "QS 504",
+                "name": "-539 ) and under Embryology ( QS 604-681 ).",
+                "notes": "",
+                "section": "Anatomy",
+                "unused": false
+            },
+            {
+                "code": "QS 22",
+                "name": "Classify other serials issued by societies in W1. For academies and institutes, see QS 23-24 .",
+                "notes": "",
+                "section": "Anatomy",
+                "unused": false
+            },
+            {
+                "code": "QS 124",
+                "name": "",
+                "notes": "",
+                "section": "Anatomy",
+                "unused": false
+            },
+            {
+                "code": "QS 26",
+                "name": "-26 .5.",
+                "notes": "",
+                "section": "Anatomy",
+                "unused": false
+            },
+            {
+                "code": "QS 130",
+                "name": "",
+                "notes": "",
+                "section": "Anatomy",
+                "unused": false
+            },
+            {
+                "code": "QS 26.5",
+                "name": "",
+                "notes": "",
+                "section": "Anatomy",
+                "unused": false
+            },
+            {
+                "code": "QS 132",
+                "name": "Classify laws on embryology in QS 632-QS 633 .",
+                "notes": "",
+                "section": "Anatomy",
+                "unused": false
+            },
+            {
+                "code": "QS 632",
+                "name": "-633 .",
+                "notes": "",
+                "section": "Anatomy",
+                "unused": false
+            },
+            {
+                "code": "QS 520",
+                "name": "Classify works on tissue culture techniques in QS 525 .",
+                "notes": "",
+                "section": "Histology",
+                "unused": false
+            },
+            {
+                "code": "QS 645",
+                "name": "",
+                "notes": "",
+                "section": "Histology",
+                "unused": false
+            },
+            {
+                "code": "QS 529",
+                "name": "",
+                "notes": "",
+                "section": "Histology",
+                "unused": false
+            },
+            {
+                "code": "QS 629",
+                "name": "",
+                "notes": "",
+                "section": "Embryology",
+                "unused": false
+            }
+        ]
+    },
+    "QT": {
+        "schedule_code": "QT",
+        "schedule_name": "Physiology",
+        "url": "https://classification.nlm.nih.gov/schedules/QT",
+        "total_entries": 6,
+        "entries": [
+            {
+                "code": "QT 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see QT 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QT 104",
+                "name": "Classify animal physiology in QP, QL, or SF.",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QT 162.M3",
+                "name": "",
+                "notes": "",
+                "section": "Physics.  Mathematics.  Engineering",
+                "unused": false
+            },
+            {
+                "code": "QT 36.5",
+                "name": "",
+                "notes": "",
+                "section": "Physics.  Mathematics.  Engineering",
+                "unused": false
+            },
+            {
+                "code": "QT 29",
+                "name": "",
+                "notes": "",
+                "section": "Physics.  Mathematics.  Engineering",
+                "unused": false
+            },
+            {
+                "code": "QT 162.L5",
+                "name": "",
+                "notes": "",
+                "section": "Hygiene. Leisure Activities",
+                "unused": false
+            }
+        ]
+    },
+    "QU": {
+        "schedule_code": "QU",
+        "schedule_name": "Biochemistry. Cell Biology and Genetics",
+        "url": "https://classification.nlm.nih.gov/schedules/QU",
+        "total_entries": 15,
+        "entries": [
+            {
+                "code": "QU 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see QU 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QU 34",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QU 145",
+                "name": "-145 .5. Classify nutrition surveys in QU 146 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QU 550",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QU 21",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QU 135",
+                "name": "-141 or with the system acted upon; on blood proteins in WH or in clinical pathology QY 455 ; on immunoglobulins in QW 601 ; on other immunoproteins in appropriate QW number .",
+                "notes": "",
+                "section": "Proteins.  Amino Acids.  Peptides",
+                "unused": false
+            },
+            {
+                "code": "QU 270",
+                "name": "Water-electrolyte imbalance, etc.",
+                "notes": "",
+                "section": "Biochemistry of the Human Body",
+                "unused": false
+            },
+            {
+                "code": "QU 55",
+                "name": "",
+                "notes": "",
+                "section": "Biochemistry of the Human Body",
+                "unused": false
+            },
+            {
+                "code": "QU 246",
+                "name": "or with the diseases resulting. Classify works on general enzyme therapy in WB 330 .",
+                "notes": "",
+                "section": "Enzymes",
+                "unused": false
+            },
+            {
+                "code": "QU 187",
+                "name": "-194 .",
+                "notes": "",
+                "section": "Vitamins. Vitamin Deficiencies",
+                "unused": false
+            },
+            {
+                "code": "QU 160",
+                "name": "-240 .",
+                "notes": "",
+                "section": "Nutrition Disorders",
+                "unused": false
+            },
+            {
+                "code": "QU 265.5",
+                "name": "L5.",
+                "notes": "",
+                "section": "Metabolic Diseases",
+                "unused": false
+            },
+            {
+                "code": "QU 105",
+                "name": "Classify works on dehydration in WB 158 .",
+                "notes": "",
+                "section": "Water-Electrolyte Imbalance. Acid-Base Imbalance",
+                "unused": false
+            },
+            {
+                "code": "QU 476",
+                "name": "",
+                "notes": "",
+                "section": "Genetics",
+                "unused": false
+            },
+            {
+                "code": "QU 450",
+                "name": "",
+                "notes": "",
+                "section": "Genetics",
+                "unused": false
+            }
+        ]
+    },
+    "QV": {
+        "schedule_code": "QV",
+        "schedule_name": "Pharmacology",
+        "url": "https://classification.nlm.nih.gov/schedules/QV",
+        "total_entries": 59,
+        "entries": [
+            {
+                "code": "QV 701",
+                "name": "",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "QV 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see QV 23-24 . Classify works on pharmaceutical organizations and societies in QV 701 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QV 37",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QV 717",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QV 744",
+                "name": "Pharmaceutical chemistry.",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QV 772",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QV 33",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QV 33.1",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QV 20.5",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QV 4",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QV 607",
+                "name": "Toxicology; QV 735 Pharmacy",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QV 38",
+                "name": "Pharmacokinetics; QV 704 Pharmacy; QY 450-490 Blood chemical analysis.",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QV 247",
+                "name": "for other anti-inflammatory agents. Classify works on local anti-infective agents in QV 220 .",
+                "notes": "",
+                "section": "Dermatologic Agents.  Gastrointestinal Agents",
+                "unused": false
+            },
+            {
+                "code": "QV 66",
+                "name": "",
+                "notes": "",
+                "section": "Dermatologic Agents.  Gastrointestinal Agents",
+                "unused": false
+            },
+            {
+                "code": "QV 110",
+                "name": "-113 Local anesthetics.",
+                "notes": "Classify works on the barbiturates (except hexobarbital) in QV 88 .",
+                "section": "Central Nervous System Agents.  Local Anesthetics",
+                "unused": false
+            },
+            {
+                "code": "QV 82",
+                "name": "-84 even if not used as a central nervous system depressant, unless otherwise instructed.",
+                "notes": "",
+                "section": "Central Nervous System Agents.  Local Anesthetics",
+                "unused": true
+            },
+            {
+                "code": "QV 77.9",
+                "name": "",
+                "notes": "",
+                "section": "Central Nervous System Agents.  Local Anesthetics",
+                "unused": false
+            },
+            {
+                "code": "QV 81",
+                "name": "",
+                "notes": "",
+                "section": "Central Nervous System Agents.  Local Anesthetics",
+                "unused": false
+            },
+            {
+                "code": "QV 95",
+                "name": "Non-steroidal anti-inflammatory agents.",
+                "notes": "",
+                "section": "Central Nervous System Agents.  Local Anesthetics",
+                "unused": false
+            },
+            {
+                "code": "QV 92",
+                "name": "",
+                "notes": "",
+                "section": "Central Nervous System Agents.  Local Anesthetics",
+                "unused": false
+            },
+            {
+                "code": "QV 89",
+                "name": "Opioid analgesics; WO 234 Preanesthetic medication. Cf. QV 247 Anti-inflammatory agents.",
+                "notes": "",
+                "section": "Central Nervous System Agents.  Local Anesthetics",
+                "unused": false
+            },
+            {
+                "code": "QV 77.5",
+                "name": "",
+                "notes": "",
+                "section": "Central Nervous System Agents.  Local Anesthetics",
+                "unused": false
+            },
+            {
+                "code": "QV 77.7",
+                "name": "",
+                "notes": "",
+                "section": "Central Nervous System Agents.  Local Anesthetics",
+                "unused": false
+            },
+            {
+                "code": "QV 60",
+                "name": "",
+                "notes": "",
+                "section": "Central Nervous System Agents.  Local Anesthetics",
+                "unused": false
+            },
+            {
+                "code": "QV 110",
+                "name": "",
+                "notes": "",
+                "section": "Central Nervous System Agents.  Local Anesthetics",
+                "unused": false
+            },
+            {
+                "code": "QV 107",
+                "name": "Classify works on autonomic agents that are also anti-inflammatory agents in QV 247 ; that are also histamine antagonists in QV 157 ; that are also sympathomimetics in QV 129 ; that are also vasodilator agents in QV 150 .",
+                "notes": "",
+                "section": "Autonomic Agents.  Nonmetallic Elements.  Neuromuscular Agents",
+                "unused": false
+            },
+            {
+                "code": "QV 126",
+                "name": "above. Classify works on amphetamines in QV 102 .",
+                "notes": "",
+                "section": "Autonomic Agents.  Nonmetallic Elements.  Neuromuscular Agents",
+                "unused": false
+            },
+            {
+                "code": "QV 77.9",
+                "name": "",
+                "notes": "",
+                "section": "Autonomic Agents.  Nonmetallic Elements.  Neuromuscular Agents",
+                "unused": false
+            },
+            {
+                "code": "QV 250",
+                "name": "Anti-infective agents",
+                "notes": "",
+                "section": "Local Anti-Infective Agents.  Coloring Agents. Complex Mixtures",
+                "unused": false
+            },
+            {
+                "code": "QV 627",
+                "name": "-633 .",
+                "notes": "",
+                "section": "Local Anti-Infective Agents.  Coloring Agents. Complex Mixtures",
+                "unused": false
+            },
+            {
+                "code": "QV 627",
+                "name": "-633 .",
+                "notes": "",
+                "section": "Local Anti-Infective Agents.  Coloring Agents. Complex Mixtures",
+                "unused": false
+            },
+            {
+                "code": "QV 240",
+                "name": "",
+                "notes": "",
+                "section": "Local Anti-Infective Agents.  Coloring Agents. Complex Mixtures",
+                "unused": false
+            },
+            {
+                "code": "QV 95",
+                "name": "; on topical anti-inflammatory agents in QV 60 .",
+                "notes": "",
+                "section": "Anti-Inflammatory Agents.  Anti-Infective Agents. Antineoplastic Agents",
+                "unused": false
+            },
+            {
+                "code": "QV 220",
+                "name": "-239 .",
+                "notes": "",
+                "section": "Anti-Inflammatory Agents.  Anti-Infective Agents. Antineoplastic Agents",
+                "unused": false
+            },
+            {
+                "code": "QV 356",
+                "name": "",
+                "notes": "",
+                "section": "Anti-Inflammatory Agents.  Anti-Infective Agents. Antineoplastic Agents",
+                "unused": false
+            },
+            {
+                "code": "QV 290",
+                "name": "-298 Heavy metals and their compounds.",
+                "notes": "",
+                "section": "Water.  Electrolytes",
+                "unused": false
+            },
+            {
+                "code": "QV 231",
+                "name": "Classify works on specific metal compounds with the metal.",
+                "notes": "",
+                "section": "Water.  Electrolytes",
+                "unused": false
+            },
+            {
+                "code": "QV 50",
+                "name": "Dental pharmacology.",
+                "notes": "",
+                "section": "Water.  Electrolytes",
+                "unused": false
+            },
+            {
+                "code": "QV 231",
+                "name": "for iodines, etc. as antiseptics.",
+                "notes": "",
+                "section": "Water.  Electrolytes",
+                "unused": false
+            },
+            {
+                "code": "QV 261",
+                "name": "",
+                "notes": "",
+                "section": "Heavy Metals",
+                "unused": false
+            },
+            {
+                "code": "QV 252",
+                "name": ", QV 269, and QV 268, respectively.",
+                "notes": "",
+                "section": "Anti-Bacterial Agents.  Tissue Extracts",
+                "unused": false
+            },
+            {
+                "code": "QV 184",
+                "name": "",
+                "notes": "",
+                "section": "Anti-Bacterial Agents.  Tissue Extracts",
+                "unused": false
+            },
+            {
+                "code": "QV 762",
+                "name": "and plant poisoning in WA 700 ; on poisons acting on plants or animals in the appropriate LC schedules. Classify works on agents that are primarily air, water, or soil pollutants in WA or WN. Classify works on chemicals used extensively in drug therapy or in experimental",
+                "notes": "",
+                "section": "General Toxicology",
+                "unused": false
+            },
+            {
+                "code": "QV 81",
+                "name": "Anesthetic gases; QV 310 Gases used in therapy.",
+                "notes": "",
+                "section": "Poisons",
+                "unused": false
+            },
+            {
+                "code": "QV 666",
+                "name": "for works on irritant gases affecting other parts of the body.",
+                "notes": "",
+                "section": "Poisons",
+                "unused": false
+            },
+            {
+                "code": "QV 664",
+                "name": "for general works on lung irritants.",
+                "notes": "",
+                "section": "Poisons",
+                "unused": false
+            },
+            {
+                "code": "QV 21",
+                "name": "; on pharmacy education in QV 18-20 .",
+                "notes": "",
+                "section": "General Pharmacy and Pharmaceutics",
+                "unused": false
+            },
+            {
+                "code": "QV 21",
+                "name": "; on pharmacy education in QV 18-20 .",
+                "notes": "",
+                "section": "General Pharmacy and Pharmaceutics",
+                "unused": false
+            },
+            {
+                "code": "QV 722",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see QV 23-24 .",
+                "notes": "",
+                "section": "General Pharmacy and Pharmaceutics",
+                "unused": false
+            },
+            {
+                "code": "QV 25",
+                "name": "",
+                "notes": "",
+                "section": "Drug Standardization.  Pharmacognosy. Toxic Plants. Medicinal Plants",
+                "unused": false
+            },
+            {
+                "code": "QV 820",
+                "name": "Preservatives.",
+                "notes": "",
+                "section": "Drug Standardization.  Pharmacognosy. Toxic Plants. Medicinal Plants",
+                "unused": false
+            },
+            {
+                "code": "QV 770",
+                "name": "Classify works on non-medicinal aspects of plants in the appropriate QK number.",
+                "notes": "",
+                "section": "Drug Standardization.  Pharmacognosy. Toxic Plants. Medicinal Plants",
+                "unused": false
+            },
+            {
+                "code": "QV 770",
+                "name": "",
+                "notes": "",
+                "section": "Drug Standardization.  Pharmacognosy. Toxic Plants. Medicinal Plants",
+                "unused": false
+            },
+            {
+                "code": "QV 766",
+                "name": "-770 .",
+                "notes": "",
+                "section": "Drug Standardization.  Pharmacognosy. Toxic Plants. Medicinal Plants",
+                "unused": false
+            },
+            {
+                "code": "QV 766",
+                "name": "",
+                "notes": "",
+                "section": "Drug Standardization.  Pharmacognosy. Toxic Plants. Medicinal Plants",
+                "unused": false
+            },
+            {
+                "code": "QV 786.5.T3",
+                "name": "",
+                "notes": "",
+                "section": "Pharmaceutical Technology. Packaging. Labeling",
+                "unused": false
+            },
+            {
+                "code": "QV 26",
+                "name": "; QV 772 .",
+                "notes": "",
+                "section": "Pharmaceutical Technology. Packaging. Labeling",
+                "unused": false
+            },
+            {
+                "code": "QV 754",
+                "name": "Collection and preservation of drugs.",
+                "notes": "",
+                "section": "Pharmaceutical Technology. Packaging. Labeling",
+                "unused": false
+            },
+            {
+                "code": "QV 32",
+                "name": "",
+                "notes": "",
+                "section": "Pharmaceutical Technology. Packaging. Labeling",
+                "unused": false
+            }
+        ]
+    },
+    "QW": {
+        "schedule_code": "QW",
+        "schedule_name": "Microbiology. Immunology",
+        "url": "https://classification.nlm.nih.gov/schedules/QW",
+        "total_entries": 36,
+        "entries": [
+            {
+                "code": "QW 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see QW 23-24 . Classify works on immunological organizations and societies under QW 501 .",
+                "notes": "",
+                "section": "Microbiology Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QW 50",
+                "name": "-52 ; on viruses alone in QW 160-170 ; on fungi alone in QW 180-180 .5, or appropriate LC numbers. Classify works on microbiology on QW 21 .",
+                "notes": "",
+                "section": "Microbiology Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QW 526.5",
+                "name": "",
+                "notes": "",
+                "section": "Microbiology Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QW 51",
+                "name": "; on fungal genetics in QW 180 ; on viral genetics in QW 160-170 .",
+                "notes": "",
+                "section": "Microbiology Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QW 125",
+                "name": "-155 for specific bacteria.",
+                "notes": "",
+                "section": "Bacteria. Archaea",
+                "unused": false
+            },
+            {
+                "code": "QW 125",
+                "name": "-155 for specific bacteria. Classify works on fungi in QW 180 ; on viruses in QW 160-170 .",
+                "notes": "",
+                "section": "Bacteria. Archaea",
+                "unused": false
+            },
+            {
+                "code": "QW 125",
+                "name": "-155 for specific bacteria. Classify works on fungi in QW 180 ; on viruses in QW 160-170 .",
+                "notes": "",
+                "section": "Bacteria. Archaea",
+                "unused": false
+            },
+            {
+                "code": "QW 163",
+                "name": "Classify works on plant mycology in QW 180 . Classify works on specific microorganisms with the microorganism.",
+                "notes": "",
+                "section": "Microbiology in Specific Environments",
+                "unused": false
+            },
+            {
+                "code": "QW 160",
+                "name": "Classify works on animal mycology in QW 180 . Classify works on specific microorganisms with the microorganism.",
+                "notes": "",
+                "section": "Microbiology in Specific Environments",
+                "unused": false
+            },
+            {
+                "code": "QW 125",
+                "name": "",
+                "notes": "",
+                "section": "Microbiology in Specific Environments",
+                "unused": false
+            },
+            {
+                "code": "QW 125.5.C5",
+                "name": "",
+                "notes": "",
+                "section": "Microbiology in Specific Environments",
+                "unused": false
+            },
+            {
+                "code": "QW 125.5.P7",
+                "name": "",
+                "notes": "",
+                "section": "Microbiology in Specific Environments",
+                "unused": false
+            },
+            {
+                "code": "QW 50",
+                "name": "",
+                "notes": "",
+                "section": "Specific Bacteria",
+                "unused": false
+            },
+            {
+                "code": "QW 142",
+                "name": "-142.5 .",
+                "notes": "",
+                "section": "Specific Bacteria",
+                "unused": false
+            },
+            {
+                "code": "QW 131",
+                "name": "",
+                "notes": "",
+                "section": "Specific Bacteria",
+                "unused": false
+            },
+            {
+                "code": "QW 150",
+                "name": "and Chlamydiales in QW 152 as appropriate.",
+                "notes": "",
+                "section": "Specific Bacteria",
+                "unused": false
+            },
+            {
+                "code": "QW 133",
+                "name": "",
+                "notes": "",
+                "section": "Specific Bacteria",
+                "unused": false
+            },
+            {
+                "code": "QW 160",
+                "name": "",
+                "notes": "",
+                "section": "Viruses",
+                "unused": false
+            },
+            {
+                "code": "QW 166",
+                "name": "",
+                "notes": "",
+                "section": "Viruses",
+                "unused": false
+            },
+            {
+                "code": "QW 160",
+                "name": "",
+                "notes": "",
+                "section": "Viruses",
+                "unused": false
+            },
+            {
+                "code": "QW 160",
+                "name": "",
+                "notes": "",
+                "section": "Viruses",
+                "unused": false
+            },
+            {
+                "code": "QW 168",
+                "name": "",
+                "notes": "",
+                "section": "Viruses",
+                "unused": false
+            },
+            {
+                "code": "QW 160",
+                "name": "",
+                "notes": "",
+                "section": "Viruses",
+                "unused": false
+            },
+            {
+                "code": "QW 230",
+                "name": "",
+                "notes": "",
+                "section": "Fungi",
+                "unused": false
+            },
+            {
+                "code": "QW 51",
+                "name": "; on fungal spores in QW 180 .",
+                "notes": "",
+                "section": "Fungi",
+                "unused": false
+            },
+            {
+                "code": "QW 522",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see QW 523-524 .",
+                "notes": "",
+                "section": "Immunology Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QW 521",
+                "name": "Classify works on immunity in QW 540-568 . Classify general works on immune diseases alone in QW 740 .",
+                "notes": "",
+                "section": "Immunology Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QW 800",
+                "name": "-815 .",
+                "notes": "",
+                "section": "Immunity",
+                "unused": false
+            },
+            {
+                "code": "QW 574",
+                "name": "",
+                "notes": "",
+                "section": "Immunity",
+                "unused": false
+            },
+            {
+                "code": "QW 608",
+                "name": "",
+                "notes": "",
+                "section": "Antigens. Immunoglobulins. Toxins and Antitoxins",
+                "unused": false
+            },
+            {
+                "code": "QW 570",
+                "name": "",
+                "notes": "",
+                "section": "Antigens. Immunoglobulins. Toxins and Antitoxins",
+                "unused": false
+            },
+            {
+                "code": "QW 805",
+                "name": "-815 .",
+                "notes": "",
+                "section": "Antigens. Immunoglobulins. Toxins and Antitoxins",
+                "unused": false
+            },
+            {
+                "code": "QW 52",
+                "name": "",
+                "notes": "",
+                "section": "Specific Immune System Phenomena. Immune System Diseases",
+                "unused": false
+            },
+            {
+                "code": "QW 42",
+                "name": "",
+                "notes": "",
+                "section": "Specific Immune System Phenomena. Immune System Diseases",
+                "unused": false
+            },
+            {
+                "code": "QW 545",
+                "name": "Classify works on immune complex diseases in QW 608 .",
+                "notes": "",
+                "section": "Specific Immune System Phenomena. Immune System Diseases",
+                "unused": false
+            },
+            {
+                "code": "QW 630",
+                "name": "-630 .5.",
+                "notes": "",
+                "section": "Immunotherapy and Hypersensitivity",
+                "unused": false
+            }
+        ]
+    },
+    "QX": {
+        "schedule_code": "QX",
+        "schedule_name": "Parasitology. Disease Vectors",
+        "url": "https://classification.nlm.nih.gov/schedules/QX",
+        "total_entries": 12,
+        "entries": [
+            {
+                "code": "QX 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see QX 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QX 203",
+                "name": "",
+                "notes": "",
+                "section": "Helminths.  Leeches",
+                "unused": false
+            },
+            {
+                "code": "QX 243",
+                "name": "",
+                "notes": "",
+                "section": "Helminths.  Leeches",
+                "unused": false
+            },
+            {
+                "code": "QX 203",
+                "name": "",
+                "notes": "",
+                "section": "Helminths.  Leeches",
+                "unused": false
+            },
+            {
+                "code": "QX 600",
+                "name": "",
+                "notes": "",
+                "section": "Arthropods. Arthropod Vectors",
+                "unused": false
+            },
+            {
+                "code": "QX 460",
+                "name": "",
+                "notes": "",
+                "section": "Arthropods. Arthropod Vectors",
+                "unused": false
+            },
+            {
+                "code": "QX 600",
+                "name": "",
+                "notes": "",
+                "section": "Arthropods. Arthropod Vectors",
+                "unused": false
+            },
+            {
+                "code": "QX 600",
+                "name": "",
+                "notes": "",
+                "section": "Arthropods. Arthropod Vectors",
+                "unused": false
+            },
+            {
+                "code": "QX 475",
+                "name": "",
+                "notes": "",
+                "section": "Arthropods. Arthropod Vectors",
+                "unused": false
+            },
+            {
+                "code": "QX 600",
+                "name": "",
+                "notes": "",
+                "section": "Insecta. Insect Vectors",
+                "unused": false
+            },
+            {
+                "code": "QX 600",
+                "name": "",
+                "notes": "",
+                "section": "Insecta. Insect Vectors",
+                "unused": false
+            },
+            {
+                "code": "QX 500",
+                "name": "",
+                "notes": "",
+                "section": "Arthropod Control",
+                "unused": false
+            }
+        ]
+    },
+    "QY": {
+        "schedule_code": "QY",
+        "schedule_name": "Clinical Laboratory Pathology",
+        "url": "https://classification.nlm.nih.gov/schedules/QY",
+        "total_entries": 6,
+        "entries": [
+            {
+                "code": "QY 1",
+                "name": "Organizations. Societies (General or not elsewhere classified)",
+                "notes": "(Cutter from name of organization or society) | ( Table-G ) (Monographs and Serials) Includes membership lists and administrative reports issued serially or separately. Classify directories in QY 22 . Classify other serials issued by societies in W1 . For academies and institutes, see QY 23-24 . QY 4 General works QY 5 Collected works by several authors QY 7 Collected works by individual authors QY 9 Addresses. | Essays. | Lectures QY 11 History | ( Table-G ) QY 11.1 General coverage | (Not Table-G) QY 13 Dictionaries. | Encyclopedias (Monographs and Serials) QY 15 Classification. | Terminology (Monographs and Serials) QY 16 Tables. | Statistics. Surveys | ( Table-G ) (Monographs and Serials) QY 16.1 General coverage | (Not Table-G) (Monographs and Serials) QY 17 Atlases. | Pictorial works QY 18 Education Classify here works about education. QY 18.2 Educational materials (Monographs and Serials) Classify here educational materials, e.g., outlines, questions and answers, programmed instruction, computer-assisted instruction, etc., regardless of format. | Classify textbooks, regardless of format, by subject. [QY 19] [This number not used] Classify works on schools of clinical pathology in QZ 19 . QY 20 Research (General) Classify here works about research in general. | Classify works about research on a particular subject by subject. QY 21 Clinical laboratory science as a profession. | Ethics. | Peer review QY 22 [Directories. | Use QZ 22] QY 22.1 Directories of clinical laboratory science | (Not Table-G) (Monographs and Serials) QY 23 Collective laboratories, academies, institutes, etc. Classify here works on clinical laboratories in general. Classify works on research laboratories in general in W 23-24 . Classify works on specific types of laboratories in the appropriate schedule, e.g., hospital laboratories in WX 207 . QY 24 Individual laboratories, academies, institutes, etc. | (Cutter from name of institution) QY 25 Laboratory manuals (General) Classify works on specific techniques or tests by type. | Classify laboratory manuals on specific clinical techniques with the technique. QY 26 Equipment and supplies (Monographs and Serials) Classify catalogs here. QY 26.5 Informatics. | Electronic data processing. | Computers (General) Classify works on use for special subjects by subject. QY 27 Collective museums, exhibitions, etc. QY 28 Individual museums, exhibitions, etc. | (Cutter from name of museum, etc.) | ( Table-G ) QY 32 Laws | ( Table-G ) (Monographs and Serials) QY 32.1 General coverage | (Not Table-G) (Monographs and Serials) QY 33 Discussion of law | ( Table-G ) (Monographs and Serials) QY 33.1 General coverage | (Not Table-G) (Monographs and Serials) [QY 35] [This number not used] Classify works on physical anatomic models and manikins in QS 26 ; classify digital anatomic models in QS 26 .5. QY 39 Handbooks. | Resource guides (Monographs and Serials) Back to top Laboratory Animals QY 50 Laboratory animals (General or not elsewhere classified) Classify here works on animals used in research, testing, or teaching, including their anatomy and diseases. Classify general works on animals in QL. QY 52 Acquisition and transportation Classify catalogs in QY 26 ; directories of users and sources for obtaining, in QY 22 . QY 54 Care and breeding QY 56 Environment QY 58 Experimental techniques Classify works on experimental neoplasms in QZ 206 . QY 60 Special classes of animals, A-Z Include here works on anatomy and diseases of these laboratory animals. QY 60.A6 Amphibians QY 60.B4 Birds QY 60.C2 Cats QY 60.D6 Dogs QY 60.F4 Fishes QY 60.I5 Insects QY 60.L3 Lagomorpha (Rabbits, etc.) QY 60.M2 Mammals (General or not elsewhere classified) QY 60.M6 Mollusca QY 60.P7 Primates QY 60.R6 Rodents QY 60.S8 Swine Back to top Laboratory Services. Laboratory Techniques QY 70 Clinical laboratory services Include here works on the administration of clinical laboratories and standards of practice. QY 75 Laboratory safety Classify works on laboratory infection in WC 195 . QY 80 Clinical laboratory techniques (General) QY 90 Chemical techniques QY 95 Cytological techniques Classify techniques associated with a specific type of cell with the cell. | Classify works on cytological techniques in cell biology in QU 25 . QY 100 Microbiological techniques QY 102 Molecular diagnostic techniques (General) Classify works on genetic testing in QZ 52 . [QY 105] [This number not used] Classify animal inoculation in QY 100 ; SF 757.2. QY 110 Mycological techniques Back to top Specimen Analysis. Diagnostic Tests Classify works on diagnosis of specific diseases with the disease. QY 118 Specimen handling (General) QY 120 Sputum culture QY 125 Saliva tests QY 130 Gastric analysis QY 140 Liver function tests. Pancreatic function tests [QY 143] [This number not used] Works on the testing and analysis of bile pigments are classed in QY 140 . [QY 147] [This number not used] Works on liver function tests are classed in QY 140 . QY 160 Stool analysis QY 175 Kidney function tests QY 185 Urinalysis QY 190 Semen analysis QY 210 Serous fluid analysis QY 220 Cerebrospinal fluid analysis QY 230 Hair analysis QY 250 Immunodiagnostic tests Cf. QW 525 for techniques of administering other immunologic tests. QY 260 Diagnostic skin tests QY 265 Serologic tests (General) [QY 275] [This number not used] Classify works on syphilis serodiagnosis in WC 160.5 . QY 330 Assay of hormones QY 335 Pregnancy tests QY 350 Assay of vitamins Back to top Hematologic Tests. Blood Chemical Analysis QY 400 Hematologic tests (General) Classify works on morphology, physiology, and clinical aspects of diseases of blood in WH. | Cf. WG for works on the cardiovascular system. QY 402 Cellular elements QY 408 Physical examination QY 410 Coagulation QY 415 Blood typing QY 450 Blood chemical analysis QY 455 Nitrogenous constituents QY 465 Lipids QY 470 Blood glucose QY 480 Inorganic substances [QY 485] [This number not used] QY 490 Enzymes",
+                "section": "Schedule Contents",
+                "unused": true
+            },
+            {
+                "code": "QY 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see QY 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QY 26",
+                "name": "; directories of users and sources for obtaining, in QY 22 .",
+                "notes": "",
+                "section": "Laboratory Animals",
+                "unused": false
+            },
+            {
+                "code": "QY 100",
+                "name": "; SF 757.2.",
+                "notes": "",
+                "section": "Laboratory Services. Laboratory Techniques",
+                "unused": false
+            },
+            {
+                "code": "QY 140",
+                "name": "",
+                "notes": "",
+                "section": "Specimen Analysis. Diagnostic Tests",
+                "unused": false
+            },
+            {
+                "code": "QY 140",
+                "name": "",
+                "notes": "",
+                "section": "Specimen Analysis. Diagnostic Tests",
+                "unused": false
+            }
+        ]
+    },
+    "QZ": {
+        "schedule_code": "QZ",
+        "schedule_name": "Pathology",
+        "url": "https://classification.nlm.nih.gov/schedules/QZ",
+        "total_entries": 5,
+        "entries": [
+            {
+                "code": "QZ 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see QZ 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QZ 21",
+                "name": "Classify works on pathologic processes only in QZ 140 . Classify material on comparative pathology in QZ 33 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QZ 206",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "QZ 210",
+                "name": "",
+                "notes": "",
+                "section": "Pathogenesis.  Etiology",
+                "unused": false
+            },
+            {
+                "code": "QZ 340",
+                "name": "",
+                "notes": "",
+                "section": "Connective Tissue Diseases. Collagen Diseases",
+                "unused": false
+            }
+        ]
+    },
+    "W": {
+        "schedule_code": "W",
+        "schedule_name": "General Medicine. Health Professions",
+        "url": "https://classification.nlm.nih.gov/schedules/W",
+        "total_entries": 26,
+        "entries": [
+            {
+                "code": "W 1",
+                "name": "–W 9 are displayed online with a space in between, do not input a space when recording these numbers in a bibliographic record.",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "W 3.5",
+                "name": "or ZW 3 to newly acquired publications.",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "W 4A",
+                "name": "for current materials.",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "W 611",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "W 84.3",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "W 87",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "W 76",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "W 26.55.C6",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "W 700",
+                "name": ", etc., Forensic medicine.",
+                "notes": "",
+                "section": "Law.  Ethics.  Professional-Patient Relations",
+                "unused": false
+            },
+            {
+                "code": "W 49",
+                "name": "",
+                "notes": "",
+                "section": "Law.  Ethics.  Professional-Patient Relations",
+                "unused": false
+            },
+            {
+                "code": "W 21.5",
+                "name": "Classify works on interpersonal relations within a particular specialty in the appropriate number in that schedule.",
+                "notes": "",
+                "section": "Law.  Ethics.  Professional-Patient Relations",
+                "unused": false
+            },
+            {
+                "code": "W 50",
+                "name": "for economic aspects of medical ethics.",
+                "notes": "",
+                "section": "Access to Health Information and Health Care. Medical Economics",
+                "unused": false
+            },
+            {
+                "code": "W 21.5",
+                "name": "",
+                "notes": "",
+                "section": "Access to Health Information and Health Care. Medical Economics",
+                "unused": false
+            },
+            {
+                "code": "W 250",
+                "name": "",
+                "notes": "",
+                "section": "Health Services.  Patients and Patient Advocacy",
+                "unused": false
+            },
+            {
+                "code": "W 21",
+                "name": "Medicine as a profession.",
+                "notes": "Include here general works about types of practice in medicine and allied fields. | Classify works on specific medical specialties or allied fields by subject, e.g., on surgery in WO 21 ; on nursing in WY 101-145 , etc.",
+                "section": "Professional Practice",
+                "unused": false
+            },
+            {
+                "code": "W 80",
+                "name": ", etc.; on education and how to teach in W 18, etc.; on research itself in W 20.5 , etc.",
+                "notes": "",
+                "section": "Professional Practice",
+                "unused": false
+            },
+            {
+                "code": "W 275",
+                "name": "General service plans by country.",
+                "notes": "",
+                "section": "Medical, Dental, and Pharmaceutical Service Plans",
+                "unused": false
+            },
+            {
+                "code": "W 100",
+                "name": "General works, not subdivided by country.",
+                "notes": "Classify works on specific types of insurance with the insurance.",
+                "section": "Medical, Dental, and Pharmaceutical Service Plans",
+                "unused": false
+            },
+            {
+                "code": "W 600",
+                "name": "for current materials.",
+                "notes": "",
+                "section": "Social Welfare through Medicine",
+                "unused": false
+            },
+            {
+                "code": "W 622",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see W 623-624 .",
+                "notes": "",
+                "section": "Forensic Sciences Reference Works. General Works",
+                "unused": false
+            },
+            {
+                "code": "W 26",
+                "name": "",
+                "notes": "",
+                "section": "Forensic Sciences Reference Works. General Works",
+                "unused": false
+            },
+            {
+                "code": "W 32.5",
+                "name": "-32.6 . Cf. W 700 .",
+                "notes": "",
+                "section": "Forensic Sciences Reference Works. General Works",
+                "unused": false
+            },
+            {
+                "code": "W 32.5",
+                "name": "-32.6 .",
+                "notes": "",
+                "section": "Forensic Sciences Reference Works. General Works",
+                "unused": false
+            },
+            {
+                "code": "W 775",
+                "name": "",
+                "notes": "",
+                "section": "Forensic Examination",
+                "unused": false
+            },
+            {
+                "code": "W 800",
+                "name": "-867 .",
+                "notes": "",
+                "section": "Forensic Examination",
+                "unused": false
+            },
+            {
+                "code": "W 32",
+                "name": "for estimation of disability in ophthalmology.",
+                "notes": "",
+                "section": "Disability Evaluation.  Compensation",
+                "unused": false
+            }
+        ]
+    },
+    "WA": {
+        "schedule_code": "WA",
+        "schedule_name": "Public Health",
+        "url": "https://classification.nlm.nih.gov/schedules/WA",
+        "total_entries": 25,
+        "entries": [
+            {
+                "code": "WA 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WA 23-24 . Classify works about specific international public health organizations in WA 530 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WA 900",
+                "name": "Classify serial government statistics in W2.",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WA 900",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WA 260",
+                "name": "; on industrial safety equipment in WA 485 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WA 390",
+                "name": "; on urban health and hygiene in WA 380 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WA 697",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WA 697",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WA 697",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WA 104",
+                "name": "Classify works on the effect of climate change in WA 30.2 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WA 950",
+                "name": "Classify statistics in WA 900 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WA 240",
+                "name": "; on control of sexually transmitted diseases in WC 142 .",
+                "notes": "",
+                "section": "Preventive Medicine",
+                "unused": false
+            },
+            {
+                "code": "WA 32",
+                "name": "-33 .",
+                "notes": "",
+                "section": "Preventive Medicine",
+                "unused": false
+            },
+            {
+                "code": "WA 485",
+                "name": "",
+                "notes": "",
+                "section": "Accident and Injury Prevention. Disasters",
+                "unused": false
+            },
+            {
+                "code": "WA 491",
+                "name": "Protection of women in the workplace.",
+                "notes": "",
+                "section": "Health Issues of Specific Groups of People",
+                "unused": false
+            },
+            {
+                "code": "WA 546",
+                "name": "Local health administration.",
+                "notes": "",
+                "section": "Health Issues of Specific Groups of People",
+                "unused": false
+            },
+            {
+                "code": "WA 400",
+                "name": "",
+                "notes": "",
+                "section": "Health Issues of Specific Groups of People",
+                "unused": false
+            },
+            {
+                "code": "WA 300",
+                "name": "",
+                "notes": "",
+                "section": "Health Issues of Specific Groups of People",
+                "unused": false
+            },
+            {
+                "code": "WA 487.5",
+                "name": "",
+                "notes": "",
+                "section": "Occupational Medicine, Health, and Hygiene",
+                "unused": false
+            },
+            {
+                "code": "WA 240",
+                "name": "",
+                "notes": "",
+                "section": "Occupational Medicine, Health, and Hygiene",
+                "unused": false
+            },
+            {
+                "code": "WA 495",
+                "name": "",
+                "notes": "",
+                "section": "Occupational Medicine, Health, and Hygiene",
+                "unused": false
+            },
+            {
+                "code": "WA 309",
+                "name": "Women's health.",
+                "notes": "",
+                "section": "Occupational Medicine, Health, and Hygiene",
+                "unused": false
+            },
+            {
+                "code": "WA 18",
+                "name": "; classify teachers' manuals on hygiene in QT 200 .",
+                "notes": "",
+                "section": "Health Administration and Organization",
+                "unused": false
+            },
+            {
+                "code": "WA 788",
+                "name": "; on pollution of bathing beaches in WA 820 .",
+                "notes": "",
+                "section": "Water",
+                "unused": false
+            },
+            {
+                "code": "WA 697",
+                "name": "",
+                "notes": "",
+                "section": "Food. Food Safety",
+                "unused": false
+            },
+            {
+                "code": "WA 450",
+                "name": "Industrial pollution.",
+                "notes": "Classify works on radioactive pollution and pollutants in WN 615 . | Classify works on agents used extensively in biochemistry or pharmacology in QU or QV.",
+                "section": "Air.  Noise",
+                "unused": false
+            }
+        ]
+    },
+    "WB": {
+        "schedule_code": "WB",
+        "schedule_name": "Practice of Medicine",
+        "url": "https://classification.nlm.nih.gov/schedules/WB",
+        "total_entries": 11,
+        "entries": [
+            {
+                "code": "WB 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WB 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WB 320",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WB 27",
+                "name": "-28 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WB 288",
+                "name": "for diagnostic use; WB 480 for therapeutic use.",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WB 460",
+                "name": "Classify works with no medical slant in HD 7255-7256.",
+                "notes": "",
+                "section": "General Therapeutics",
+                "unused": false
+            },
+            {
+                "code": "WB 415",
+                "name": "",
+                "notes": "",
+                "section": "Dietetics. Nutrition Therapy",
+                "unused": false
+            },
+            {
+                "code": "WB 520",
+                "name": "",
+                "notes": "",
+                "section": "Dietetics. Nutrition Therapy",
+                "unused": false
+            },
+            {
+                "code": "WB 900",
+                "name": "Classify works on mind-body therapies to treat mental disorders in WM 416 .",
+                "notes": "",
+                "section": "Complementary and Alternative Therapies",
+                "unused": false
+            },
+            {
+                "code": "WB 900",
+                "name": "Cf. WM 427 for spiritual therapies used in psychotherapy.",
+                "notes": "",
+                "section": "Complementary and Alternative Therapies",
+                "unused": false
+            },
+            {
+                "code": "WB 371",
+                "name": "; on diet fads in WB 449 ; on vegetarianism in WB 430 ; on mental healing in WB 880-885 . Classify works on a specific disease with the disease.",
+                "notes": "Classify works on complementary therapies to treat mental disorders in WM 413 .",
+                "section": "Complementary and Alternative Therapies",
+                "unused": false
+            },
+            {
+                "code": "WB 18",
+                "name": "",
+                "notes": "",
+                "section": "Complementary and Alternative Therapies",
+                "unused": false
+            }
+        ]
+    },
+    "WC": {
+        "schedule_code": "WC",
+        "schedule_name": "Communicable Diseases",
+        "url": "https://classification.nlm.nih.gov/schedules/WC",
+        "total_entries": 19,
+        "entries": [
+            {
+                "code": "WC 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WC 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WC 503",
+                "name": "-503 .7.",
+                "notes": "",
+                "section": "Sexually Transmitted Diseases",
+                "unused": false
+            },
+            {
+                "code": "WC 165",
+                "name": "",
+                "notes": "",
+                "section": "Sexually Transmitted Diseases",
+                "unused": false
+            },
+            {
+                "code": "WC 204",
+                "name": "",
+                "notes": "",
+                "section": "Bacterial Infections",
+                "unused": false
+            },
+            {
+                "code": "WC 204",
+                "name": "; on food poisoning in WC 268 .",
+                "notes": "",
+                "section": "Bacterial Infections",
+                "unused": false
+            },
+            {
+                "code": "WC 350",
+                "name": "",
+                "notes": "",
+                "section": "Enteric Infections",
+                "unused": false
+            },
+            {
+                "code": "WC 268",
+                "name": "; on paratyphoid fevers in WC 266 .",
+                "notes": "",
+                "section": "Enteric Infections",
+                "unused": false
+            },
+            {
+                "code": "WC 335",
+                "name": "; on mycetoma in WR 340 ; on tuberculosis in WF, etc.",
+                "notes": "",
+                "section": "Other Bacterial Infections.  Zoonotic Bacterial Infections",
+                "unused": false
+            },
+            {
+                "code": "WC 268",
+                "name": "",
+                "notes": "",
+                "section": "Other Bacterial Infections.  Zoonotic Bacterial Infections",
+                "unused": false
+            },
+            {
+                "code": "WC 390",
+                "name": "",
+                "notes": "",
+                "section": "Other Bacterial Infections.  Zoonotic Bacterial Infections",
+                "unused": false
+            },
+            {
+                "code": "WC 160",
+                "name": "-170 .",
+                "notes": "",
+                "section": "Other Bacterial Infections.  Zoonotic Bacterial Infections",
+                "unused": false
+            },
+            {
+                "code": "WC 580",
+                "name": "",
+                "notes": "",
+                "section": "Viral Respiratory Tract Infections.  Respirovirus Infections",
+                "unused": false
+            },
+            {
+                "code": "WC 542",
+                "name": "; on lymphocytic choriomeningitis in WC 540 .",
+                "notes": "",
+                "section": "Infectious Mononucleosis.  Arbovirus Infections",
+                "unused": false
+            },
+            {
+                "code": "WC 660",
+                "name": "",
+                "notes": "",
+                "section": "Infectious Mononucleosis.  Arbovirus Infections",
+                "unused": false
+            },
+            {
+                "code": "WC 522",
+                "name": "; on Burkitt's lymphoma in WH 525 ; on other infections with no skin manifestations in WC 500 .",
+                "notes": "",
+                "section": "Infectious Viral Skin Diseases",
+                "unused": false
+            },
+            {
+                "code": "WC 640",
+                "name": "",
+                "notes": "",
+                "section": "Infectious Viral Skin Diseases",
+                "unused": false
+            },
+            {
+                "code": "WC 285",
+                "name": "",
+                "notes": "",
+                "section": "Tropical and Parasitic  Diseases",
+                "unused": false
+            },
+            {
+                "code": "WC 285",
+                "name": "; on trichomonas vaginitis in WP 258 .",
+                "notes": "See also other localized infections indexed.",
+                "section": "Tropical and Parasitic  Diseases",
+                "unused": false
+            },
+            {
+                "code": "WC 830",
+                "name": "",
+                "notes": "",
+                "section": "Tropical and Parasitic  Diseases",
+                "unused": false
+            }
+        ]
+    },
+    "WD": {
+        "schedule_code": "WD",
+        "schedule_name": "Medicine in Selected Environments",
+        "url": "https://classification.nlm.nih.gov/schedules/WD",
+        "total_entries": 11,
+        "entries": [
+            {
+                "code": "WD 850",
+                "name": "",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WD 800",
+                "name": "-860 .",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WD 750",
+                "name": "-760 .",
+                "notes": "",
+                "section": "Aerospace Medicine",
+                "unused": false
+            },
+            {
+                "code": "WD 704.5",
+                "name": "Classify annual reports, journals, etc. in W1 .",
+                "notes": "",
+                "section": "Aerospace Medicine",
+                "unused": false
+            },
+            {
+                "code": "WD 751",
+                "name": "Classify works about research on a particular subject, by subject.",
+                "notes": "",
+                "section": "Aerospace Medicine",
+                "unused": false
+            },
+            {
+                "code": "WD 860",
+                "name": "",
+                "notes": "",
+                "section": "Aerospace Medicine",
+                "unused": false
+            },
+            {
+                "code": "WD 710",
+                "name": "",
+                "notes": "",
+                "section": "Aerospace Medicine",
+                "unused": false
+            },
+            {
+                "code": "WD 754",
+                "name": "",
+                "notes": "",
+                "section": "Aerospace Medicine",
+                "unused": false
+            },
+            {
+                "code": "WD 758",
+                "name": "",
+                "notes": "",
+                "section": "Space Flight",
+                "unused": false
+            },
+            {
+                "code": "WD 822",
+                "name": "Classify annual reports, journals, etc. in W1 .",
+                "notes": "",
+                "section": "Naval Medicine",
+                "unused": false
+            },
+            {
+                "code": "WD 922",
+                "name": "Classify annual reports, journals, etc. in W1 . For academies and institutes, see WD 919 .",
+                "notes": "",
+                "section": "Military Medicine",
+                "unused": false
+            }
+        ]
+    },
+    "WE": {
+        "schedule_code": "WE",
+        "schedule_name": "Musculoskeletal System",
+        "url": "https://classification.nlm.nih.gov/schedules/WE",
+        "total_entries": 14,
+        "entries": [
+            {
+                "code": "WE 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WE 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WE 100",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WE 185",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WE 21",
+                "name": "Classify works on diseases only in WE 140 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WE 504",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WE 100",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WE 21",
+                "name": "",
+                "notes": "",
+                "section": "Orthopedic Procedures",
+                "unused": false
+            },
+            {
+                "code": "WE 250",
+                "name": "",
+                "notes": "",
+                "section": "Orthopedic Procedures",
+                "unused": false
+            },
+            {
+                "code": "WE 725",
+                "name": "Ankylosing spondylitis.",
+                "notes": "",
+                "section": "Joint and Connective Tissues",
+                "unused": false
+            },
+            {
+                "code": "WE 550",
+                "name": "Classify works on specific muscles with part or system involved.",
+                "notes": "",
+                "section": "Muscles and Tendons",
+                "unused": false
+            },
+            {
+                "code": "WE 500",
+                "name": "; on muscle cramp and myoclonus in WE 550 .",
+                "notes": "",
+                "section": "Muscles and Tendons",
+                "unused": false
+            },
+            {
+                "code": "WE 708",
+                "name": "",
+                "notes": "",
+                "section": "Head and Neck",
+                "unused": false
+            },
+            {
+                "code": "WE 750",
+                "name": "",
+                "notes": "",
+                "section": "Torso",
+                "unused": false
+            },
+            {
+                "code": "WE 253",
+                "name": "",
+                "notes": "",
+                "section": "Torso",
+                "unused": false
+            }
+        ]
+    },
+    "WF": {
+        "schedule_code": "WF",
+        "schedule_name": "Respiratory System",
+        "url": "https://classification.nlm.nih.gov/schedules/WF",
+        "total_entries": 13,
+        "entries": [
+            {
+                "code": "WF 22",
+                "name": "; Classify other serials issued by societies in W1 . For academies and institutes, see WF 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WF 100",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WF 140",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WF 100",
+                "name": "",
+                "notes": "",
+                "section": "Respiratory System Diseases",
+                "unused": false
+            },
+            {
+                "code": "WF 302",
+                "name": "",
+                "notes": "",
+                "section": "Tuberculosis",
+                "unused": false
+            },
+            {
+                "code": "WF 304",
+                "name": "",
+                "notes": "",
+                "section": "Tuberculosis",
+                "unused": false
+            },
+            {
+                "code": "WF 306",
+                "name": "",
+                "notes": "",
+                "section": "Tuberculosis",
+                "unused": false
+            },
+            {
+                "code": "WF 975",
+                "name": "",
+                "notes": "",
+                "section": "Tuberculosis",
+                "unused": false
+            },
+            {
+                "code": "WF 310",
+                "name": "- WF 360 .",
+                "notes": "",
+                "section": "Tuberculosis",
+                "unused": false
+            },
+            {
+                "code": "WF 654",
+                "name": "",
+                "notes": "",
+                "section": "Tuberculosis",
+                "unused": false
+            },
+            {
+                "code": "WF 200",
+                "name": "- WF 390 .",
+                "notes": "",
+                "section": "Tuberculosis",
+                "unused": false
+            },
+            {
+                "code": "WF 300",
+                "name": "-360 .",
+                "notes": "",
+                "section": "Lungs",
+                "unused": false
+            },
+            {
+                "code": "WF 800",
+                "name": "",
+                "notes": "",
+                "section": "Pleura.  Diaphragm.  Mediastinum",
+                "unused": false
+            }
+        ]
+    },
+    "WG": {
+        "schedule_code": "WG",
+        "schedule_name": "Cardiovascular System",
+        "url": "https://classification.nlm.nih.gov/schedules/WG",
+        "total_entries": 23,
+        "entries": [
+            {
+                "code": "WG 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WG 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WG 100",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WG 140",
+                "name": "for clinical examination and diagnosis.",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WG 166.5.C2",
+                "name": "for artificial cardiac pacing. Classify catalogs in W 26 . Classify works on artificial and mechanical hearts in WG 169.5 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WG 21",
+                "name": "Classify works on diseases alone in WG 120 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WG 340",
+                "name": "; on measurement of blood pressure in clinical diagnosis in WB 280 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WG 20",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WG 100",
+                "name": "",
+                "notes": "",
+                "section": "Cardiovascular Diseases, Diagnosis, and Therapeutics",
+                "unused": false
+            },
+            {
+                "code": "WG 410",
+                "name": "Classify works on surgery of a particular disorder with the disorder. Classify works on cardiac anesthesia in WG 460 .",
+                "notes": "",
+                "section": "Cardiovascular Diseases, Diagnosis, and Therapeutics",
+                "unused": false
+            },
+            {
+                "code": "WG 410",
+                "name": "Aorta and numbers for other specific vessels.",
+                "notes": "",
+                "section": "Cardiovascular Diseases, Diagnosis, and Therapeutics",
+                "unused": false
+            },
+            {
+                "code": "WG 113",
+                "name": "; works on examination in WG 140-141 .5; on general therapeutics in WG 166-166 .5; on surgery in WG 169-169 .5.",
+                "notes": "",
+                "section": "Heart.  Heart Diseases",
+                "unused": false
+            },
+            {
+                "code": "WG 310",
+                "name": "",
+                "notes": "",
+                "section": "Heart.  Heart Diseases",
+                "unused": false
+            },
+            {
+                "code": "WG 299",
+                "name": "; on the aorta specifically in WG 410 ; on circulation in WG 103-104 ; on vascular resistance in WG 106 ; on vascular surgery in WG 170 .",
+                "notes": "",
+                "section": "Blood Vessels (General). Vascular Diseases",
+                "unused": false
+            },
+            {
+                "code": "WG 299",
+                "name": "; on the aorta specifically in WG 410 ; on circulation in WG 103-104 ; on vascular resistance in WG 106 ; on vascular surgery in WG 170 .",
+                "notes": "",
+                "section": "Blood Vessels (General). Vascular Diseases",
+                "unused": false
+            },
+            {
+                "code": "WG 299",
+                "name": "; on the aorta specifically in WG 410 ; on circulation in WG 103-104 ; on vascular resistance in WG 106 ; on vascular surgery in WG 170 .",
+                "notes": "",
+                "section": "Blood Vessels (General). Vascular Diseases",
+                "unused": false
+            },
+            {
+                "code": "WG 299",
+                "name": "; on the aorta specifically in WG 410 ; on circulation in WG 103-104 ; on vascular resistance in WG 106 ; on vascular surgery in WG 170 .",
+                "notes": "",
+                "section": "Blood Vessels (General). Vascular Diseases",
+                "unused": false
+            },
+            {
+                "code": "WG 299",
+                "name": "; on the aorta specifically in WG 410 ; on circulation in WG 103-104 ; on vascular resistance in WG 106 ; on vascular surgery in WG 170 .",
+                "notes": "",
+                "section": "Blood Vessels (General). Vascular Diseases",
+                "unused": false
+            },
+            {
+                "code": "WG 410",
+                "name": "; on heart aneurysm in WG 300 ; on cerebral aneurysm in WL 354-355 .",
+                "notes": "",
+                "section": "Arteries",
+                "unused": false
+            },
+            {
+                "code": "WG 410",
+                "name": "; on coronary arteries in WG 299 .",
+                "notes": "",
+                "section": "Arteries",
+                "unused": false
+            },
+            {
+                "code": "WG 595.B72",
+                "name": "",
+                "notes": "",
+                "section": "Arteries",
+                "unused": false
+            },
+            {
+                "code": "WG 300",
+                "name": "; on the portal system in WI 720 .",
+                "notes": "",
+                "section": "Veins.  Capillaries",
+                "unused": false
+            },
+            {
+                "code": "WG 625.B7",
+                "name": "",
+                "notes": "",
+                "section": "Veins.  Capillaries",
+                "unused": false
+            },
+            {
+                "code": "WG 106",
+                "name": "; on microcirculation in WG 104 .",
+                "notes": "",
+                "section": "Veins.  Capillaries",
+                "unused": false
+            }
+        ]
+    },
+    "WH": {
+        "schedule_code": "WH",
+        "schedule_name": "Hemic and Lymphatic Systems",
+        "url": "https://classification.nlm.nih.gov/schedules/WH",
+        "total_entries": 15,
+        "entries": [
+            {
+                "code": "WH 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WH 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WH 460",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WH 120",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WH 600",
+                "name": "",
+                "notes": "",
+                "section": "Hematologic Diseases.  Hematopoietic System",
+                "unused": false
+            },
+            {
+                "code": "WH 200",
+                "name": "",
+                "notes": "",
+                "section": "Hematologic Diseases.  Hematopoietic System",
+                "unused": false
+            },
+            {
+                "code": "WH 322",
+                "name": "-325 .",
+                "notes": "",
+                "section": "Hematologic Diseases.  Hematopoietic System",
+                "unused": false
+            },
+            {
+                "code": "WH 410",
+                "name": "",
+                "notes": "",
+                "section": "Hematologic Diseases.  Hematopoietic System",
+                "unused": false
+            },
+            {
+                "code": "WH 300",
+                "name": "",
+                "notes": "",
+                "section": "Hematologic Diseases.  Hematopoietic System",
+                "unused": false
+            },
+            {
+                "code": "WH 322",
+                "name": "",
+                "notes": "",
+                "section": "Hematologic Diseases.  Hematopoietic System",
+                "unused": false
+            },
+            {
+                "code": "WH 322",
+                "name": "",
+                "notes": "",
+                "section": "Hematologic Diseases.  Hematopoietic System",
+                "unused": false
+            },
+            {
+                "code": "WH 322",
+                "name": "",
+                "notes": "",
+                "section": "Hematologic Diseases.  Hematopoietic System",
+                "unused": false
+            },
+            {
+                "code": "WH 175",
+                "name": "Anemias; WH 180 Polycythemia vera.",
+                "notes": "",
+                "section": "Hematologic Diseases.  Hematopoietic System",
+                "unused": false
+            },
+            {
+                "code": "WH 540",
+                "name": "Multiple myeloma. Classify blood proteins associated with fibrinolysis in WH 311.",
+                "notes": "",
+                "section": "Hematologic Diseases.  Hematopoietic System",
+                "unused": false
+            },
+            {
+                "code": "WH 24.5",
+                "name": "; on blood transfusion in WB 356 .",
+                "notes": "",
+                "section": "Hematologic Diseases.  Hematopoietic System",
+                "unused": false
+            },
+            {
+                "code": "WH 385",
+                "name": "",
+                "notes": "",
+                "section": "Hematologic Neoplasms (General). Lymphoma",
+                "unused": false
+            }
+        ]
+    },
+    "WI": {
+        "schedule_code": "WI",
+        "schedule_name": "Digestive System",
+        "url": "https://classification.nlm.nih.gov/schedules/WI",
+        "total_entries": 12,
+        "entries": [
+            {
+                "code": "WI 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WI 23-24 .",
+                "notes": "",
+                "section": "Digestive System Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WI 100",
+                "name": "",
+                "notes": "",
+                "section": "Digestive System Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WI 140",
+                "name": "Classify works on surgery of the digestive system or gastrointestinal tract in WI 980 .",
+                "notes": "",
+                "section": "Digestive System Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WI 100",
+                "name": "",
+                "notes": "",
+                "section": "Diseases.  Diagnosis.  Signs and Symptoms",
+                "unused": false
+            },
+            {
+                "code": "WI 143",
+                "name": "",
+                "notes": "",
+                "section": "Diseases.  Diagnosis.  Signs and Symptoms",
+                "unused": false
+            },
+            {
+                "code": "WI 980",
+                "name": "",
+                "notes": "",
+                "section": "Gastrointestinal Tract",
+                "unused": false
+            },
+            {
+                "code": "WI 370",
+                "name": "",
+                "notes": "",
+                "section": "Small Intestine",
+                "unused": false
+            },
+            {
+                "code": "WI 425",
+                "name": "Cf. WC 280 Dysentery.",
+                "notes": "Classify Colorectal surgery in WI 650 .",
+                "section": "Large Intestine",
+                "unused": false
+            },
+            {
+                "code": "WI 529",
+                "name": "",
+                "notes": "",
+                "section": "Anus.  Rectum",
+                "unused": false
+            },
+            {
+                "code": "WI 710",
+                "name": "Classify general works on the biliary tract and biliary tract diseases in WI 750 .",
+                "notes": "Classify works on surgery of the liver and/or biliary tract in WI 770 .",
+                "section": "Liver.  Biliary Tract",
+                "unused": false
+            },
+            {
+                "code": "WI 702",
+                "name": "",
+                "notes": "",
+                "section": "Liver.  Biliary Tract",
+                "unused": false
+            },
+            {
+                "code": "WI 700",
+                "name": "",
+                "notes": "",
+                "section": "Liver.  Biliary Tract",
+                "unused": false
+            }
+        ]
+    },
+    "WJ": {
+        "schedule_code": "WJ",
+        "schedule_name": "Urogenital System",
+        "url": "https://classification.nlm.nih.gov/schedules/WJ",
+        "total_entries": 10,
+        "entries": [
+            {
+                "code": "WJ 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WJ 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WJ 140",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WJ 140",
+                "name": "- WJ 141 .",
+                "notes": "",
+                "section": "Therapeutics.  Surgery",
+                "unused": false
+            },
+            {
+                "code": "WJ 146",
+                "name": "; classify works on renal elimination in WJ 301 .",
+                "notes": "",
+                "section": "Kidney",
+                "unused": false
+            },
+            {
+                "code": "WJ 146",
+                "name": "",
+                "notes": "",
+                "section": "Kidney",
+                "unused": false
+            },
+            {
+                "code": "WJ 146",
+                "name": "",
+                "notes": "",
+                "section": "Kidney",
+                "unused": false
+            },
+            {
+                "code": "WJ 301.5",
+                "name": "",
+                "notes": "",
+                "section": "Kidney",
+                "unused": false
+            },
+            {
+                "code": "WJ 101",
+                "name": "",
+                "notes": "",
+                "section": "Ureter.  Urinary Bladder.  Urethra",
+                "unused": false
+            },
+            {
+                "code": "WJ 170",
+                "name": "",
+                "notes": "",
+                "section": "Ureter.  Urinary Bladder.  Urethra",
+                "unused": false
+            },
+            {
+                "code": "WJ 168",
+                "name": "",
+                "notes": "",
+                "section": "Ureter.  Urinary Bladder.  Urethra",
+                "unused": false
+            }
+        ]
+    },
+    "WK": {
+        "schedule_code": "WK",
+        "schedule_name": "Endocrine System",
+        "url": "https://classification.nlm.nih.gov/schedules/WK",
+        "total_entries": 16,
+        "entries": [
+            {
+                "code": "WK 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WK 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WK 100",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WK 140",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WK 90",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WK 200",
+                "name": "",
+                "notes": "",
+                "section": "Thyroid Gland.  Parathyroid Glands",
+                "unused": false
+            },
+            {
+                "code": "WK 265",
+                "name": "",
+                "notes": "",
+                "section": "Thyroid Gland.  Parathyroid Glands",
+                "unused": false
+            },
+            {
+                "code": "WK 265.",
+                "name": "",
+                "notes": "",
+                "section": "Thyroid Gland.  Parathyroid Glands",
+                "unused": false
+            },
+            {
+                "code": "WK 500",
+                "name": "",
+                "notes": "",
+                "section": "Pituitary Gland",
+                "unused": false
+            },
+            {
+                "code": "WK 700",
+                "name": "",
+                "notes": "",
+                "section": "Adrenal Glands",
+                "unused": false
+            },
+            {
+                "code": "WK 700",
+                "name": "",
+                "notes": "",
+                "section": "Adrenal Glands",
+                "unused": false
+            },
+            {
+                "code": "WK 780",
+                "name": "; on surgery, in WK 790 ; on the pituitary-adrenal system, in WK 510 .",
+                "notes": "",
+                "section": "Adrenal Glands",
+                "unused": false
+            },
+            {
+                "code": "WK 800",
+                "name": "",
+                "notes": "",
+                "section": "Islets of Langerhans. Pancreatic Hormones. Diabetes Mellitus",
+                "unused": false
+            },
+            {
+                "code": "WK 800",
+                "name": "",
+                "notes": "",
+                "section": "Islets of Langerhans. Pancreatic Hormones. Diabetes Mellitus",
+                "unused": false
+            },
+            {
+                "code": "WK 835.5.C6",
+                "name": "; on diabetic ketoacidosis in WK 835.5.K4 .",
+                "notes": "",
+                "section": "Islets of Langerhans. Pancreatic Hormones. Diabetes Mellitus",
+                "unused": false
+            },
+            {
+                "code": "WK 835",
+                "name": "",
+                "notes": "",
+                "section": "Islets of Langerhans. Pancreatic Hormones. Diabetes Mellitus",
+                "unused": false
+            },
+            {
+                "code": "WK 105",
+                "name": "Androgens; WK 110 Estrogens; WK 515 Pituitary gonadotropins; WK 925 Corpus luteum hormones.",
+                "notes": "",
+                "section": "Gonadal Hormones",
+                "unused": false
+            }
+        ]
+    },
+    "WL": {
+        "schedule_code": "WL",
+        "schedule_name": "Nervous System",
+        "url": "https://classification.nlm.nih.gov/schedules/WL",
+        "total_entries": 14,
+        "entries": [
+            {
+                "code": "WL 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes see WL 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WL 100",
+                "name": "Classify works on both speech-language pathology and associated disorders in WL 340.2 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WL 140",
+                "name": "Cf. WL 103-105 Specific neurosciences",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WL 100",
+                "name": "",
+                "notes": "",
+                "section": "Diseases.  Examination and Diagnosis (General)",
+                "unused": false
+            },
+            {
+                "code": "WL 141",
+                "name": "; Electroencephalography in WL 150 ; Echoencephalography in WL 154 ; Myelography in WL 405 .",
+                "notes": "",
+                "section": "Diseases.  Examination and Diagnosis (General)",
+                "unused": false
+            },
+            {
+                "code": "WL 348",
+                "name": "Brain diseases.",
+                "notes": "",
+                "section": "Central Nervous System",
+                "unused": false
+            },
+            {
+                "code": "WL 348",
+                "name": "Brain diseases. Classify works on diseases of specific parts of the central nervous system with the part. Classify works on diagnosis in WL 141 .",
+                "notes": "",
+                "section": "Central Nervous System",
+                "unused": false
+            },
+            {
+                "code": "WL 390",
+                "name": "Movement disorders; WW 460 Neuro-ophthalmic conditions.",
+                "notes": "",
+                "section": "Neurologic Manifestations",
+                "unused": false
+            },
+            {
+                "code": "WL 141",
+                "name": "",
+                "notes": "",
+                "section": "Brain Diseases",
+                "unused": false
+            },
+            {
+                "code": "WL 610",
+                "name": "Classify works on surgery for a particular disorder with the disorder.",
+                "notes": "",
+                "section": "Brain Surgery",
+                "unused": false
+            },
+            {
+                "code": "WL 330",
+                "name": "Cranial nerves; WL 400 Spinal nerves.",
+                "notes": "",
+                "section": "Peripheral Nerves",
+                "unused": false
+            },
+            {
+                "code": "WL 330",
+                "name": "",
+                "notes": "",
+                "section": "Autonomic Nervous System",
+                "unused": false
+            },
+            {
+                "code": "WL 103",
+                "name": "",
+                "notes": "",
+                "section": "Sense Organs",
+                "unused": false
+            },
+            {
+                "code": "WL 704",
+                "name": "",
+                "notes": "",
+                "section": "Sense Organs",
+                "unused": false
+            }
+        ]
+    },
+    "WM": {
+        "schedule_code": "WM",
+        "schedule_name": "Psychiatry",
+        "url": "https://classification.nlm.nih.gov/schedules/WM",
+        "total_entries": 19,
+        "entries": [
+            {
+                "code": "WM 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WM 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WM 401",
+                "name": "for general works on crisis intervention; WA 305 for special population groups.",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WM 49",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WM 30.5",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WM 611",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WM 140",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WM 75",
+                "name": "Classify works on the mental health of special population groups in WA 305 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WM 55",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WM 145.5.M6",
+                "name": "",
+                "notes": "",
+                "section": "Mental Disorders. Behavioral Symptoms",
+                "unused": false
+            },
+            {
+                "code": "WM 145.5.P8",
+                "name": "",
+                "notes": "",
+                "section": "Mental Disorders. Behavioral Symptoms",
+                "unused": false
+            },
+            {
+                "code": "WM 145.5",
+                "name": "P8",
+                "notes": "",
+                "section": "Mental Disorders. Behavioral Symptoms",
+                "unused": false
+            },
+            {
+                "code": "WM 172.5",
+                "name": "; Depression with depressive disorder in WM 171.5 . Classify works on HIV survivors in WC 503.7 .",
+                "notes": "Classify works on cancer survivors in QZ 260 . Classify works on atomic bomb survivors in WN 610 .",
+                "section": "Mental Disorders. Behavioral Symptoms",
+                "unused": false
+            },
+            {
+                "code": "WM 203.5",
+                "name": "",
+                "notes": "",
+                "section": "Mental Disorders. Behavioral Symptoms",
+                "unused": false
+            },
+            {
+                "code": "WM 192",
+                "name": "",
+                "notes": "",
+                "section": "Mental Disorders. Behavioral Symptoms",
+                "unused": false
+            },
+            {
+                "code": "WM 171",
+                "name": "",
+                "notes": "",
+                "section": "Mental Disorders. Behavioral Symptoms",
+                "unused": false
+            },
+            {
+                "code": "WM 190.5.A2",
+                "name": "",
+                "notes": "",
+                "section": "Mental Disorders. Behavioral Symptoms",
+                "unused": false
+            },
+            {
+                "code": "WM 30",
+                "name": "",
+                "notes": "",
+                "section": "Therapies",
+                "unused": false
+            },
+            {
+                "code": "WM 620",
+                "name": "",
+                "notes": "",
+                "section": "Sexual Dysfunctions",
+                "unused": false
+            },
+            {
+                "code": "WM 620.5.H6",
+                "name": "",
+                "notes": "",
+                "section": "Sexual Dysfunctions",
+                "unused": false
+            }
+        ]
+    },
+    "WN": {
+        "schedule_code": "WN",
+        "schedule_name": "Radiology. Diagnostic Imaging",
+        "url": "https://classification.nlm.nih.gov/schedules/WN",
+        "total_entries": 12,
+        "entries": [
+            {
+                "code": "WN 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WN 23-24 .",
+                "notes": "",
+                "section": "Reference Works. General Works",
+                "unused": false
+            },
+            {
+                "code": "WN 150",
+                "name": "; catalogs of equipment in W 26 .",
+                "notes": "",
+                "section": "Reference Works. General Works",
+                "unused": false
+            },
+            {
+                "code": "WN 21",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works. General Works",
+                "unused": false
+            },
+            {
+                "code": "WN 240",
+                "name": "",
+                "notes": "",
+                "section": "Diagnostic Imaging",
+                "unused": false
+            },
+            {
+                "code": "WN 230",
+                "name": "Classify pediatric radiography in WN 240 .",
+                "notes": "",
+                "section": "Diagnostic Imaging",
+                "unused": false
+            },
+            {
+                "code": "WN 240",
+                "name": "",
+                "notes": "",
+                "section": "Diagnostic Imaging",
+                "unused": false
+            },
+            {
+                "code": "WN 610",
+                "name": "-615 ; Classify works on diagnostic use of radium and radon in WN 445 .",
+                "notes": "",
+                "section": "Radiotherapy",
+                "unused": false
+            },
+            {
+                "code": "WN 450",
+                "name": "",
+                "notes": "",
+                "section": "Radiotherapy",
+                "unused": false
+            },
+            {
+                "code": "WN 440",
+                "name": "-450 . Classify works on adverse effects of radioisotopes and radioactive elements in WN 610-615 .",
+                "notes": "",
+                "section": "Radiotherapy",
+                "unused": false
+            },
+            {
+                "code": "WN 21",
+                "name": "",
+                "notes": "",
+                "section": "Nuclear Medicine",
+                "unused": false
+            },
+            {
+                "code": "WN 203",
+                "name": "",
+                "notes": "",
+                "section": "Nuclear Medicine",
+                "unused": false
+            },
+            {
+                "code": "WN 610",
+                "name": "Classify works on non-radioactive pollution in WA 754 for general air pollution; in WA 450 for industrial air pollution; in WA 785 for soil pollution; and WA 689 for water pollution.",
+                "notes": "",
+                "section": "Radiologic Health",
+                "unused": false
+            }
+        ]
+    },
+    "WO": {
+        "schedule_code": "WO",
+        "schedule_name": "Surgery",
+        "url": "https://classification.nlm.nih.gov/schedules/WO",
+        "total_entries": 32,
+        "entries": [
+            {
+                "code": "WO 201",
+                "name": "-233 .1. Classify general works on wounds and injuries in WO 700 .",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WO 201",
+                "name": "-233 .1. Classify general works on wounds and injuries in WO 700 .",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WO 201",
+                "name": "-233 .1.",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WO 700",
+                "name": "",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WO 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WO 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WO 517",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WO 50",
+                "name": "Experimental surgery.",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WO 100",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WO 500",
+                "name": "-512 , etc.",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WO 162",
+                "name": "; on instruments and equipment used in anesthesia in WO 240 ; catalogs in W 26 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WO 33",
+                "name": "-33.1 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WO 20",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WO 21",
+                "name": "Classify works on procedures alone in WO 500 .",
+                "notes": "For specific surgical procedures, classify under the specific procedure term. Cf. WF 980 Thoracic surgical procedures; WI 980 Digestive system surgical procedures, etc.",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WO 500",
+                "name": "Classify works on surgery for specific diseases with the disease.",
+                "notes": "",
+                "section": "Antisepsis.  Surgical Diagnostic Techniques.  Surgical Shock",
+                "unused": false
+            },
+            {
+                "code": "WO 240",
+                "name": "for equipment used in anesthesia.",
+                "notes": "",
+                "section": "Surgical Equipment",
+                "unused": false
+            },
+            {
+                "code": "WO 508",
+                "name": "Classify works on electrosurgery in WO 504 . Classify works on laser coagulation in WO 511 .",
+                "notes": "",
+                "section": "Perioperative Care.  Ambulatory and Minor Surgical Procedures",
+                "unused": false
+            },
+            {
+                "code": "WO 275",
+                "name": "Classify anesthesia and analgesia used in specific types of surgery with the surgery.",
+                "notes": "",
+                "section": "Anesthesia and Analgesia Reference Works. General Works",
+                "unused": false
+            },
+            {
+                "code": "WO 222",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WO 23-24 .",
+                "notes": "",
+                "section": "Anesthesia and Analgesia Reference Works. General Works",
+                "unused": false
+            },
+            {
+                "code": "WO 240",
+                "name": "; catalogs in W 26 . Cf. WO 162 Surgical equipment.",
+                "notes": "",
+                "section": "Anesthesia and Analgesia Reference Works. General Works",
+                "unused": false
+            },
+            {
+                "code": "WO 162",
+                "name": "Surgical equipment.",
+                "notes": "",
+                "section": "Preanesthetic Treatment.  Equipment.  Adverse Effects",
+                "unused": false
+            },
+            {
+                "code": "WO 720",
+                "name": "Classify works on resuscitation in WB 106 . Classify works on respiration problems caused by anesthesia in WO 245 .",
+                "notes": "",
+                "section": "Preanesthetic Treatment.  Equipment.  Adverse Effects",
+                "unused": false
+            },
+            {
+                "code": "WO 275",
+                "name": "",
+                "notes": "",
+                "section": "Specific Types of Anesthesia",
+                "unused": false
+            },
+            {
+                "code": "WO 234",
+                "name": "",
+                "notes": "",
+                "section": "Specific Types of Anesthesia",
+                "unused": false
+            },
+            {
+                "code": "WO 320",
+                "name": "Classify works on anesthetics in QV 81 .",
+                "notes": "",
+                "section": "Induced Hypothermia",
+                "unused": false
+            },
+            {
+                "code": "WO 21",
+                "name": "Classify works on the specialty and procedures together in WO 100 .",
+                "notes": "",
+                "section": "Operative Surgical Procedures. Techniques",
+                "unused": false
+            },
+            {
+                "code": "WO 162",
+                "name": "Cf. WO 176 Artificial organs (General).",
+                "notes": "",
+                "section": "Cosmetic Techniques.  Reconstructive Surgical Procedures",
+                "unused": false
+            },
+            {
+                "code": "WO 176",
+                "name": "",
+                "notes": "",
+                "section": "Transplantation. Transplants",
+                "unused": false
+            },
+            {
+                "code": "WO 32",
+                "name": "-WO 33 .",
+                "notes": "",
+                "section": "Transplantation. Transplants",
+                "unused": false
+            },
+            {
+                "code": "WO 188",
+                "name": "",
+                "notes": "",
+                "section": "Wounds and Injuries",
+                "unused": false
+            },
+            {
+                "code": "WO 704",
+                "name": "",
+                "notes": "",
+                "section": "Wounds and Injuries",
+                "unused": false
+            },
+            {
+                "code": "WO 440",
+                "name": "; on surgery of individual organs or systems in WS 260-340 .",
+                "notes": "",
+                "section": "Special Age Groups",
+                "unused": false
+            },
+            {
+                "code": "WO 445",
+                "name": "",
+                "notes": "",
+                "section": "Special Age Groups",
+                "unused": false
+            }
+        ]
+    },
+    "WP": {
+        "schedule_code": "WP",
+        "schedule_name": "Reproductive Medicine",
+        "url": "https://classification.nlm.nih.gov/schedules/WP",
+        "total_entries": 14,
+        "entries": [
+            {
+                "code": "WP 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WP 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WP 50",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WP 100",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WP 95",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WP 130",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WP 21.5",
+                "name": "Classify works on diseases only in WP 135 . Classify works on semen analysis in QY 190 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WP 21",
+                "name": "Classify works on diseases only in WP 140 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WP 101",
+                "name": "",
+                "notes": "",
+                "section": "Anatomy. Genital Diseases. Injuries",
+                "unused": false
+            },
+            {
+                "code": "WP 180",
+                "name": "; WP 250 .",
+                "notes": "",
+                "section": "Anatomy. Genital Diseases. Injuries",
+                "unused": false
+            },
+            {
+                "code": "WP 400",
+                "name": "",
+                "notes": "",
+                "section": "Uterine Diseases",
+                "unused": false
+            },
+            {
+                "code": "WP 458",
+                "name": "",
+                "notes": "",
+                "section": "Uterine Diseases",
+                "unused": false
+            },
+            {
+                "code": "WP 320",
+                "name": "",
+                "notes": "",
+                "section": "Physiology",
+                "unused": false
+            },
+            {
+                "code": "WP 645",
+                "name": "Classify works on female circumcision in WJ 170 .",
+                "notes": "",
+                "section": "Therapy of Genital Diseases",
+                "unused": false
+            },
+            {
+                "code": "WP 900",
+                "name": "",
+                "notes": "",
+                "section": "Therapy.  Surgery",
+                "unused": false
+            }
+        ]
+    },
+    "WQ": {
+        "schedule_code": "WQ",
+        "schedule_name": "Obstetrics. Pregnancy",
+        "url": "https://classification.nlm.nih.gov/schedules/WQ",
+        "total_entries": 10,
+        "entries": [
+            {
+                "code": "WQ 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WQ 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WQ 100",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WQ 165",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WQ 21",
+                "name": "Classify general works on pregnancy alone in WQ 200 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WQ 150",
+                "name": "",
+                "notes": "",
+                "section": "Midwifery.  Prenatal Care",
+                "unused": false
+            },
+            {
+                "code": "WQ 445",
+                "name": "Induced abortion; W 867 Illegal abortion. Classify works on perinatal mortality in WA 900 .",
+                "notes": "",
+                "section": "Pregnancy Complications",
+                "unused": false
+            },
+            {
+                "code": "WQ 215",
+                "name": "",
+                "notes": "",
+                "section": "Pregnancy Complications",
+                "unused": false
+            },
+            {
+                "code": "WQ 152",
+                "name": "; works on birth setting in WQ 155 .",
+                "notes": "",
+                "section": "Childbirth. Obstetric Labor",
+                "unused": false
+            },
+            {
+                "code": "WQ 415",
+                "name": "",
+                "notes": "",
+                "section": "Obstetric Surgical Procedures",
+                "unused": false
+            },
+            {
+                "code": "WQ 225",
+                "name": "Spontaneous abortion, WQ 32 legal abortion, and W 867 Illegal abortion. Classify works on sociological and religious aspects of induced abortion in HQ 767-767.52. Classify works on public health aspects of abortion in WA 550 .",
+                "notes": "",
+                "section": "Obstetric Surgical Procedures",
+                "unused": false
+            }
+        ]
+    },
+    "WR": {
+        "schedule_code": "WR",
+        "schedule_name": "Dermatology. Integumentary System",
+        "url": "https://classification.nlm.nih.gov/schedules/WR",
+        "total_entries": 14,
+        "entries": [
+            {
+                "code": "WR 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WR 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WR 100",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WR 140",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WR 100",
+                "name": "",
+                "notes": "",
+                "section": "Skin Diseases",
+                "unused": false
+            },
+            {
+                "code": "WR 200",
+                "name": "; on occupational dermatitis in WR 600 ; on neurodermatitis in WR 280 .",
+                "notes": "",
+                "section": "Skin Diseases",
+                "unused": false
+            },
+            {
+                "code": "WR 267",
+                "name": "",
+                "notes": "",
+                "section": "Skin Diseases",
+                "unused": false
+            },
+            {
+                "code": "WR 600",
+                "name": "Occupational dermatitis.",
+                "notes": "",
+                "section": "Skin Diseases",
+                "unused": false
+            },
+            {
+                "code": "WR 150",
+                "name": "",
+                "notes": "",
+                "section": "Skin Diseases",
+                "unused": false
+            },
+            {
+                "code": "WR 180",
+                "name": "; on seborrhea in WR 415 .",
+                "notes": "",
+                "section": "Skin Diseases",
+                "unused": false
+            },
+            {
+                "code": "WR 345",
+                "name": "",
+                "notes": "",
+                "section": "Skin Diseases",
+                "unused": false
+            },
+            {
+                "code": "WR 265",
+                "name": "",
+                "notes": "",
+                "section": "Skin Diseases",
+                "unused": false
+            },
+            {
+                "code": "WR 310",
+                "name": "",
+                "notes": "",
+                "section": "Skin Diseases",
+                "unused": false
+            },
+            {
+                "code": "WR 350",
+                "name": "",
+                "notes": "",
+                "section": "Parasitic Skin Diseases",
+                "unused": false
+            },
+            {
+                "code": "WR 175",
+                "name": "Contact dermatitis.",
+                "notes": "",
+                "section": "Occupational Dermatitis",
+                "unused": false
+            }
+        ]
+    },
+    "WS": {
+        "schedule_code": "WS",
+        "schedule_name": "Pediatrics",
+        "url": "https://classification.nlm.nih.gov/schedules/WS",
+        "total_entries": 38,
+        "entries": [
+            {
+                "code": "WS 260",
+                "name": "-342 . Classify works on specific diseases with the disease unless otherwise instructed. Classify works on anatomy and physiology of the child in QS or QT. Classify works on pediatric surgery in WO 925 . Classify general works on pediatric and adolescent nursing in WY 159 . Classify works on pediatric and adolescent nursing in special fields by type, e.g., on pediatric surgical nursing in WY 161 . Classify works on pediatric dentistry in WU 480 .",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WS 260",
+                "name": "-342 . Classify works on specific diseases with the disease unless otherwise instructed. Classify works on anatomy and physiology of the child in QS or QT. Classify works on pediatric surgery in WO 925 . Classify general works on pediatric and adolescent nursing in WY 159 . Classify works on pediatric and adolescent nursing in special fields by type, e.g., on pediatric surgical nursing in WY 161 . Classify works on pediatric dentistry in WU 480 .",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WS 260",
+                "name": "-342 . Classify works on specific diseases with the disease unless otherwise instructed. Classify works on anatomy and physiology of the child in QS or QT. Classify works on pediatric surgery in WO 925 . Classify general works on pediatric and adolescent nursing in WY 159 . Classify works on pediatric and adolescent nursing in special fields by type, e.g., on pediatric surgical nursing in WY 161 . Classify works on pediatric dentistry in WU 480 .",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WS 260",
+                "name": "-342 . Classify works on specific diseases with the disease unless otherwise instructed. Classify works on anatomy and physiology of the child in QS or QT. Classify works on pediatric surgery in WO 925 . Classify general works on pediatric and adolescent nursing in WY 159 . Classify works on pediatric and adolescent nursing in special fields by type, e.g., on pediatric surgical nursing in WY 161 . Classify works on pediatric dentistry in WU 480 .",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WS 260",
+                "name": "-342 . Classify works on specific diseases with the disease unless otherwise instructed. Classify works on anatomy and physiology of the child in QS or QT. Classify works on pediatric surgery in WO 925 . Classify general works on pediatric and adolescent nursing in WY 159 . Classify works on pediatric and adolescent nursing in special fields by type, e.g., on pediatric surgical nursing in WY 161 . Classify works on pediatric dentistry in WU 480 .",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WS 260",
+                "name": "-342 . Classify works on specific diseases with the disease unless otherwise instructed. Classify works on anatomy and physiology of the child in QS or QT. Classify works on pediatric surgery in WO 925 . Classify general works on pediatric and adolescent nursing in WY 159 . Classify works on pediatric and adolescent nursing in special fields by type, e.g., on pediatric surgical nursing in WY 161 . Classify works on pediatric dentistry in WU 480 .",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WS 260",
+                "name": "-342 . Classify works on specific diseases with the disease unless otherwise instructed.",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WS 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WS 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WS 21",
+                "name": "Classify works on diseases alone in WS 200 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WS 460",
+                "name": "",
+                "notes": "",
+                "section": "Growth and Development",
+                "unused": false
+            },
+            {
+                "code": "WS 105.5.S5",
+                "name": "",
+                "notes": "",
+                "section": "Growth and Development",
+                "unused": false
+            },
+            {
+                "code": "WS 106",
+                "name": "-107 .",
+                "notes": "",
+                "section": "Growth and Development",
+                "unused": false
+            },
+            {
+                "code": "WS 105.5.S6",
+                "name": "Race relations.",
+                "notes": "",
+                "section": "Growth and Development",
+                "unused": false
+            },
+            {
+                "code": "WS 105.5.I5",
+                "name": "Interpersonal relations.",
+                "notes": "",
+                "section": "Growth and Development",
+                "unused": false
+            },
+            {
+                "code": "WS 107",
+                "name": "",
+                "notes": "",
+                "section": "Exceptional Child",
+                "unused": false
+            },
+            {
+                "code": "WS 105.5.A8",
+                "name": "",
+                "notes": "",
+                "section": "Exceptional Child",
+                "unused": false
+            },
+            {
+                "code": "WS 105.5.H7",
+                "name": "",
+                "notes": "",
+                "section": "Exceptional Child",
+                "unused": false
+            },
+            {
+                "code": "WS 120",
+                "name": "-125 , on children ages 2-12 in WS 130 and on adolescents alone in WS 132 . Classify eating disorders regardless of age group in WM 175 .",
+                "notes": "",
+                "section": "Child Care.  Nutrition",
+                "unused": false
+            },
+            {
+                "code": "WS 430",
+                "name": "",
+                "notes": "",
+                "section": "General Diseases of Children and Adolescents",
+                "unused": false
+            },
+            {
+                "code": "WS 312",
+                "name": ", WS 322, and WS 342 . Classify works on diseases in premature infants in WS 410 . Classify works on diseases in newborn infants in WS 421 .",
+                "notes": "",
+                "section": "By System",
+                "unused": false
+            },
+            {
+                "code": "WS 312",
+                "name": ", WS 322, and WS 342 . Classify works on diseases in premature infants in WS 410 . Classify works on diseases in newborn infants in WS 421 .",
+                "notes": "",
+                "section": "By System",
+                "unused": false
+            },
+            {
+                "code": "WS 312",
+                "name": ", WS 322, and WS 342 . Classify works on diseases in premature infants in WS 410 . Classify works on diseases in newborn infants in WS 421 .",
+                "notes": "",
+                "section": "By System",
+                "unused": false
+            },
+            {
+                "code": "WS 312",
+                "name": ", WS 322, and WS 342 . Classify works on diseases in premature infants in WS 410 . Classify works on diseases in newborn infants in WS 421 .",
+                "notes": "",
+                "section": "By System",
+                "unused": false
+            },
+            {
+                "code": "WS 312",
+                "name": ", WS 322, and WS 342 . Classify works on diseases in premature infants in WS 410 . Classify works on diseases in newborn infants in WS 421 .",
+                "notes": "",
+                "section": "By System",
+                "unused": false
+            },
+            {
+                "code": "WS 312",
+                "name": ", WS 322, and WS 342 .",
+                "notes": "",
+                "section": "By System",
+                "unused": false
+            },
+            {
+                "code": "WS 410",
+                "name": "",
+                "notes": "",
+                "section": "By System",
+                "unused": false
+            },
+            {
+                "code": "WS 421",
+                "name": "",
+                "notes": "",
+                "section": "By System",
+                "unused": false
+            },
+            {
+                "code": "WS 107",
+                "name": "The intellectually disabled child.",
+                "notes": "",
+                "section": "Child Psychiatry. Child Mental Disorders",
+                "unused": false
+            },
+            {
+                "code": "WS 105.5.S6",
+                "name": "",
+                "notes": "",
+                "section": "Child Psychiatry. Child Mental Disorders",
+                "unused": false
+            },
+            {
+                "code": "WS 105.5.P3",
+                "name": "",
+                "notes": "",
+                "section": "Child Psychiatry. Child Mental Disorders",
+                "unused": false
+            },
+            {
+                "code": "WS 350.8.A4",
+                "name": "",
+                "notes": "",
+                "section": "Child Psychiatry. Child Mental Disorders",
+                "unused": false
+            },
+            {
+                "code": "WS 320",
+                "name": "-321 .",
+                "notes": "",
+                "section": "Pediatric Therapeutics",
+                "unused": false
+            },
+            {
+                "code": "WS 350.33",
+                "name": "",
+                "notes": "",
+                "section": "Pediatric Therapeutics",
+                "unused": false
+            },
+            {
+                "code": "WS 342",
+                "name": "",
+                "notes": "",
+                "section": "Topics Related to Specific Age Groups",
+                "unused": false
+            },
+            {
+                "code": "WS 342",
+                "name": "",
+                "notes": "",
+                "section": "Topics Related to Specific Age Groups",
+                "unused": false
+            },
+            {
+                "code": "WS 462.5.S5",
+                "name": "",
+                "notes": "",
+                "section": "Adolescent Psychology.  Adolescent Psychiatry. Adolescent Mental Disorders",
+                "unused": false
+            },
+            {
+                "code": "WS 107",
+                "name": "The intellectually disabled adolescent. Classify works on particular mental disorders in WM 171-197 .",
+                "notes": "",
+                "section": "Adolescent Psychology.  Adolescent Psychiatry. Adolescent Mental Disorders",
+                "unused": false
+            },
+            {
+                "code": "WS 470.A4",
+                "name": "",
+                "notes": "",
+                "section": "Adolescent Psychology.  Adolescent Psychiatry. Adolescent Mental Disorders",
+                "unused": false
+            }
+        ]
+    },
+    "WT": {
+        "schedule_code": "WT",
+        "schedule_name": "Geriatrics",
+        "url": "https://classification.nlm.nih.gov/schedules/WT",
+        "total_entries": 4,
+        "entries": [
+            {
+                "code": "WT 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WT 23-24 .",
+                "notes": "",
+                "section": "Reference Works. General Works",
+                "unused": false
+            },
+            {
+                "code": "WT 21",
+                "name": "Classify works on specific diseases with the disease in other schedules; on nursing of specific diseases in WY 152 ; on anesthesia in WO 445 ; on surgery in WO 950 .",
+                "notes": "",
+                "section": "Reference Works. General Works",
+                "unused": false
+            },
+            {
+                "code": "WT 150",
+                "name": "",
+                "notes": "",
+                "section": "Geriatric Psychology, Psychiatry and Mental Disorders",
+                "unused": false
+            },
+            {
+                "code": "WT 145",
+                "name": "",
+                "notes": "",
+                "section": "Geriatric Psychology, Psychiatry and Mental Disorders",
+                "unused": false
+            }
+        ]
+    },
+    "WU": {
+        "schedule_code": "WU",
+        "schedule_name": "Dentistry. Oral Surgery",
+        "url": "https://classification.nlm.nih.gov/schedules/WU",
+        "total_entries": 26,
+        "entries": [
+            {
+                "code": "WU 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WU 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WU 30",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WU 317",
+                "name": "Classify atlases on orthodontics in WU 417 . Classify atlases on prosthodontics in WU 507 . Classify atlases on oral surgical procedures in WU 600.7 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WU 18",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WU 180",
+                "name": "-190 ; on orthodontic appliances in WU 426 ; on dental prostheses in WU 510 ; on maxillofacial prostheses in WU 626 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WU 49",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WU 113.6",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WU 210",
+                "name": "-WU 240.5 .",
+                "notes": "",
+                "section": "Stomatognathic System",
+                "unused": false
+            },
+            {
+                "code": "WU 600",
+                "name": "Oral surgical procedures. Classify works on tooth abnormalities in WU 260 .",
+                "notes": "",
+                "section": "Stomatognathic System",
+                "unused": false
+            },
+            {
+                "code": "WU 215",
+                "name": "",
+                "notes": "",
+                "section": "Stomatognathic System",
+                "unused": false
+            },
+            {
+                "code": "WU 29.3",
+                "name": "",
+                "notes": "",
+                "section": "Stomatognathic System",
+                "unused": false
+            },
+            {
+                "code": "WU 80",
+                "name": "",
+                "notes": "",
+                "section": "Stomatognathic System",
+                "unused": false
+            },
+            {
+                "code": "WU 115",
+                "name": "Cf. WA 350 School dental services. Classify general works on pediatric dentistry in WU 480 .",
+                "notes": "",
+                "section": "Stomatognathic System",
+                "unused": false
+            },
+            {
+                "code": "WU 270",
+                "name": "Tooth Demineralization.",
+                "notes": "",
+                "section": "Stomatognathic System",
+                "unused": false
+            },
+            {
+                "code": "WU 113.6",
+                "name": "",
+                "notes": "",
+                "section": "Stomatognathic System",
+                "unused": false
+            },
+            {
+                "code": "WU 140.5",
+                "name": "; classify works on mouth diseases alone in WU 140.8 .",
+                "notes": "",
+                "section": "Stomatognathic Diseases.  Injuries.  Technology.  Therapeutics",
+                "unused": false
+            },
+            {
+                "code": "WU 610",
+                "name": "Injuries and surgery of the jaw.",
+                "notes": "",
+                "section": "Stomatognathic Diseases.  Injuries.  Technology.  Therapeutics",
+                "unused": false
+            },
+            {
+                "code": "WU 141",
+                "name": "",
+                "notes": "",
+                "section": "Stomatognathic Diseases.  Injuries.  Technology.  Therapeutics",
+                "unused": false
+            },
+            {
+                "code": "WU 141",
+                "name": "",
+                "notes": "",
+                "section": "Stomatognathic Diseases.  Injuries.  Technology.  Therapeutics",
+                "unused": false
+            },
+            {
+                "code": "WU 215",
+                "name": "",
+                "notes": "",
+                "section": "Stomatognathic Diseases.  Injuries.  Technology.  Therapeutics",
+                "unused": false
+            },
+            {
+                "code": "WU 247",
+                "name": "Classify works on mouth injuries in WU 140.8 .",
+                "notes": "",
+                "section": "Stomatognathic Diseases.  Injuries.  Technology.  Therapeutics",
+                "unused": false
+            },
+            {
+                "code": "WU 640",
+                "name": "",
+                "notes": "",
+                "section": "Dentition",
+                "unused": false
+            },
+            {
+                "code": "WU 317",
+                "name": "-WU 360 .",
+                "notes": "",
+                "section": "Periodontal Diseases. Tooth Diseases",
+                "unused": false
+            },
+            {
+                "code": "WU 270",
+                "name": "",
+                "notes": "",
+                "section": "Operative Dentistry",
+                "unused": false
+            },
+            {
+                "code": "WU 113.6",
+                "name": "",
+                "notes": "",
+                "section": "Other Dental Specialties and Special Patient Groups",
+                "unused": false
+            },
+            {
+                "code": "WU 626",
+                "name": "",
+                "notes": "",
+                "section": "Prosthodontics",
+                "unused": false
+            }
+        ]
+    },
+    "WV": {
+        "schedule_code": "WV",
+        "schedule_name": "Otolaryngology",
+        "url": "https://classification.nlm.nih.gov/schedules/WV",
+        "total_entries": 16,
+        "entries": [
+            {
+                "code": "WV 1",
+                "name": "-39 are assigned to works on the specialties otology, rhinology, and laryngology when treated individually as well as in combination. Classify works on otolaryngological nursing and nursing of patients with specific diseases of the ear, nose, or throat in WY 158.5 .",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WV 1",
+                "name": "-39 are assigned to works on the specialties otology, rhinology, and laryngology when treated individually as well as in combination. Classify works on otolaryngological nursing and nursing of patients with specific diseases of the ear, nose, or throat in WY 158.5 .",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WV 1",
+                "name": "-39 are assigned to works on the specialties otology, rhinology, and laryngology when treated individually as well as in combination.",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WV 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WV 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WV 100",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WV 140",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WV 100",
+                "name": "",
+                "notes": "",
+                "section": "Diseases. Therapeutics",
+                "unused": false
+            },
+            {
+                "code": "WV 101",
+                "name": "Classify works on physiology of hearing in WV 268. Classify works on testing of hearing in WV 272.",
+                "notes": "",
+                "section": "Ear",
+                "unused": false
+            },
+            {
+                "code": "WV 270",
+                "name": "",
+                "notes": "",
+                "section": "Ear",
+                "unused": false
+            },
+            {
+                "code": "WV 410",
+                "name": "",
+                "notes": "",
+                "section": "Nose",
+                "unused": false
+            },
+            {
+                "code": "WV 300",
+                "name": "- WV 301 .",
+                "notes": "",
+                "section": "Nose",
+                "unused": false
+            },
+            {
+                "code": "WV 300",
+                "name": "- WV 301 .",
+                "notes": "",
+                "section": "Nose",
+                "unused": false
+            },
+            {
+                "code": "WV 410",
+                "name": "",
+                "notes": "",
+                "section": "Nose",
+                "unused": false
+            },
+            {
+                "code": "WV 410",
+                "name": "",
+                "notes": "",
+                "section": "Nose",
+                "unused": false
+            },
+            {
+                "code": "WV 530",
+                "name": "Classify surgery of the larynx in WV 540 .",
+                "notes": "",
+                "section": "Larynx. Voice. Speech",
+                "unused": false
+            },
+            {
+                "code": "WV 485.",
+                "name": "",
+                "notes": "",
+                "section": "Larynx. Voice. Speech",
+                "unused": false
+            }
+        ]
+    },
+    "WW": {
+        "schedule_code": "WW",
+        "schedule_name": "Ophthalmology",
+        "url": "https://classification.nlm.nih.gov/schedules/WW",
+        "total_entries": 23,
+        "entries": [
+            {
+                "code": "WW 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WW 23-24 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WW 352",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WW 100",
+                "name": "Classify works on optometry and opticianry in WW 21.7 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WW 140",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WW 150",
+                "name": "Color perception.",
+                "notes": "",
+                "section": "Eye Anatomy.  Physiology",
+                "unused": false
+            },
+            {
+                "code": "WW 140.5",
+                "name": "; eye protective devices in WW 26 .",
+                "notes": "",
+                "section": "Eye Anatomy.  Physiology",
+                "unused": false
+            },
+            {
+                "code": "WW 100",
+                "name": "Classify works on eye infections or hypersensitivity diseases in WW 160 .",
+                "notes": "",
+                "section": "Diseases.  Color Perception",
+                "unused": false
+            },
+            {
+                "code": "WW 276",
+                "name": "",
+                "notes": "",
+                "section": "Diseases.  Color Perception",
+                "unused": false
+            },
+            {
+                "code": "WW 410",
+                "name": "; on electroretinography or ophthalmodynamometry in WW 270 ; on gonioscopy in WW 210 .",
+                "notes": "",
+                "section": "Diseases.  Color Perception",
+                "unused": false
+            },
+            {
+                "code": "WW 105",
+                "name": "Visual perception",
+                "notes": "",
+                "section": "Diseases.  Color Perception",
+                "unused": false
+            },
+            {
+                "code": "WW 140",
+                "name": "",
+                "notes": "",
+                "section": "Diseases.  Color Perception",
+                "unused": false
+            },
+            {
+                "code": "WW 168",
+                "name": "Ophthalmologic surgical procedures",
+                "notes": "",
+                "section": "Therapeutics.  Eye Banks",
+                "unused": false
+            },
+            {
+                "code": "WW 340",
+                "name": "Refractive surgery.",
+                "notes": "",
+                "section": "Therapeutics.  Eye Banks",
+                "unused": false
+            },
+            {
+                "code": "WW 21.7",
+                "name": "",
+                "notes": "",
+                "section": "Optometry",
+                "unused": false
+            },
+            {
+                "code": "WW 358",
+                "name": "or if exclusively for cataract therapy, in WW 260 .",
+                "notes": "",
+                "section": "Optometry",
+                "unused": false
+            },
+            {
+                "code": "WW 460",
+                "name": "Classify works on eye manifestations of specific diseases with disease.",
+                "notes": "",
+                "section": "Manifestations of Disease",
+                "unused": false
+            },
+            {
+                "code": "WW 505",
+                "name": "",
+                "notes": "",
+                "section": "Occupational Ophthalmology.  Eye Injuries",
+                "unused": false
+            },
+            {
+                "code": "WW 168",
+                "name": "",
+                "notes": "",
+                "section": "Age Groups",
+                "unused": false
+            },
+            {
+                "code": "WW 168",
+                "name": "",
+                "notes": "",
+                "section": "Age Groups",
+                "unused": false
+            },
+            {
+                "code": "WW 350",
+                "name": "",
+                "notes": "",
+                "section": "Age Groups",
+                "unused": false
+            },
+            {
+                "code": "WW 21.7",
+                "name": "",
+                "notes": "",
+                "section": "Age Groups",
+                "unused": false
+            },
+            {
+                "code": "WW 22",
+                "name": "",
+                "notes": "",
+                "section": "Age Groups",
+                "unused": false
+            },
+            {
+                "code": "WW 22",
+                "name": "",
+                "notes": "",
+                "section": "Age Groups",
+                "unused": false
+            }
+        ]
+    },
+    "WX": {
+        "schedule_code": "WX",
+        "schedule_name": "Hospitals and Other Health Facilities",
+        "url": "https://classification.nlm.nih.gov/schedules/WX",
+        "total_entries": 14,
+        "entries": [
+            {
+                "code": "WX 22",
+                "name": "Classify other serials issued by societies in W1 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WX 27",
+                "name": "-28 History of individual hospitals or groups of individual hospitals.",
+                "notes": "Classify history of emergency or ambulance services in WX 215 .",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WX 40",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WX 155",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WX 147",
+                "name": "Classify catalogs in W 26 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WX 2",
+                "name": "Classify reports of army hospitals in WD 927-928 ; on those of naval hospitals in WD 827-828 . Classify works on special types of hospitals or of specialized departments of general hospitals in the appropriate schedule for the field, e.g., isolation hospitals in WC 27-28 . Classify works on psychiatric departments of general hospitals in WM 27-28 , etc.",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WX 205",
+                "name": "Hospital outpatient clinics.",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WX 159",
+                "name": "; those for hospital medical staff only in WX 203 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WX 223",
+                "name": "",
+                "notes": "",
+                "section": "Facility Design and Construction.  Equipment",
+                "unused": false
+            },
+            {
+                "code": "WX 16",
+                "name": "Classify works on hospitalization insurance in W 160 .",
+                "notes": "",
+                "section": "Hospital Administration and Health Facility Administration",
+                "unused": false
+            },
+            {
+                "code": "WX 203",
+                "name": "",
+                "notes": "",
+                "section": "Hospital Administration and Health Facility Administration",
+                "unused": false
+            },
+            {
+                "code": "WX 159",
+                "name": "",
+                "notes": "",
+                "section": "Clinical Departments and Units",
+                "unused": false
+            },
+            {
+                "code": "WX 186",
+                "name": "",
+                "notes": "",
+                "section": "Clinical Departments and Units",
+                "unused": false
+            },
+            {
+                "code": "WX 158",
+                "name": "Patient transfer",
+                "notes": "",
+                "section": "Clinical Departments and Units",
+                "unused": false
+            }
+        ]
+    },
+    "WY": {
+        "schedule_code": "WY",
+        "schedule_name": "Nursing",
+        "url": "https://classification.nlm.nih.gov/schedules/WY",
+        "total_entries": 25,
+        "entries": [
+            {
+                "code": "WY 150",
+                "name": "-170 ) or by emphasis, e.g., nursing care of eye diseases in WY 158 . Classify background materials on specific subjects prepared for a nursing audience by subject, e.g., surgery for nurses, WO 100 ; bacteriology for nurses, QW 50 . Classify works which include the nurse's role in WY.",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WY 150",
+                "name": "-170 ) or by emphasis, e.g., nursing care of eye diseases in WY 158 . Classify background materials on specific subjects prepared for a nursing audience by subject, e.g., surgery for nurses, WO 100 ; bacteriology for nurses, QW 50 . Classify works which include the nurse's role in WY.",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WY 150",
+                "name": "-170 ) or by emphasis, e.g., nursing care of eye diseases in WY 158 . Classify background materials on specific subjects prepared for a nursing audience by subject, e.g., surgery for nurses, WO 100 ; bacteriology for nurses, QW 50 . Classify works which include the nurse's role in WY.",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WY 150",
+                "name": "-170 ) or by emphasis, e.g., nursing care of eye diseases in WY 158 . Classify background materials on specific subjects prepared for a nursing audience by subject, e.g., surgery for nurses, WO 100 ; bacteriology for nurses, QW 50 . Classify works which include the nurse's role in WY.",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WY 150",
+                "name": "-170 ) or by emphasis, e.g., nursing care of eye diseases in WY 158 .",
+                "notes": "",
+                "section": "Schedule Contents",
+                "unused": false
+            },
+            {
+                "code": "WY 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WY 23-24 .",
+                "notes": "",
+                "section": "Reference Works",
+                "unused": false
+            },
+            {
+                "code": "WY 19",
+                "name": ", on history of nursing institutes in WY 23-24 .",
+                "notes": "",
+                "section": "Reference Works",
+                "unused": false
+            },
+            {
+                "code": "WY 101",
+                "name": "-200 .",
+                "notes": "",
+                "section": "Reference Works",
+                "unused": false
+            },
+            {
+                "code": "WY 101",
+                "name": "-200 .",
+                "notes": "",
+                "section": "Reference Works",
+                "unused": false
+            },
+            {
+                "code": "WY 49",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works",
+                "unused": false
+            },
+            {
+                "code": "WY 150",
+                "name": "-164 .",
+                "notes": "",
+                "section": "Referral.  Nursing Care, Assessment and Audit",
+                "unused": false
+            },
+            {
+                "code": "WY 150",
+                "name": "General works on nursing in special fields of medicine.",
+                "notes": "",
+                "section": "Nursing Specialties",
+                "unused": false
+            },
+            {
+                "code": "WY 108",
+                "name": "Classify works on visiting nurses in WY 115 .",
+                "notes": "",
+                "section": "Nursing Specialties",
+                "unused": false
+            },
+            {
+                "code": "WY 130",
+                "name": "Governmental nursing services.",
+                "notes": "",
+                "section": "Nursing Specialties",
+                "unused": false
+            },
+            {
+                "code": "WY 200",
+                "name": "Home nursing by non-professionals. Classify here works on visiting nursing, visiting nurses associations, and respite care.",
+                "notes": "",
+                "section": "Nursing Specialties",
+                "unused": false
+            },
+            {
+                "code": "WY 105",
+                "name": "Administrative work.",
+                "notes": "",
+                "section": "Nursing Specialties",
+                "unused": false
+            },
+            {
+                "code": "WY 108",
+                "name": "Public health nursing.",
+                "notes": "",
+                "section": "Nursing Specialties",
+                "unused": false
+            },
+            {
+                "code": "WY 150",
+                "name": "-170 ) or by emphasis, e.g., nursing care of eye diseases in WY 158 .",
+                "notes": "",
+                "section": "Nursing in Special Fields of Medicine",
+                "unused": false
+            },
+            {
+                "code": "WY 161",
+                "name": "Postanesthesia nursing.",
+                "notes": "",
+                "section": "Nursing in Special Fields of Medicine",
+                "unused": false
+            },
+            {
+                "code": "WY 151",
+                "name": "nurse anesthetics; WY 161-162 Perioperative nursing.",
+                "notes": "",
+                "section": "Nursing in Special Fields of Medicine",
+                "unused": false
+            },
+            {
+                "code": "WY 161",
+                "name": "",
+                "notes": "",
+                "section": "Nursing in Special Fields of Medicine",
+                "unused": false
+            },
+            {
+                "code": "WY 151",
+                "name": "nurse anesthetists",
+                "notes": "",
+                "section": "Nursing in Special Fields of Medicine",
+                "unused": false
+            },
+            {
+                "code": "WY 160",
+                "name": "",
+                "notes": "",
+                "section": "Other  Services",
+                "unused": false
+            },
+            {
+                "code": "WY 115",
+                "name": "Home care provided by professionals.",
+                "notes": "",
+                "section": "Other  Services",
+                "unused": false
+            },
+            {
+                "code": "WY 100",
+                "name": "",
+                "notes": "",
+                "section": "Other  Services",
+                "unused": false
+            }
+        ]
+    },
+    "WZ": {
+        "schedule_code": "WZ",
+        "schedule_name": "History of Medicine. Medical Miscellany",
+        "url": "https://classification.nlm.nih.gov/schedules/WZ",
+        "total_entries": 18,
+        "entries": [
+            {
+                "code": "WZ 22",
+                "name": "Classify other serials issued by societies in W1 . For academies and institutes, see WZ 23 .",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WZ 39",
+                "name": "",
+                "notes": "",
+                "section": "Reference Works.  General Works",
+                "unused": false
+            },
+            {
+                "code": "WZ 70",
+                "name": "when applicable.",
+                "notes": "",
+                "section": "History by Period, Locality, etc.",
+                "unused": false
+            },
+            {
+                "code": "WZ 294",
+                "name": "Modern criticism and bibliographies of early works.",
+                "notes": "Include here works about two persons or a family, e.g., the Mayos.",
+                "section": "Biography",
+                "unused": false
+            },
+            {
+                "code": "WZ 121",
+                "name": "-150 .",
+                "notes": "Classify collective biographies of persons outside the field of medicine in the appropriate LC schedule.",
+                "section": "Biography",
+                "unused": false
+            },
+            {
+                "code": "WZ 112.5.N8",
+                "name": "Classify collective biographies of all other military health personnel in WZ 112.5.M4 regardless of specialty. Classify biography of individuals in WZ 100 regardless of specialty.",
+                "notes": "",
+                "section": "Biography",
+                "unused": false
+            },
+            {
+                "code": "WZ 112.5.M4",
+                "name": "above.",
+                "notes": "",
+                "section": "Biography",
+                "unused": false
+            },
+            {
+                "code": "WZ 290.",
+                "name": "",
+                "notes": "",
+                "section": "Manuscripts",
+                "unused": false
+            },
+            {
+                "code": "WZ 290.",
+                "name": "",
+                "notes": "",
+                "section": "Manuscripts",
+                "unused": false
+            },
+            {
+                "code": "WZ 290",
+                "name": "",
+                "notes": "",
+                "section": "Early Printed Books",
+                "unused": false
+            },
+            {
+                "code": "WZ 290",
+                "name": "",
+                "notes": "",
+                "section": "Americana",
+                "unused": false
+            },
+            {
+                "code": "WZ 270",
+                "name": "Do not include here 19th Century revised editions of 18th Century imprints.",
+                "notes": "(Cf. 19th Century schedule for works and reprints of works published 1801-1913.)",
+                "section": "Modern Versions and Commentaries of Early Works",
+                "unused": false
+            },
+            {
+                "code": "WZ 290",
+                "name": "",
+                "notes": "",
+                "section": "Modern Versions and Commentaries of Early Works",
+                "unused": false
+            },
+            {
+                "code": "WZ 100",
+                "name": "Classify in WZ 290 works that include the original text unless it is decidedly subordinate to the commentary. Classify here a bibliography of a single work. Cf. WZ 100 for bibliography of a single author's works.",
+                "notes": "",
+                "section": "Modern Versions and Commentaries of Early Works",
+                "unused": false
+            },
+            {
+                "code": "WZ 336",
+                "name": "",
+                "notes": "",
+                "section": "Miscellany Relating to Medicine",
+                "unused": false
+            },
+            {
+                "code": "WZ 350",
+                "name": "Literary works by health professionals.",
+                "notes": "",
+                "section": "Miscellany Relating to Medicine",
+                "unused": false
+            },
+            {
+                "code": "WZ 330",
+                "name": "Cf. WM 49 Art as related to psychiatry. Cf. WZ 350 Artistic works by health professionals.",
+                "notes": "",
+                "section": "Miscellany Relating to Medicine",
+                "unused": false
+            },
+            {
+                "code": "WZ 330",
+                "name": "-331 Medicine in literature and art.",
+                "notes": "",
+                "section": "Miscellany Relating to Medicine",
+                "unused": false
+            }
+        ]
+    }
+}

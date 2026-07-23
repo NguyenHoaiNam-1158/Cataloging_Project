@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+body { @apply bg-canvas text-slate-800 font-sans antialiased; }
+
+/* thanh cuộn mảnh cho panel */
+.thin-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
+.thin-scroll::-webkit-scrollbar-thumb { @apply bg-slate-300 rounded-full; }
