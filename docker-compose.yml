@@ -53,35 +53,20 @@ services:
   # 4. EXTRACT MODULE (OCR + AI Extraction)
   extract-module:
     build:
-      context: ./backend/extract_module
-      dockerfile: Dockerfile
+      context: ./backend
+      dockerfile: extract_module/Dockerfile
     container_name: project_extract_module
-    restart: unless-stopped
+    restart: "no"
     env_file:
       - .env
     volumes:
       - ./OCR/paddle markdown:/app/paddle markdown
-      - ./OCR/BC KHCN:/app/data
+      - ./OCR/BC KHCN:/app/extract_module/data
     depends_on:
       - db
     networks:
       - project_network
 
-  # 5. FRONTEND MODULE (Ví dụ dùng Node/React/Vue)
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    container_name: project_frontend
-    restart: unless-stopped
-    env_file:
-      - .env
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend
-    networks:
-      - project_network
 
 # Định nghĩa Volume lưu trữ cứng cho Database
 volumes:

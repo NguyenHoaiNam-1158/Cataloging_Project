@@ -21,7 +21,7 @@ venv/
 # ==========================================
 # 3. FRONTEND (UI)
 # ==========================================
-frontend/node_modules/
+node_modules/
 frontend/dist/
 frontend/build/
 frontend/.next/
