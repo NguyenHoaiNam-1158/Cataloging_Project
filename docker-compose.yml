@@ -26,6 +26,11 @@ services:
     restart: unless-stopped
     env_file:
       - .env
+    environment:
+      # Model embedding da duoc bake san vao image luc build (xem backend/Dockerfile),
+      # nen khong can goi mang toi huggingface.co de xac thuc cache moi lan container khoi dong.
+      - HF_HUB_OFFLINE=1
+      - TRANSFORMERS_OFFLINE=1
     ports:
       - "8000:8000"
     depends_on:

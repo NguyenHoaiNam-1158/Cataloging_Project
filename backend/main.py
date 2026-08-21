@@ -7,16 +7,18 @@ import argparse
 import asyncio
 import logging
 import tempfile
+import threading
 import uvicorn
 from datetime import datetime
-from fastapi import FastAPI, UploadFile, File, Form
+from fastapi import FastAPI, UploadFile, File, Form, BackgroundTasks
 from fastapi.responses import JSONResponse
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from extract_module.core.orchestrator import CentralOrchestrator
 from mapping_module.core.converters import DocumentConverter
-from dublin_core_module import DublinCoreConverter  
+from mapping_module.core.rag_bridge import get_rag_integration
+from dublin_core_module import DublinCoreConverter
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)-8s | %(message)s")
 logger = logging.getLogger("BACKEND_MAIN")
@@ -31,6 +33,24 @@ TEMP_UPLOAD_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "temp
 os.makedirs(TEMP_UPLOAD_DIR, exist_ok=True)
 
 
+@app.on_event("startup")
+def warm_up_rag():
+    """Nạp trước embedding model + FAISS index ở nền, để request xử lý tài liệu
+    đầu tiên không phải đợi phần lazy-load (xem mapping_module/core/rag_bridge.py)."""
+    def _warm():
+        try:
+            logger.info("Warm-up: đang nạp trước RAG Engine (embedding model + FAISS)...")
+            integration = get_rag_integration()
+            if integration and integration._ensure_ready():
+                logger.info("Warm-up: RAG Engine đã sẵn sàng.")
+            else:
+                logger.warning("Warm-up: RAG Engine không sẵn sàng, sẽ thử lại ở lần dùng đầu tiên.")
+        except Exception:
+            logger.exception("Warm-up RAG thất bại, sẽ thử lại ở lần dùng đầu tiên")
+
+    threading.Thread(target=_warm, daemon=True).start()
+
+
 def _safe_stem(filename: str) -> str:
     """Lấy tên file an toàn để đặt tên output (chống path traversal '../')."""
     base = os.path.basename(filename or "document")   # bỏ mọi thành phần thư mục
@@ -38,8 +58,14 @@ def _safe_stem(filename: str) -> str:
     return "".join(ch if ch.isalnum() or ch in "-_." else "_" for ch in stem)
 
 
+def _cleanup_temp_file(path: str) -> None:
+    if os.path.exists(path):
+        os.remove(path)
+
+
 @app.post("/api/v1/process-document")
 async def process_document(
+    background_tasks: BackgroundTasks,
     file: UploadFile = File(...),
     doc_type: str = Form(None),
     additional_info: str = Form(None)
@@ -48,69 +74,68 @@ async def process_document(
     with open(temp_pdf_path, "wb") as f:
         f.write(await file.read())
 
+    # Dọn file PDF tạm SAU KHI đã trả response cho client (chạy nền), thay vì xoá
+    # đồng bộ ngay trước khi return như trước — tránh làm chậm lúc xuất biểu ghi.
+    background_tasks.add_task(_cleanup_temp_file, temp_pdf_path)
+
     safe_stem = _safe_stem(file.filename)
 
+    status_code, extracted_json = await orchestrator.handle_request(
+        file_path=temp_pdf_path,
+        doc_type=doc_type,
+        additional_info=additional_info
+    )
+
+    if status_code != 200:
+        return JSONResponse(status_code=400, content={"error": "Lỗi trích xuất", "details": extracted_json})
+
+    os.makedirs("output_final", exist_ok=True)
+    output_mrc_path = f"output_final/{safe_stem}.mrc"
+    output_json_path = f"output_final/{safe_stem}_marc.json"
+    output_dc_path = f"output_final/{safe_stem}_dc.json"
+
+    final_marc_dict = None
+    marc_error = None
     try:
-        status_code, extracted_json = await orchestrator.handle_request(
-            file_path=temp_pdf_path,
-            doc_type=doc_type,
-            additional_info=additional_info
+        final_marc_dict = converter.process_raw_dict(
+            raw_data=extracted_json,
+            output_mrc=output_mrc_path,
+            output_json=output_json_path
+        )
+    except Exception as marc_err:
+        marc_error = str(marc_err)
+        logger.exception("[MARC] Lỗi ánh xạ MARC21")
+
+    dublin_core_dict = None
+    dc_error = None
+    try:
+        dublin_core_dict = dc_converter.process_raw_dict(
+            raw_data=extracted_json,
+            output_json=output_dc_path,
+        )
+    except Exception as dc_err:
+        dc_error = str(dc_err)
+        logger.exception("[DC] Lỗi ánh xạ Dublin Core")
+
+    if final_marc_dict is None and dublin_core_dict is None:
+        return JSONResponse(
+            status_code=500,
+            content={"error": "Ánh xạ thất bại", "marc_error": marc_error, "dc_error": dc_error},
         )
 
-        if status_code != 200:
-            return JSONResponse(status_code=400, content={"error": "Lỗi trích xuất", "details": extracted_json})
-
-        os.makedirs("output_final", exist_ok=True)
-        output_mrc_path = f"output_final/{safe_stem}.mrc"
-        output_json_path = f"output_final/{safe_stem}_marc.json"
-        output_dc_path = f"output_final/{safe_stem}_dc.json"
-
-        final_marc_dict = None
-        marc_error = None
-        try:
-            final_marc_dict = converter.process_raw_dict(
-                raw_data=extracted_json,
-                output_mrc=output_mrc_path,
-                output_json=output_json_path
-            )
-        except Exception as marc_err:
-            marc_error = str(marc_err)
-            logger.exception("[MARC] Lỗi ánh xạ MARC21")
-
-        dublin_core_dict = None
-        dc_error = None
-        try:
-            dublin_core_dict = dc_converter.process_raw_dict(
-                raw_data=extracted_json,
-                output_json=output_dc_path,
-            )
-        except Exception as dc_err:
-            dc_error = str(dc_err)
-            logger.exception("[DC] Lỗi ánh xạ Dublin Core")
-
-        if final_marc_dict is None and dublin_core_dict is None:
-            return JSONResponse(
-                status_code=500,
-                content={"error": "Ánh xạ thất bại", "marc_error": marc_error, "dc_error": dc_error},
-            )
-
-        return {
-            "status": "success",
-            "extracted_raw_data": extracted_json,
-            "marc21_record": final_marc_dict,
-            "marc_error": marc_error,                          
-            "dublin_core_record": dublin_core_dict,
-            "dc_error": dc_error,
-            "file_paths": {
-                "mrc_file": output_mrc_path if final_marc_dict is not None else None,
-                "json_file": output_json_path if final_marc_dict is not None else None,
-                "dc_file": output_dc_path if dublin_core_dict is not None else None,
-            }
+    return {
+        "status": "success",
+        "extracted_raw_data": extracted_json,
+        "marc21_record": final_marc_dict,
+        "marc_error": marc_error,
+        "dublin_core_record": dublin_core_dict,
+        "dc_error": dc_error,
+        "file_paths": {
+            "mrc_file": output_mrc_path if final_marc_dict is not None else None,
+            "json_file": output_json_path if final_marc_dict is not None else None,
+            "dc_file": output_dc_path if dublin_core_dict is not None else None,
         }
-
-    finally:
-        if os.path.exists(temp_pdf_path):
-            os.remove(temp_pdf_path)
+    }
 
 async def run_batch_processing(use_ocr: bool):
     logger.info("Kích hoạt chế độ xử lý Batch từ thư mục nội bộ extract_module/data")

@@ -13,6 +13,10 @@ COPY pyproject.toml uv.lock ./
 # 5. Sử dụng uv để cài đặt các package thẳng vào hệ thống của container
 RUN uv pip install --system -r pyproject.toml
 
+# 5b. Tải sẵn embedding model (sentence-transformers) vào cache của image ngay lúc build,
+# để lúc container chạy không phải tải qua mạng nữa (xem HF_HUB_OFFLINE trong docker-compose.yml)
+RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('all-MiniLM-L6-v2')"
+
 # 6. Sao chép toàn bộ mã nguồn còn lại từ máy host vào container
 COPY . .
 
