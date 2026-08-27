@@ -10,11 +10,12 @@ ingest_tools/
 ├── ai_extractor.py          # Gemini AI fallback (cho PDF image-based)
 ├── extractors/
 │   ├── base_extractor.py    # Interface chung
-│   └── pdf_extractor.py     # Extract từ PDF (pdfplumber + pymupdf)
+│   ├── pdf_extractor.py     # Extract từ PDF (pdfplumber + pymupdf)
+│   └── docx_extractor.py    # Extract từ Word DOCX (python-docx)
 ├── parsers/
 │   ├── base_parser.py       # Interface chung
 │   ├── table_parser.py      # Parse bảng tổng quát
-│   ├── marc_spec_parser.py  # Parse Phụ lục 1 (quy tắc MARC21)
+│   ├── marc_spec_parser.py  # Parse Phụ lục 1 (quy tắc MARC21 / DOCX, PDF)
 │   ├── dept_lookup_parser.py# Parse Phụ 6 (tên đơn vị)
 │   └── rubric_parser.py     # Parse bộ tiêu chí đánh giá
 ├── exporters/
@@ -29,7 +30,7 @@ ingest_tools/
 
 ```bash
 # Dependencies (đã có trong backend/pyproject.toml)
-pip install pdfplumber pymupdf google-genai
+pip install pdfplumber pymupdf python-docx google-genai
 ```
 
 ## Sử dụng
@@ -39,6 +40,10 @@ pip install pdfplumber pymupdf google-genai
 ```bash
 # Ingest Phụ lục 6 (tên đơn vị) -> CSV
 python ingest_tools/main.py ingest <file.pdf> -t departments -o output.csv
+
+# Ingest Phụ lục 1 (quy tắc MARC21) từ PDF hoặc DOCX -> JSON
+python ingest_tools/main.py ingest <phu_luc_1.pdf> -t marc -o output.json
+python ingest_tools/main.py ingest <phu_luc_1.docx> -t marc -o output.json
 
 # Ingest PDF bảng biểu tổng quát
 python ingest_tools/main.py ingest <file.pdf> -t generic -o output.csv
@@ -68,7 +73,7 @@ python ingest_tools/main.py validate-dept <file.pdf> -e existing.json -o diff.js
 | Giá trị | Mô tả |
 |---------|-------|
 | `departments` / `phu_luc_6` | Phụ lục 6 - tên đơn vị ĐHYD |
-| `marc_spec` / `marc` | Phụ lục 1 - quy tắc MARC21 |
+| `marc_spec` / `marc` | Phụ lục 1 - quy tắc MARC21 (hỗ trợ PDF + DOCX) |
 | `rubric` | Bộ tiêu chí đánh giá (từ spreadsheet) |
 | `generic` | Bảng biểu tổng quát |
 
@@ -105,15 +110,13 @@ STT,tenDonViCap1,tenDonViCap2
 
 ```
 PDF Upload --> pdf_extractor (text) --> table_parser --> csv_exporter --> .csv
-                    |                       |
-                    v                       v
-              ai_extractor (Gemini)   dept_lookup_parser
-                                            |
-                                            v
-                                    validate-dept (so sánh)
-                                            |
-                                            v
-                                    diff report (.json)
+    |                     |                       |
+    v                     v                       v
+  ai_extractor (Gemini)  dept_lookup_parser   marc_spec_parser
+                            |                       |
+                            v                       v
+                    validate-dept (so sánh)   JSON (MARC rules)
+DOCX Upload --> docx_extractor (python-docx) --> marc_spec_parser --> .json
 ```
 
 ## Lưu ý
@@ -122,3 +125,5 @@ PDF Upload --> pdf_extractor (text) --> table_parser --> csv_exporter --> .csv
 - AI extractor cần `GEMINI_API_KEY` trong file `.env`
 - Nếu PDF là text-based (như Phụ lục 6), không cần AI
 - Nếu PDF là image scan, tool sẽ tự fallback sang Gemini
+- Hỗ trợ file **DOCX** (Word) cho Phụ lục 1 — dùng `python-docx`
+- Output MARC spec (Phụ lục 1) ở dạng **JSON** gồm: tag, ind1, ind2, subfields, field_name, repeatable, description, reference_url, notes, mandatory

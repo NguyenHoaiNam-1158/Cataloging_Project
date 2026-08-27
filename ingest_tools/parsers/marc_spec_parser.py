@@ -21,10 +21,93 @@ class MarcSpecParser(BaseParser):
         r"^(\d{3})\s*"  # Tag number
     )
 
+    # Column order in DOCX table (Phụ lục 1):
+    # 0=Thẻ, 1=I1, 2=I2, 3=$, 4=Tên trường, 5=Lặp/KL,
+    # 6=Mô tả, 7=Tài liệu căn cứ, 8=Ghi chú, 9=Bắt buộc/Không
+    HEADER_INDEX = {
+        "tag": 0,
+        "ind1": 1,
+        "ind2": 2,
+        "subfields": 3,
+        "field_name": 4,
+        "repeatable": 5,
+        "description": 6,
+        "reference_url": 7,
+        "notes": 8,
+        "mandatory": 9,
+    }
+
     def parse(self, raw_data: Any) -> list[dict]:
         if isinstance(raw_data, str):
             return self.parse_text(raw_data)
         return []
+
+    def parse_table(self, table: list[list[str]]) -> list[dict]:
+        """Parse a DOCX/table representation of MARC21 spec.
+
+        Each row (after header) is one MARC field rule.
+        Returns list of dicts with standardized keys.
+        """
+        rules = []
+        header_row = None
+
+        for row in table:
+            if not row or not any(cell.strip() for cell in row):
+                continue
+            if header_row is None:
+                header_row = self._map_header(row)
+                continue
+            if not any(cell.strip() for cell in row):
+                continue
+
+            tag = (row[0].strip() if len(row) > 0 else "")
+            # Skip rows without a valid 3-digit MARC tag
+            norm = tag.replace(" ", "")
+            if not re.match(r"^\d{3}$", norm):
+                continue
+
+            rule = {
+                "tag": norm,
+                "ind1": self._cell(row, 1).replace(" ", ""),
+                "ind2": self._cell(row, 2).replace(" ", ""),
+                "subfields": self._cell(row, 3),
+                "field_name": self._cell(row, 4),
+                "repeatable": self._cell(row, 5),
+                "description": self._cell(row, 6),
+                "reference_url": self._cell(row, 7),
+                "notes": self._cell(row, 8),
+                "mandatory": self._cell(row, 9),
+            }
+            rules.append(rule)
+
+        return rules
+
+    def _map_header(self, row: list[str]) -> dict:
+        mapping = {}
+        for idx, cell in enumerate(row):
+            key = cell.strip().lower()
+            if "lặp" in key or "không lặp" in key:
+                mapping["repeatable"] = idx
+            elif "mô tả" in key:
+                mapping["description"] = idx
+            elif "căn cứ" in key:
+                mapping["reference_url"] = idx
+            elif "ghi chú" in key:
+                mapping["notes"] = idx
+            elif "bắt buộc" in key:
+                mapping["mandatory"] = idx
+            elif "tên trường" in key:
+                mapping["field_name"] = idx
+            else:
+                mapping[key] = idx
+        self._header_mapping = mapping
+        return mapping
+
+    def _cell(self, row: list[str], idx: int) -> str:
+        # Prefer positional index; fallback to header mapping
+        if len(row) > idx:
+            return row[idx].strip()
+        return ""
 
     def parse_text(self, text: str) -> list[dict]:
         rules = []

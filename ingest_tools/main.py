@@ -10,6 +10,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 from extractors.pdf_extractor import PDFExtractor
+from extractors.docx_extractor import DocxExtractor
 from parsers.table_parser import TableParser
 from parsers.dept_lookup_parser import DeptLookupParser
 from parsers.marc_spec_parser import MarcSpecParser
@@ -41,24 +42,29 @@ def cmd_ingest(args):
 
     logger.info(f"Ingesting: {pdf_path} (type={parser_type})")
 
-    extractor = PDFExtractor()
-    result = extractor.extract(pdf_path, pages=args.pages)
-
-    if result.is_image_only and not args.no_ai:
-        logger.info("PDF is image-only, falling back to AI extraction")
-        try:
-            from ai_extractor import AIExtractor
-            ai = AIExtractor()
-            records = ai.extract_from_pdf(pdf_path)
-        except Exception as e:
-            logger.error(f"AI extraction failed: {e}")
-            logger.info("Try: set GEMINI_API_KEY in .env, or use --no-ai to skip")
-            return
-    elif result.is_image_only and args.no_ai:
-        logger.error("PDF is image-only and AI extraction disabled. Cannot proceed.")
-        return
-    else:
+    if pdf_path.lower().endswith((".docx", ".doc")):
+        extractor = DocxExtractor()
+        result = extractor.extract(pdf_path)
         records = _parse_extracted_data(result, parser_type)
+    else:
+        extractor = PDFExtractor()
+        result = extractor.extract(pdf_path, pages=args.pages)
+
+        if result.is_image_only and not args.no_ai:
+            logger.info("PDF is image-only, falling back to AI extraction")
+            try:
+                from ai_extractor import AIExtractor
+                ai = AIExtractor()
+                records = ai.extract_from_pdf(pdf_path)
+            except Exception as e:
+                logger.error(f"AI extraction failed: {e}")
+                logger.info("Try: set GEMINI_API_KEY in .env, or use --no-ai to skip")
+                return
+        elif result.is_image_only and args.no_ai:
+            logger.error("PDF is image-only and AI extraction disabled. Cannot proceed.")
+            return
+        else:
+            records = _parse_extracted_data(result, parser_type)
 
     if not records:
         logger.warning("No records extracted. Check the PDF content.")
@@ -116,6 +122,12 @@ def _parse_extracted_data(result, parser_type: str):
         if parser_type == "dept":
             parser = DeptLookupParser()
             return parser.parse_tables(result.tables)
+        if parser_type == "marc":
+            parser = MarcSpecParser()
+            rules = []
+            for table in result.tables:
+                rules.extend(parser.parse_table(table))
+            return rules
         table_parser = TableParser()
         return table_parser.parse_from_tables(result.tables)
 

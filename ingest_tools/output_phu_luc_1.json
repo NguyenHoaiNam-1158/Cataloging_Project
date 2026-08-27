@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "source_file": "data\\Phu luc 1. Quy uoc nhap lieu kho mau MARC21 doi voi cac san pham hoc thuat.docx",
+    "parser": "marc",
+    "record_count": 3
+  },
+  "data": [
+    {
+      "tag": "001",
+      "ind1": "",
+      "ind2": "",
+      "subfields": "",
+      "field_name": "Số kiểm soát",
+      "repeatable": "KL",
+      "description": "Gồm 11 ký tự, trong đó 02 ký tự đầu mặc định là YD.  Ví dụ: YD180059381",
+      "reference_url": "https://nlv.gov.vn/images/documents/marc21/001-006.htm#_001__",
+      "notes": "Sinh tự động",
+      "mandatory": "Bắt buộc trong biểu ghi do hệ thống AI tạo sinh"
+    },
+    {
+      "tag": "005",
+      "ind1": "",
+      "ind2": "",
+      "subfields": "",
+      "field_name": "Ngày giờ giao dịch",
+      "repeatable": "KL",
+      "description": "Trường này chứa 16 ký tự mô tả ngày và thời gian của lần giao dịch gần nhất với biểu ghi. Ngày được trình bày bằng 8 ký tự theo mẫu yyyymmdd (4 ký tự cho năm (yyyy), 2 ký tự cho tháng (mm) và 2 ký tự cho ngày (dd)).  Dữ liệu thời gian trình bày 8 ký tự theo mẫu hhmmss.f (2 ký tự cho giờ (hh), hai ký tự cho phút (mm), 2 ký tự cho giây (ss) và 2 ký tự cho phần trăm giây tính cả dấu chấm). Thời gian trong ngày được tính theo 24 giờ (từ 00-23). Ví dụ: 20181022144958.0",
+      "reference_url": "https://nlv.gov.vn/images/documents/marc21/001-006.htm#_005__",
+      "notes": "Sinh tự động",
+      "mandatory": "Bắt buộc"
+    },
+    {
+      "tag": "008",
+      "ind1": "",
+      "ind2": "",
+      "subfields": "",
+      "field_name": "Các yếu tố dữ liệu có độ dài cố định",
+      "repeatable": "KL",
+      "description": "Gồm 40 vị trí ký tự (00-39). 00-05: Ngày nhập vào dữ liệu. Gồm 06 ký tự theo mẫu yymmdd. Ví dụ: 260819 06: Loại năm/tình trạng xuất bản. Mặc định là “s”. 07-10: Năm một. Gồm 04 ký tự. Mặc định là năm bảo vệ đề tài. Ví dụ: 2025. 11-14: Năm hai. Gồm 04 ký tự. Mặc định là để trống. 15-17: Nơi xuất bản, sản xuất hoặc thực hiện. Gồm 03 ký tự. Mặc định là “vm#”. 18-21: Các minh họa. Gồm 04 ký tự. Lấy từ thuật ngữ trong trường 300. Ví dụ: 300 $b: minh họa 18-21: a 300 $b: minh họa, ảnh màu 18-21: ao 300 $b: minh họa, biểu đồ/ đồ thị 18-21: ad 300 $b: minh họa, bản đồ  22: Đối tượng sử dụng mục tiêu. Mặc định là “#”. 23: Hình thức tài liệu (Dạng tư liệu). Mặc định là “#”",
+      "reference_url": "https://nlv.gov.vn/images/documents/marc21/008.htm#_008__  https://nlv.gov.vn/images/documents/marc21/008.htm#_008___1  https://www.loc.gov/marc/bibliographic/bd008.html  https://www.loc.gov/marc/bibliographic/bd008b.html   Phiếu thông tin bổ sung được gắn với mỗi tệp hình ảnh của tài liệu",
+      "notes": "",
+      "mandatory": "Bắt buộc"
+    }
+  ]
+}
