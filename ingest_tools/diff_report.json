@@ -1,0 +1,188 @@
+{
+  "added": [],
+  "removed": [],
+  "modified": [
+    {
+      "stt": 29,
+      "old": {
+        "stt": 29,
+        "tenDonViCap1": "Trường Y",
+        "tenDonViCap2": "Bộ môn Vi sinh - ký sinh"
+      },
+      "new": {
+        "stt": 29,
+        "tenDonViCap1": "Trường Y",
+        "tenDonViCap2": "Bộ môn Vi sinh - Ký sinh"
+      }
+    },
+    {
+      "stt": 49,
+      "old": {
+        "stt": 49,
+        "tenDonViCap1": "Trường Dược",
+        "tenDonViCap2": "Bộ môn Hoá hữu cơ"
+      },
+      "new": {
+        "stt": 49,
+        "tenDonViCap1": "Trường Dược",
+        "tenDonViCap2": "Bộ môn Hóa hữu cơ"
+      }
+    },
+    {
+      "stt": 50,
+      "old": {
+        "stt": 50,
+        "tenDonViCap1": "Trường Dược",
+        "tenDonViCap2": "Bộ môn Hoá dược"
+      },
+      "new": {
+        "stt": 50,
+        "tenDonViCap1": "Trường Dược",
+        "tenDonViCap2": "Bộ môn Hóa dược"
+      }
+    },
+    {
+      "stt": 51,
+      "old": {
+        "stt": 51,
+        "tenDonViCap1": "Trường Dược",
+        "tenDonViCap2": "Bộ môn Hoá sinh"
+      },
+      "new": {
+        "stt": 51,
+        "tenDonViCap1": "Trường Dược",
+        "tenDonViCap2": "Bộ môn Hóa sinh"
+      }
+    },
+    {
+      "stt": 66,
+      "old": {
+        "stt": 66,
+        "tenDonViCap1": "Khoa Răng Hàm Mặt",
+        "tenDonViCap2": "Bộ môn Chữa răng - Nội nha"
+      },
+      "new": {
+        "stt": 66,
+        "tenDonViCap1": "Khoa Răng Hàm Mặt",
+        "tenDonViCap2": "Bộ môn Chữa răng – Nội nha"
+      }
+    },
+    {
+      "stt": 81,
+      "old": {
+        "stt": 81,
+        "tenDonViCap1": "Khoa Y tế công cộng",
+        "tenDonViCap2": "Bộ môn Dinh dưỡng Thực phẩm"
+      },
+      "new": {
+        "stt": 81,
+        "tenDonViCap1": "Khoa Y tế công cộng",
+        "tenDonViCap2": "Bộ môn Dinh dưỡng - Thực phẩm"
+      }
+    },
+    {
+      "stt": 82,
+      "old": {
+        "stt": 82,
+        "tenDonViCap1": "Khoa Y tế công cộng",
+        "tenDonViCap2": "Bộ môn Giáo dục sức khỏe - Tâm lý Y học"
+      },
+      "new": {
+        "stt": 82,
+        "tenDonViCap1": "Khoa Y tế công cộng",
+        "tenDonViCap2": "Bộ môn Giáo dục sức khỏe - Tâm lý y học"
+      }
+    },
+    {
+      "stt": 83,
+      "old": {
+        "stt": 83,
+        "tenDonViCap1": "Khoa Y tế công cộng",
+        "tenDonViCap2": "Bộ môn Kinh tế Y tế"
+      },
+      "new": {
+        "stt": 83,
+        "tenDonViCap1": "Khoa Y tế công cộng",
+        "tenDonViCap2": "Bộ môn Kinh tế y tế"
+      }
+    },
+    {
+      "stt": 84,
+      "old": {
+        "stt": 84,
+        "tenDonViCap1": "Khoa Y tế công cộng",
+        "tenDonViCap2": "Bộ môn Thống kê y học Tin học"
+      },
+      "new": {
+        "stt": 84,
+        "tenDonViCap1": "Khoa Y tế công cộng",
+        "tenDonViCap2": "Bộ môn Thống kê y học - Tin học"
+      }
+    },
+    {
+      "stt": 86,
+      "old": {
+        "stt": 86,
+        "tenDonViCap1": "Khoa Y tế công cộng",
+        "tenDonViCap2": "Bộ môn Sức khỏe Cộng đồng"
+      },
+      "new": {
+        "stt": 86,
+        "tenDonViCap1": "Khoa Y tế công cộng",
+        "tenDonViCap2": "Bộ môn Sức khỏe cộng đồng"
+      }
+    },
+    {
+      "stt": 87,
+      "old": {
+        "stt": 87,
+        "tenDonViCap1": "Khoa Y tế công cộng",
+        "tenDonViCap2": "Bộ môn Tổ chức – Quản lý Y tế"
+      },
+      "new": {
+        "stt": 87,
+        "tenDonViCap1": "Khoa Y tế công cộng",
+        "tenDonViCap2": "Bộ môn Tổ chức – Quản lý y tế"
+      }
+    },
+    {
+      "stt": 92,
+      "old": {
+        "stt": 92,
+        "tenDonViCap1": "Khoa Khoa học cơ bản",
+        "tenDonViCap2": "Bộ môn Lý luận Chính trị"
+      },
+      "new": {
+        "stt": 92,
+        "tenDonViCap1": "Khoa Khoa học cơ bản",
+        "tenDonViCap2": "Bộ môn Lý luận chính trị"
+      }
+    },
+    {
+      "stt": 113,
+      "old": {
+        "stt": 113,
+        "tenDonViCap1": "Trung tâm Đào tạo nhân lực y tế theo nhu cầu xã hội",
+        "tenDonViCap2": null
+      },
+      "new": {
+        "stt": 113,
+        "tenDonViCap1": "Trung tâm Đào tạo nhân lực y tế theo nhu\ncầu xã hội",
+        "tenDonViCap2": null
+      }
+    },
+    {
+      "stt": 116,
+      "old": {
+        "stt": 116,
+        "tenDonViCap1": "Trung tâm Kiểm chuẩn chất lượng xét nghiệm y học",
+        "tenDonViCap2": null
+      },
+      "new": {
+        "stt": 116,
+        "tenDonViCap1": "Trung tâm Kiểm chuẩn chất lượng xét\nnghiệm y học",
+        "tenDonViCap2": null
+      }
+    }
+  ]
+}

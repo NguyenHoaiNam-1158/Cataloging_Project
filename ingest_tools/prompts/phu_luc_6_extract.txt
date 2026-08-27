@@ -1,0 +1,20 @@
+Extract ALL data from this PDF table image. This is a Vietnamese document from a university.
+
+OUTPUT FORMAT: Return a JSON array of objects. Each object represents one row with these exact keys:
+- "STT": ordinal number (string)
+- "tenDonViCap1": first-level organizational unit name (string)
+- "tenDonViCap2": second-level organizational unit name (string, empty string if none)
+
+RULES:
+1. Extract EVERY row, do not skip any.
+2. Preserve the original Vietnamese text exactly (including diacritics).
+3. If a row only has 1 level of organization, set tenDonViCap2 to "".
+4. STT must be a numeric string (e.g., "1", "2", "33", "117").
+5. Skip header rows, title rows, and footer rows.
+6. Return ONLY the JSON array, no other text.
+
+Example output:
+[
+  {"STT": "1", "tenDonViCap1": "Trường Y", "tenDonViCap2": "Bộ môn Chẩn đoán hình ảnh"},
+  {"STT": "99", "tenDonViCap1": "Bệnh viện Đại học Y Dược - Cơ sở 1", "tenDonViCap2": ""}
+]
