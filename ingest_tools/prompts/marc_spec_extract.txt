@@ -1,0 +1,22 @@
+Extract the complete MARC21 cataloging specification from this document.
+
+This is "Phụ lục 1" - a Vietnamese library cataloging standard that defines which MARC21 fields are required/optional for different document types.
+
+OUTPUT FORMAT: Return a JSON array of objects. Each object represents one MARC field rule with these exact keys:
+- "tag": MARC tag number (e.g., "001", "245", "502")
+- "ind1": First indicator (string, e.g., "1", "#", "" for not applicable)
+- "ind2": Second indicator (string, e.g., "0", "#", "" for not applicable)
+- "subfields": Required subfields (e.g., "$a", "$a $b $c")
+- "field_name": Vietnamese name of the field (e.g., "Số kiểm soát")
+- "repeatable": "L" (repeatable) or "KL" (not repeatable)
+- "description": Full Vietnamese description of the field rules
+- "reference_url": Source URL if provided
+- "notes": Additional notes
+- "mandatory": "Bắt buộc" (required) or "Không bắt buộc" (optional)
+
+RULES:
+1. Extract EVERY MARC field mentioned in the document.
+2. Preserve the exact Vietnamese text for descriptions.
+3. Include all indicator rules and subfield requirements.
+4. If a field is described as required for specific document types, note that.
+5. Return ONLY the JSON array, no other text.

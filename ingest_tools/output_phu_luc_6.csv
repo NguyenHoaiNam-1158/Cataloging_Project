@@ -1,0 +1,113 @@
+﻿STT,tenDonViCap1,tenDonViCap2
+1,Trường Y,Bộ môn Chẩn đoán hình ảnh
+2,Trường Y,Bộ môn Chấn thương chỉnh hình - PHCN
+3,Trường Y,Bộ môn Da liễu
+4,Trường Y,Bộ môn Gây mê hồi sức
+5,Trường Y,Bộ môn Giải phẫu học
+6,Trường Y,Bộ môn Hóa sinh
+7,Trường Y,Bộ môn Hồi sức cấp cứu chống độc
+8,Trường Y,Bộ môn Huyết học
+9,Trường Y,Bộ môn Lão khoa
+10,Trường Y,Bộ môn Lao và bệnh phổi
+11,Trường Y,Bộ môn Mắt
+12,Trường Y,Bộ môn Mô phôi - Giải phẫu bệnh
+13,Trường Y,Bộ môn Ngoại Nhi
+14,Trường Y,Bộ môn Ngoại Thần kinh
+15,Trường Y,Bộ môn Ngoại tổng quát
+16,Trường Y,Bộ môn Nhi
+17,Trường Y,Bộ môn Nhiễm
+18,Trường Y,Bộ môn Nội tiết
+19,Trường Y,Bộ môn Nội tổng quát
+20,Trường Y,Bộ môn Phẫu thuật lồng ngực và tim mạch
+21,Trường Y,Bộ môn Phụ sản
+22,Trường Y,Bộ môn Sinh lý - Sinh lý bệnh miễn dịch - Dược lý
+23,Trường Y,Bộ môn Tai mũi họng
+24,Trường Y,Bộ môn Tâm thần
+25,Trường Y,Bộ môn Tạo hình - Thẩm mỹ
+26,Trường Y,Bộ môn Thần kinh
+27,Trường Y,Bộ môn Tiết niệu học
+28,Trường Y,Bộ môn Ung bướu
+29,Trường Y,Bộ môn Vi sinh - Ký sinh
+30,Trường Y,Bộ môn Y đức - Xã hội học - Chăm sóc giảm nhẹ
+31,Trường Y,Trung tâm Bác sĩ gia đình
+32,Trường Y,Trung tâm ACTS
+34,Trường Điều dưỡng - Kỹ thuật y học,Bộ môn Bệnh học lâm sàng
+35,Trường Điều dưỡng - Kỹ thuật y học,Bộ môn Điều dưỡng
+36,Trường Điều dưỡng - Kỹ thuật y học,Bộ môn Gây mê hồi sức
+37,Trường Điều dưỡng - Kỹ thuật y học,Bộ môn Giải phẫu - Sinh lý
+38,Trường Điều dưỡng - Kỹ thuật y học,Bộ môn Hộ sinh
+39,Trường Điều dưỡng - Kỹ thuật y học,Bộ môn Kỹ thuật hình ảnh
+40,Trường Điều dưỡng - Kỹ thuật y học,Bộ môn Phục hồi chức năng
+41,Trường Điều dưỡng - Kỹ thuật y học,Bộ môn Xét nghiệm
+43,Trường Dược,Bộ môn Bào chế
+44,Trường Dược,Bộ môn Công nghệ thông tin dược
+45,Trường Dược,Bộ môn Công nghệ dược phẩm
+46,Trường Dược,Bộ môn Dược liệu - Dược học cổ truyền
+47,Trường Dược,Bộ môn Dược lý
+48,Trường Dược,Bộ môn Dược lâm sàng
+49,Trường Dược,Bộ môn Hóa hữu cơ
+50,Trường Dược,Bộ môn Hóa dược
+51,Trường Dược,Bộ môn Hóa sinh
+52,Trường Dược,Bộ môn Phân tích - Kiểm nghiệm
+53,Trường Dược,Bộ môn Tổ chức quản lý dược
+54,Trường Dược,Bộ môn Vi sinh - Ký sinh
+56,Khoa Răng Hàm Mặt,Bộ môn Nha khoa cơ sở
+57,Khoa Răng Hàm Mặt,Bộ môn Chẩn đoán hình ảnh Răng Hàm Mặt
+58,Khoa Răng Hàm Mặt,Bộ môn Bệnh học miệng
+59,Khoa Răng Hàm Mặt,Bộ môn Phẫu thuật miệng
+60,Khoa Răng Hàm Mặt,Bộ môn Phẫu thuật hàm mặt
+61,Khoa Răng Hàm Mặt,Bộ môn Cấy ghép nha khoa
+62,Khoa Răng Hàm Mặt,Bộ môn Chỉnh hình răng mặt
+63,Khoa Răng Hàm Mặt,Bộ môn Nha khoa trẻ em
+64,Khoa Răng Hàm Mặt,Bộ môn Nha khoa công cộng
+65,Khoa Răng Hàm Mặt,Bộ môn Nha chu
+66,Khoa Răng Hàm Mặt,Bộ môn Chữa răng – Nội nha
+67,Khoa Răng Hàm Mặt,Bộ môn Phục hình răng
+68,Khoa Răng Hàm Mặt,Bộ môn Kỹ thuật phục hình răng
+69,Khoa Răng Hàm Mặt,Bộ môn Nha khoa tổng quát
+71,Khoa Y học cổ truyền,Bộ môn Bào chế đông dược
+72,Khoa Y học cổ truyền,Bộ môn Châm cứu
+73,Khoa Y học cổ truyền,Bộ môn Dược học cổ truyền
+74,Khoa Y học cổ truyền,Bộ môn Dưỡng sinh
+75,Khoa Y học cổ truyền,Bộ môn Nhi khoa Đông y
+76,Khoa Y học cổ truyền,Bộ môn Nội khoa Đông y
+77,Khoa Y học cổ truyền,Bộ môn Y học cổ truyền cơ sở
+79,Khoa Y tế công cộng,Bộ môn Dịch tễ học
+80,Khoa Y tế công cộng,Bộ môn Dân số học
+81,Khoa Y tế công cộng,Bộ môn Dinh dưỡng - Thực phẩm
+82,Khoa Y tế công cộng,Bộ môn Giáo dục sức khỏe - Tâm lý y học
+83,Khoa Y tế công cộng,Bộ môn Kinh tế y tế
+84,Khoa Y tế công cộng,Bộ môn Thống kê y học - Tin học
+85,Khoa Y tế công cộng,Bộ môn Sức khỏe môi trường
+86,Khoa Y tế công cộng,Bộ môn Sức khỏe cộng đồng
+87,Khoa Y tế công cộng,Bộ môn Tổ chức – Quản lý y tế
+88,Khoa Y tế công cộng,Bộ môn Y học dự phòng cơ sở
+90,Khoa Khoa học cơ bản,Bộ môn Giáo dục thể chất
+91,Khoa Khoa học cơ bản,Bộ môn Hóa học
+92,Khoa Khoa học cơ bản,Bộ môn Lý luận chính trị
+93,Khoa Khoa học cơ bản,Bộ môn Ngoại ngữ
+94,Khoa Khoa học cơ bản,Bộ môn Sinh học
+95,Khoa Khoa học cơ bản,Bộ môn Tin học
+96,Khoa Khoa học cơ bản,Bộ môn Toán
+97,Khoa Khoa học cơ bản,Bộ môn Vật lý
+99,Bệnh viện Đại học Y Dược - Cơ sở 1,
+100,Bệnh viện Đại học Y Dược - Cơ sở 2,
+101,Bệnh viện Đại học Y Dược - Cơ sở 3,
+102,Phòng Hợp tác quốc tế,
+103,Phòng Hành chính tổng hợp,
+104,Phòng Tổ chức cán bộ,
+105,Phòng Thanh tra pháp chế,
+106,Phòng Đào tạo sau đại học,
+107,Phòng Đào tạo đại học,
+108,Phòng Kế hoạch tài chính,
+109,Phòng Khoa học công nghệ,
+110,Phòng Quản trị giáo tài,
+111,Trung tâm Y sinh học phân tử,
+112,Trung tâm Công nghệ thông tin,
+113,"Trung tâm Đào tạo nhân lực y tế theo nhu
+cầu xã hội",
+114,Trung tâm Giáo dục y học,
+115,Trung tâm Khoa học và Công nghệ UMP,
+116,"Trung tâm Kiểm chuẩn chất lượng xét
+nghiệm y học",
+117,Trung tâm Phẫu thuật thực nghiệm,
