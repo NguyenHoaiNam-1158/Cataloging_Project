@@ -72,6 +72,14 @@ async def process_document(
         if status_code != 200:
             return JSONResponse(status_code=400, content={"error": "Lỗi trích xuất", "details": extracted_json})
 
+        # Department correction: fuzzy match corporate_name vs Phu luc 6
+        if extracted_json.get("corporate_name"):
+            from mapping_module.core.department_corrector import DepartmentCorrector
+            corrector = DepartmentCorrector()
+            correction = corrector.correct_corporate_name(extracted_json["corporate_name"])
+            extracted_json["corporate_name"] = correction["corrected_name"]
+            extracted_json["_corporate_validation"] = correction
+
         os.makedirs("output_final", exist_ok=True)
         output_mrc_path = f"output_final/{safe_stem}.mrc"
         output_json_path = f"output_final/{safe_stem}_marc.json"
@@ -208,6 +216,14 @@ async def run_batch_processing(use_ocr: bool):
 
         if status_code == 200:
             base_name = os.path.splitext(name)[0]
+
+            # Department correction: fuzzy match corporate_name vs Phu luc 6
+            if response_data.get("corporate_name"):
+                from mapping_module.core.department_corrector import DepartmentCorrector
+                corrector = DepartmentCorrector()
+                correction = corrector.correct_corporate_name(response_data["corporate_name"])
+                response_data["corporate_name"] = correction["corrected_name"]
+                response_data["_corporate_validation"] = correction
 
             out_mrc = os.path.join(output_base_dir, f"{base_name}.mrc")
             out_json = os.path.join(output_base_dir, f"{base_name}_marc.json")

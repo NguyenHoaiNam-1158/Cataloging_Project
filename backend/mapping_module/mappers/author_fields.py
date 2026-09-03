@@ -1,4 +1,5 @@
 import json
+import logging
 import re
 from typing import List, Tuple, Optional
 from pymarc import Field, Subfield
@@ -8,10 +9,14 @@ from mapping_module.core.models import RawExtractionData
 from mapping_module.config.settings import Settings
 from mapping_module.utils.marc_punctuation import safe_isbd_punctuation
 
+logger = logging.getLogger(__name__)
+
 
 class AuthorCorporateMapper(BaseFieldMapper):
     def __init__(self):
         self.departments_data = self._load_departments()
+        from mapping_module.core.department_corrector import DepartmentCorrector
+        self.corrector = DepartmentCorrector()
 
     def _load_departments(self) -> List[dict]:
         try:
@@ -90,16 +95,15 @@ class AuthorCorporateMapper(BaseFieldMapper):
         return text if text.endswith('.') else f"{text}."
 
     def _match_departments(self, corp_name: str) -> Tuple[Optional[str], Optional[str]]:
-        corp_lower = corp_name.strip().lower()
-        matched_cap1: Optional[str] = None
-        for dept in self.departments_data:
-            cap1 = dept.get("tenDonViCap1")
-            cap2 = dept.get("tenDonViCap2")
-            if cap2 and cap2.lower() in corp_lower:
-                return cap1, cap2
-            if cap1 and cap1.lower() in corp_lower and not matched_cap1:
-                matched_cap1 = cap1
-        return matched_cap1, None
+        result = self.corrector.correct_corporate_name(corp_name)
+        self._last_correction = result
+        if result.get("needs_review"):
+            logger.warning(
+                f"Corporate name can review: '{corp_name}' -> "
+                f"'{result['corrected_name']}' "
+                f"(score: {result['confidence']:.1f}, method: {result['match_method']})"
+            )
+        return result.get("cap1"), result.get("cap2")
 
     def _parse_corporate_name(self, corp_name: str) -> List[Subfield]:
         segments = [s.strip() for s in corp_name.split("|") if s.strip()]
