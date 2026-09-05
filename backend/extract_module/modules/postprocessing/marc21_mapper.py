@@ -289,15 +289,23 @@ class Marc21Mapper:
     # 110 – Tên tập thể
     # ------------------------------------------------------------------
     def map_110(self):
-        """Trường 110: Tên tập thể (Ind1=2)."""
+        """Trường 110: Tên tập thể (Ind1=2).
+
+        Sau khi DepartmentCorrector chuan hoa theo Phu luc 6,
+        corporate_name co dang 'Cap1|Cap2' -> tach $a = Cap 1, $b = Cap 2.
+        """
         corporate = self._safe_get("corporate_name")
-        if corporate:
+        if not corporate:
+            return
+        name_parts = [p.strip() for p in corporate.split("|") if p.strip()]
+        subfields = []
+        if name_parts:
+            subfields.append(_sf("a", name_parts[0]))
+            if len(name_parts) > 1:
+                subfields.append(_sf("b", name_parts[1]))
+        if subfields:
             self.record.add_ordered_field(
-                Field(
-                    tag="110",
-                    indicators=Indicators("2", " "),
-                    subfields=_subfields("a", corporate),
-                )
+                Field(tag="110", indicators=Indicators("2", " "), subfields=subfields)
             )
 
     # ------------------------------------------------------------------
@@ -537,6 +545,9 @@ class Marc21Mapper:
                 parts.append(f"({major})")
             corporate = self._safe_get("corporate_name")
             if corporate:
+                # Neu da chuan hoa theo Phu luc 6 (dang 'Cap1|Cap2'),
+                # chi dung Cap 1 o phu chu de khong lo dau '|'
+                corporate = corporate.split("|")[0].strip()
                 parts.append(f"-- {corporate}")
             pub_year = self._safe_get("publication_year")
             if pub_year and len(parts) > 1:

@@ -76,6 +76,7 @@ async def process_document(
         if extracted_json.get("corporate_name"):
             from mapping_module.core.department_corrector import DepartmentCorrector
             corrector = DepartmentCorrector()
+            extracted_json["original_corporate_name"] = str(extracted_json["corporate_name"]).strip()
             correction = corrector.correct_corporate_name(extracted_json["corporate_name"])
             extracted_json["corporate_name"] = correction["corrected_name"]
             extracted_json["_corporate_validation"] = correction
@@ -221,6 +222,7 @@ async def run_batch_processing(use_ocr: bool):
             if response_data.get("corporate_name"):
                 from mapping_module.core.department_corrector import DepartmentCorrector
                 corrector = DepartmentCorrector()
+                response_data["original_corporate_name"] = str(response_data["corporate_name"]).strip()
                 correction = corrector.correct_corporate_name(response_data["corporate_name"])
                 response_data["corporate_name"] = correction["corrected_name"]
                 response_data["_corporate_validation"] = correction

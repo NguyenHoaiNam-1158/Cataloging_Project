@@ -60,6 +60,15 @@ async def process_document(
         if status_code != 200:
             return JSONResponse(status_code=400, content={"error": "Lỗi trích xuất", "details": extracted_json})
 
+        # Department correction: fuzzy match corporate_name vs Phu luc 6
+        if extracted_json.get("corporate_name"):
+            from mapping_module.core.department_corrector import DepartmentCorrector
+            corrector = DepartmentCorrector()
+            extracted_json["original_corporate_name"] = str(extracted_json["corporate_name"]).strip()
+            correction = corrector.correct_corporate_name(extracted_json["corporate_name"])
+            extracted_json["corporate_name"] = correction["corrected_name"]
+            extracted_json["_corporate_validation"] = correction
+
         os.makedirs("output_final", exist_ok=True)
         output_mrc_path = f"output_final/{safe_stem}.mrc"
         output_json_path = f"output_final/{safe_stem}_marc.json"
@@ -76,6 +85,26 @@ async def process_document(
         except Exception as marc_err:
             marc_error = str(marc_err)
             logger.exception("[MARC] Lỗi ánh xạ MARC21")
+
+        # Xuất phiếu PDF khi biểu ghi MARC sinh thành công
+        pdf_path = None
+        if final_marc_dict is not None:
+            try:
+                from mapping_module.exporters.marc_worksheet import (
+                    build_worksheet_pdf,
+                    build_worksheet_filename,
+                )
+                pdf_bytes = build_worksheet_pdf(
+                    marc_data=final_marc_dict,
+                    raw_data=extracted_json,
+                    source_file=file.filename,
+                )
+                pdf_path = f"output_final/{build_worksheet_filename(file.filename, final_marc_dict)}"
+                with open(pdf_path, "wb") as pdf_handle:
+                    pdf_handle.write(pdf_bytes)
+            except Exception as pdf_err:
+                pdf_path = None
+                logger.warning(f"[PDF] Không xuất được phiếu PDF: {pdf_err}")
 
         dublin_core_dict = None
         dc_error = None
@@ -105,6 +134,7 @@ async def process_document(
                 "mrc_file": output_mrc_path if final_marc_dict is not None else None,
                 "json_file": output_json_path if final_marc_dict is not None else None,
                 "dc_file": output_dc_path if dublin_core_dict is not None else None,
+                "pdf_file": pdf_path,
             }
         }
 
@@ -161,12 +191,23 @@ async def run_batch_processing(use_ocr: bool):
         if status_code == 200:
             base_name = os.path.splitext(name)[0]
 
+            # Department correction: fuzzy match corporate_name vs Phu luc 6
+            if response_data.get("corporate_name"):
+                from mapping_module.core.department_corrector import DepartmentCorrector
+                corrector = DepartmentCorrector()
+                response_data["original_corporate_name"] = str(response_data["corporate_name"]).strip()
+                correction = corrector.correct_corporate_name(response_data["corporate_name"])
+                response_data["corporate_name"] = correction["corrected_name"]
+                response_data["_corporate_validation"] = correction
+
             out_mrc = os.path.join(output_base_dir, f"{base_name}.mrc")
             out_json = os.path.join(output_base_dir, f"{base_name}_marc.json")
             out_dc = os.path.join(output_base_dir, f"{base_name}_dc.json")
+            out_pdf = os.path.join(output_base_dir, f"{base_name}_phieu.pdf")
 
+            marc_dict = None
             try:
-                converter.process_raw_dict(
+                marc_dict = converter.process_raw_dict(
                     raw_data=response_data,
                     output_mrc=out_mrc,
                     output_json=out_json
@@ -181,6 +222,19 @@ async def run_batch_processing(use_ocr: bool):
                 )
             except Exception as dc_err:
                 logger.error(f"[DC] Lỗi map Dublin Core cho {name}: {dc_err}")
+
+            if marc_dict:
+                try:
+                    from mapping_module.exporters.marc_worksheet import build_worksheet_pdf
+                    pdf_bytes = build_worksheet_pdf(
+                        marc_data=marc_dict,
+                        raw_data=response_data,
+                        source_file=name,
+                    )
+                    with open(out_pdf, "wb") as pdf_fh:
+                        pdf_fh.write(pdf_bytes)
+                except Exception as pdf_err:
+                    logger.warning(f"[PDF] Không xuất được phiếu PDF cho {name}: {pdf_err}")
 
             logger.info(f" Biên mục xong file {name} -> Lưu tại {output_base_dir}")
         else:

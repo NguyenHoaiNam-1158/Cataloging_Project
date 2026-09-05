@@ -39,6 +39,7 @@ yarn-error.log*
 data/
 temp/
 downloads/
+OCR/
 OCR/paddle markdown/
 output/
 backend/extract_module/output/

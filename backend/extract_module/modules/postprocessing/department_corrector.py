@@ -1,10 +1,17 @@
-"""Department name corrector using Fuzzy Matching against Phu luc 6."""
+"""Department name corrector using Fuzzy Matching against Phu luc 6.
+
+Bản dùng riêng trong extract_module (pipeline OCR docker) — không phụ
+thuộc mapping_module để container extract-module tự chứa.
+"""
 
 import json
 import logging
+import os
 from rapidfuzz import process, fuzz
-from mapping_module.config.settings import Settings
-from mapping_module.utils.fuzzy_matcher import FuzzyMatcher, normalize_vietnamese
+from .fuzzy_matcher import (
+    FuzzyMatcher,
+    normalize_vietnamese,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -15,11 +22,19 @@ CAP2_PREFIXES = [
     "bo mon", "trung tam",
 ]
 
+_EXTRACT_MODULE_DIR = os.path.dirname(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+)
+DEPARTMENTS_JSON_PATH = os.path.join(
+    _EXTRACT_MODULE_DIR, "resources", "ump_departments.json"
+)
+
 
 class DepartmentCorrector:
     """Sua corporate_name theo Phu luc 6 bang Fuzzy Matching."""
 
-    def __init__(self):
+    def __init__(self, departments_path: str = DEPARTMENTS_JSON_PATH):
+        self.departments_path = departments_path
         self.departments = self._load_departments()
         self.cap1_names = list(set(d["tenDonViCap1"] for d in self.departments))
         self.cap2_names = [
@@ -42,7 +57,7 @@ class DepartmentCorrector:
 
     def _load_departments(self) -> list:
         try:
-            with open(Settings.DEPARTMENTS_JSON_PATH, "r", encoding="utf-8") as f:
+            with open(self.departments_path, "r", encoding="utf-8") as f:
                 return json.load(f)
         except Exception as e:
             logger.error(f"Khong the load departments: {e}")

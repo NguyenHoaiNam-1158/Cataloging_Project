@@ -1,0 +1,45 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Pipeline xử lý Phụ lục 6 và biên mục tên đơn vị",
+    "quality_profile": "showcase"
+  },
+  "lanes": [
+    { "id": "ingest", "label": "Luồng 1 · Ingest Phụ lục 6" },
+    { "id": "extract", "label": "Luồng 2 · Trích xuất tài liệu" },
+    { "id": "correct", "label": "Sửa tên đơn vị" },
+    { "id": "emit", "label": "Xuất MARC21" }
+  ],
+  "groups": [
+    { "id": "g_ingest", "label": "Thủ công một lần · tái chạy khi phụ lục đổi", "lane": "ingest", "fromCol": 0, "toCol": 3, "variant": "emphasis" },
+    { "id": "g_luc2", "label": "Tự động · chạy theo từng tài liệu", "lane": "extract", "fromCol": 0, "toCol": 5 }
+  ],
+  "mainPath": ["doc", "gemini", "fields", "corrector", "mapper"],
+  "nodes": [
+    { "id": "pdf_pl6", "lane": "ingest", "col": 0, "type": "frontend", "width": 100, "label": "PDF Phụ lục 6", "sublabel": "340 KB · 3 trang" },
+    { "id": "parse", "lane": "ingest", "col": 1, "type": "backend", "width": 122, "label": "Đọc bảng", "sublabel": "pdfplumber → pymupdf" },
+    { "id": "validate", "lane": "ingest", "col": 2, "type": "security", "width": 120, "label": "validate-dept", "sublabel": "14 khác biệt · thủ công" },
+    { "id": "dept_json", "lane": "ingest", "col": 3, "type": "database", "width": 144, "label": "ump_departments.json", "sublabel": "110 đơn vị · 26 C1 · 91 C2" },
+    { "id": "doc", "lane": "extract", "col": 0, "type": "external", "label": "Tài liệu PDF", "sublabel": "báo cáo NCKH" },
+    { "id": "gemini", "lane": "extract", "col": 2, "type": "cloud", "width": 150, "label": "Gemini 2.5-flash", "sublabel": "PaddleOCR nếu ảnh" },
+    { "id": "fields", "lane": "extract", "col": 3, "type": "backend", "label": "corporate_name", "sublabel": "tên đơn vị / cơ quan" },
+    { "id": "corrector", "lane": "correct", "col": 4, "type": "backend", "width": 140, "label": "DepartmentCorrector", "sublabel": "đọc bộ tra cứu · fuzzy PL6" },
+    { "id": "mapper", "lane": "emit", "col": 5, "type": "backend", "width": 158, "label": "Marc21Mapper", "sublabel": "110$a · 110$b · 710$a → JSON + .mrc" }
+  ],
+  "edges": [
+    { "from": "pdf_pl6", "to": "parse" },
+    { "from": "parse", "to": "validate" },
+    { "from": "validate", "to": "dept_json" },
+    { "from": "dept_json", "to": "corrector", "label": "tải bộ tra cứu 1 lần" },
+    { "from": "doc", "to": "gemini" },
+    { "from": "gemini", "to": "fields", "label": "corporate_name" },
+    { "from": "fields", "to": "corrector" },
+    { "from": "corrector", "to": "mapper", "label": "tên chuẩn + reason" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "Luồng 1 — Ingest một lần", "items": ["PDF text-based nên không cần OCR ở khâu này", "validate-dept phát hiện 14 khác biệt (chủ yếu lỗi dấu / chữ hoa)", "Đầu ra tích hợp duy nhất là ump_departments.json"] },
+    { "dot": "emerald", "title": "Luồng 2 — Theo từng tài liệu", "items": ["Sửa tên trước khi map MARC → JSON và MARC dùng cùng tên chuẩn", "Mọi ca trả về kèm reason (tiếng Việt)", "Luôn giữ original_corporate_name để đối chiếu"] },
+    { "dot": "amber", "title": "Cờ rà soát cho người duyệt", "items": ["needs_review = điểm < 90 hoặc nhánh không chắc chắn", "2 dương tính giả Sở/Bộ KH&CN vẫn nằm ở cờ này", "Người duyệt tự quyết khi ca no_match kèm đơn vị gần nhất"] }
+  ]
+}

@@ -9,6 +9,25 @@ from pathlib import Path
 from extract_module.utils.logger import setup_logging
 from extract_module.core.orchestrator import CentralOrchestrator
 from extract_module.modules.postprocessing.marc21_mapper import Marc21Mapper
+from extract_module.modules.postprocessing.department_corrector import (
+    DepartmentCorrector,
+)
+
+
+def _correct_corporate_name(response_data: dict, corrector) -> None:
+    """Fuzzy match corporate_name theo Phu luc 6 (cap1|cap2) truoc khi map MARC.
+
+    Ghi de truc tiep vao response_data de ca file JSON luu ra lan
+    Marc21Mapper deu dung ten don vi da chuan hoa.
+    """
+    raw_name = response_data.get("corporate_name")
+    if not raw_name or not str(raw_name).strip():
+        return
+    response_data["original_corporate_name"] = str(raw_name).strip()
+    correction = corrector.correct_corporate_name(str(raw_name))
+    response_data["corporate_name"] = correction["corrected_name"]
+    response_data["_corporate_validation"] = correction
+
 
 async def main():
     parser = argparse.ArgumentParser(description="Extract Module - Trích xuất thư mục")
@@ -21,6 +40,17 @@ async def main():
 
     # 2. Khởi tạo Pipeline
     orchestrator = CentralOrchestrator(use_ocr=args.use_ocr)
+
+    # 2.1 Khởi tạo DepartmentCorrector (fuzzy match Phu luc 6) - load store 1 lan
+    try:
+        corrector = DepartmentCorrector()
+        logger.info(
+            f"[PHULUC6] Đã tải {len(corrector.departments)} đơn vị từ "
+            f"{corrector.departments_path}"
+        )
+    except Exception as e:
+        corrector = None
+        logger.warning(f"[PHULUC6] Không khởi tạo được DepartmentCorrector: {e}")
     
     # 3. Giả lập thao tác người dùng trên UI (mặc định) - sẽ được ghi đè bởi metadata per-file nếu có
     ui_doc_type = "bao_cao_nckh"
@@ -81,6 +111,11 @@ async def main():
         print(f"Status Code: {status_code}")
 
         if status_code == 200:
+            # [PHULUC6] Chuan hoa ten don vi theo Phu luc 6 truoc khi
+            # luu JSON va map MARC21 (110 $a cap1 / $b cap2)
+            if corrector is not None:
+                _correct_corporate_name(response_data, corrector)
+
             print(json.dumps(response_data, indent=4, ensure_ascii=False))
 
             # Create dated output folder and save result there

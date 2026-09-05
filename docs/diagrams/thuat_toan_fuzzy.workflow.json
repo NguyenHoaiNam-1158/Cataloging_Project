@@ -1,0 +1,53 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Lưu đồ thuật toán DepartmentCorrector",
+    "quality_profile": "showcase"
+  },
+  "lanes": [
+    { "id": "entry", "label": "Đầu vào" },
+    { "id": "norm", "label": "Chuẩn hóa" },
+    { "id": "check", "label": "Kiểm tra" },
+    { "id": "classify", "label": "Phân loại cấu trúc" },
+    { "id": "cap2", "label": "Nhánh Cấp 2 · trực tiếp" },
+    { "id": "partial", "label": "Nhánh Cấp 2 · trong chuỗi" },
+    { "id": "cap1", "label": "Nhánh Cấp 1" },
+    { "id": "end", "label": "Kết quả" }
+  ],
+  "mainPath": ["start", "normalize", "empty_q", "struct_q", "fuzzy_cap1", "no_match"],
+  "nodes": [
+    { "id": "start", "lane": "entry", "col": 0, "type": "frontend", "label": "corporate_name", "sublabel": "từ Gemini / OCR" },
+    { "id": "normalize", "lane": "norm", "col": 1, "type": "backend", "width": 104, "label": "Chuẩn hóa", "sublabel": "bỏ dấu NFKD · viết thường" },
+    { "id": "empty_q", "lane": "check", "col": 2, "type": "security", "label": "Không rỗng?", "sublabel": "kiểm tra chuỗi trống" },
+    { "id": "struct_q", "lane": "classify", "col": 3, "type": "security", "width": 152, "label": "Nhận dạng cấu trúc", "sublabel": "dấu tách / prefix Cấp 1" },
+    { "id": "fuzzy_cap2", "lane": "cap2", "col": 3, "type": "backend", "label": "fuzzy_cap2", "sublabel": "token_set_ratio ≥ 85" },
+    { "id": "cap2_ok", "lane": "cap2", "col": 5, "type": "messagebus", "width": 132, "label": "Cap1 | Cap2", "sublabel": "điểm < 90 cờ review" },
+    { "id": "partial_chain", "lane": "partial", "col": 4, "type": "backend", "width": 116, "label": "partial cap2", "sublabel": "tìm Cấp 2 trong chuỗi ghép" },
+    { "id": "partial_ok", "lane": "partial", "col": 5, "type": "messagebus", "width": 132, "label": "Cap1 | Cap2", "sublabel": "điểm < 90 cờ review" },
+    { "id": "fuzzy_cap1", "lane": "cap1", "col": 4, "type": "backend", "label": "fuzzy_cap1", "sublabel": "token_set_ratio ≥ 85" },
+    { "id": "cap1_ok", "lane": "cap1", "col": 5, "type": "messagebus", "width": 150, "label": "Cap1 (+Cấp 2)", "sublabel": "multi/only luôn review" },
+    { "id": "keep", "lane": "end", "col": 3, "type": "external", "label": "Giữ nguyên tên", "sublabel": "corporate_name rỗng" },
+    { "id": "no_match", "lane": "end", "col": 5, "type": "security", "width": 230, "label": "no_match", "sublabel": "giữ nguyên · LUÔN cờ review · kèm reason + đơn vị gần nhất" }
+  ],
+  "edges": [
+    { "from": "start", "to": "normalize" },
+    { "from": "normalize", "to": "empty_q" },
+    { "from": "empty_q", "to": "keep", "label": "rỗng", "variant": "security", "role": "error" },
+    { "from": "empty_q", "to": "struct_q", "label": "có nội dung" },
+    { "from": "struct_q", "to": "fuzzy_cap2", "label": "Bộ môn/Trung tâm hoặc không dấu tách" },
+    { "from": "struct_q", "to": "partial_chain", "label": "có dấu tách + prefix Cấp 1" },
+    { "from": "struct_q", "to": "fuzzy_cap1", "label": "trường hợp khác" },
+    { "from": "fuzzy_cap2", "to": "cap2_ok", "label": "điểm ≥ 85" },
+    { "from": "fuzzy_cap2", "to": "fuzzy_cap1", "label": "điểm < 85" },
+    { "from": "partial_chain", "to": "partial_ok", "label": "điểm ≥ 75" },
+    { "from": "partial_chain", "to": "fuzzy_cap1", "label": "điểm < 75" },
+    { "from": "fuzzy_cap1", "to": "cap1_ok", "label": "điểm ≥ 85" },
+    { "from": "fuzzy_cap1", "to": "no_match", "label": "điểm < 85" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "Luật điểm và tie-break", "items": ["cap1/cap2: token_set_ratio ≥ 85", "partial cap2 trong chuỗi: partial_ratio ≥ 75 (tie-break 75–88 chọn tên ngắn)", "chênh ≤ 5 điểm → chọn tên ngắn hơn"] },
+    { "dot": "emerald", "title": "Luôn giữ cờ rà soát", "items": ["cap1_multi / cap1_only / no_match / empty → needs_review = true", "các nhánh khác: needs_review khi điểm < 90", "mọi nhánh trả về reason tiếng Việt"] },
+    { "dot": "rose", "title": "Điểm yếu đã đo", "items": ["token_set_ratio cho 100 khi tên là tập con → 14/91 self-match nhầm", "cửa review điểm < 90 không bắt được sai điểm cao", "dương tính giả với Sở/Bộ KH&CN (2/10 tài liệu thật)"] }
+  ]
+}
