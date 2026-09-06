@@ -6,9 +6,7 @@ from pymarc import Field, Record, Subfield
 class MARCFieldSerializer:
     """Chuyển đổi hai chiều giữa Field/Record pymarc và dict JSON."""
 
-    # ==================================================================
-    # Record/Field  ->  dict   (giữ nguyên như cũ)
-    # ==================================================================
+    # --- Record/Field -> dict ---
     @staticmethod
     def field_to_dict(field: Field) -> Dict[str, Any]:
         """Chuyển đổi trường MARC sang dict."""
@@ -56,9 +54,7 @@ class MARCFieldSerializer:
             "fields": [MARCFieldSerializer.field_to_dict(field) for field in fields],
         }
 
-    # ==================================================================
-    # [VÁ F04]  dict  ->  Record   (đảo ngược, phục vụ lưu bản đã sửa)
-    # ==================================================================
+    # --- dict -> Record (phục vụ lưu biểu ghi thủ thư đã sửa) ---
     @staticmethod
     def _read_subfield_any(subfield: Any) -> Tuple[str, str]:
         """Đọc 1 subfield về (code, value), chấp nhận:

@@ -1,5 +1,3 @@
-# pipeline/marc_pipeline.py
-
 import json
 from pathlib import Path
 from typing import Any, Dict, Optional, Tuple
@@ -35,11 +33,10 @@ class MarcPipeline:
         ]
 
     def build_record_with_data(self, raw_data: Dict[str, Any]) -> Tuple[Record, RawExtractionData]:
-        """Dựng biểu ghi VÀ trả về luôn object dữ liệu đã được các mapper làm giàu.
+        """Dựng biểu ghi và trả về luôn object `data` đã được mapper làm giàu.
 
-        [VÁ M12] RAGEnrichedFieldMapper gán lcc_classification/nlm_classification
-        (kèm confidence) vào chính object `data` trong lúc chạy. Trước đây object
-        này bị bỏ đi -> confidence không lấy lại được. Nay trả về cùng record.
+        RAGEnrichedFieldMapper gán lcc/nlm_classification (kèm confidence) vào
+        chính `data` lúc chạy, nên phải trả về cùng record để đọc lại confidence.
         """
         data = RawExtractionData(**raw_data)
         record = Record()
@@ -96,6 +93,6 @@ class MarcPipeline:
             with output_path.open("w", encoding="utf-8") as handle:
                 handle.write(record.as_marcxml())
         except AttributeError:
-            # [dọn M16] fallback nhị phân phải mở ở chế độ 'wb'
+            # fallback nhị phân: phải mở ở chế độ 'wb'
             with output_path.open("wb") as handle:
                 handle.write(record.as_marc())

@@ -29,9 +29,8 @@ class TitleMapper(BaseFieldMapper):
 
         nonfiling_count = self._count_nonfiling_chars(raw_data.title_main)
 
-        # [VÁ M02] $c = statement of responsibility. Ưu tiên trường
-        # statement_of_responsibility đã trích xuất; nếu trống mới suy ra từ
-        # tên tác giả cá nhân. Trước đây SOR bị bỏ hoàn toàn.
+        # $c = statement of responsibility: ưu tiên trường đã trích xuất,
+        # trống mới suy ra từ tên tác giả cá nhân.
         sor = None
         if raw_data.statement_of_responsibility and raw_data.statement_of_responsibility.strip():
             sor = raw_data.statement_of_responsibility.strip()
@@ -43,10 +42,9 @@ class TitleMapper(BaseFieldMapper):
 
         subfields: List[Subfield] = []
 
-        # [VÁ M01] Dấu ISBD chuẩn cho 245:
-        #   $a kết thúc ' :' nếu có $b (phụ đề); ' /' nếu không $b nhưng có $c; '.' nếu không cả hai.
-        #   $b kết thúc ' /' nếu có $c; '.' nếu không.
-        #   $c kết thúc '.'.
+        # Dấu ISBD cho 245:
+        #   $a -> ' :' nếu có $b; ' /' nếu không $b nhưng có $c; '.' nếu không cả hai
+        #   $b -> ' /' nếu có $c; '.' nếu không.   $c -> '.'
         title_a = raw_data.title_main.strip().rstrip(" .:/")
         if has_b:
             title_a = f"{title_a} :"

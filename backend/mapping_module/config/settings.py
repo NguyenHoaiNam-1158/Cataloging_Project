@@ -26,9 +26,11 @@ class Settings:
     FINAL_OUTPUT_FILE = "final_marc21_record.json"
     
     BASE_URL = "https://classification.nlm.nih.gov"
-    DELAY = 1.5 
-    PDF_FOLDER = r"E:\Cataloging_Project\backend\mapping_module\file_tailieu"
-    PDF_FOLDER_650 = r"E:\Cataloging_Project\backend\mapping_module\file_subject_650"
+    DELAY = 1.5
+    # Đường dẫn suy ra từ vị trí file này (BASE_DIR = backend/mapping_module),
+    # có thể override bằng biến môi trường khi chạy trong Docker.
+    PDF_FOLDER = os.getenv("LCC_PDF_FOLDER", os.path.join(BASE_DIR, "file_tailieu"))
+    PDF_FOLDER_650 = os.getenv("SUBJECT_650_PDF_FOLDER", os.path.join(BASE_DIR, "file_subject_650"))
 
     HEADERS = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, Gecko) Chrome/124.0.0.0 Safari/537.36",

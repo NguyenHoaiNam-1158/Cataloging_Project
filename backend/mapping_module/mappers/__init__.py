@@ -1,5 +1,3 @@
-# mapping_module/mappers/__init__.py
-
 from .control_fields import ControlFieldMapper
 from .identifier_fields import IdentifierMapper
 from .title_fields import TitleMapper

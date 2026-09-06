@@ -11,7 +11,7 @@ from mapping_module.utils.marc_punctuation import add_end_period
 
 
 class NoteMapper(BaseFieldMapper):
-    # [VÁ M05] Nhãn 502 theo đúng loại tài liệu, không còn cứng "Luận văn".
+    # Nhãn 502 theo loại tài liệu
     DISSERTATION_LABELS = {
         "luan_van": "Luận văn",
         "luan_an": "Luận án",
@@ -64,7 +64,6 @@ class NoteMapper(BaseFieldMapper):
                 )
             )
         elif raw_data.document_type in self.DISSERTATION_LABELS:
-            # [VÁ M05] lấy nhãn đúng theo loại (Luận văn / Luận án / Khóa luận)
             parts = [self.DISSERTATION_LABELS[raw_data.document_type]]
             if raw_data.major:
                 parts.append(f"({raw_data.major.strip()})")

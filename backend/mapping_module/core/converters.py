@@ -29,7 +29,7 @@ class DocumentConverter:
             Settings.log.warning(f"⚠️ Không thể tự động tạo LCC index: {exc}")
 
         raw_data = self.pipeline.load_json(input_path)
-        # [VÁ M12] lấy cả object đã làm giàu để đọc confidence
+        # enriched giữ lcc/nlm + confidence do mapper gán
         record, enriched = self.pipeline.build_record_with_data(raw_data)
 
         output_mrc_path = output_mrc or "output.mrc"
@@ -55,19 +55,16 @@ class DocumentConverter:
         Ghi ra file .mrc, file .json kiểm chuẩn và trả về dữ liệu dạng dict cho hệ thống.
         """
         try:
-            # 1. Dựng biểu ghi + lấy object đã làm giàu (chứa lcc/nlm + confidence)
+            # enriched = object đã được mapper gán lcc/nlm + confidence
             record, enriched = self.pipeline.build_record_with_data(raw_data)
 
-            # 2. Ghi biểu ghi ra file nhị phân .mrc chuẩn thư viện
             output_mrc_path = output_mrc or "output.mrc"
             self.pipeline.write_marc21(record, output_mrc_path)
 
-            # 3. Nếu có yêu cầu xuất file JSON kết quả kèm chỉ số chính xác
             if output_json:
                 evaluation_metrics = self._collect_confidence_metrics(enriched)
                 self._write_record_json(record, output_json, evaluation_metrics)
 
-            # 4. Trả về định dạng dict để main.py có thể dùng hiển thị hoặc phản hồi API
             return self.serializer.record_to_dict(record)
 
         except Exception as e:

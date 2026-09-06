@@ -1,4 +1,3 @@
-# frontend/utils/marc_common.py
 from typing import Any, Dict, List, Tuple
 
 LOCAL_FIELDS_NO_INDICATOR = {"927"}

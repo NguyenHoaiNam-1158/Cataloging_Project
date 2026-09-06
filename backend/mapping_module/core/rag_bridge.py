@@ -31,10 +31,8 @@ class RAGIntegration:
         if not RAG_AVAILABLE or CatalogingRAG is None:
             raise RuntimeError("RAG Engine không khả dụng cục bộ")
 
-        # [VÁ A03] KHÔNG nạp embedder/FAISS ở đây nữa. Chỉ đặt cờ; việc nạp nặng
-        # được dời sang _ensure_ready(), chạy ở LẦN QUERY ĐẦU TIÊN. Nhờ vậy khởi
-        # động backend tức thì, không nạp 2 lần dưới uvicorn --reload, và không
-        # crash lúc startup nếu thiếu index/model.
+        # Không nạp embedder/FAISS ở đây; dời sang _ensure_ready() (lần query đầu)
+        # để backend khởi động nhanh và không crash lúc startup nếu thiếu index/model.
         self.rag = None
         self.lcc_index, self.lcc_metadata = None, None
         self.nlm_index, self.nlm_metadata = None, None

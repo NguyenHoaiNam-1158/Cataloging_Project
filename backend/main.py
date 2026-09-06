@@ -27,7 +27,7 @@ app = FastAPI(title="Hệ thống Biên mục Tự động")
 
 orchestrator = CentralOrchestrator(use_ocr=False)
 converter = DocumentConverter()
-dc_converter = DublinCoreConverter()                        # [DC] khởi tạo 1 lần, dùng lại
+dc_converter = DublinCoreConverter()
 
 TEMP_UPLOAD_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "temp_uploads")
 os.makedirs(TEMP_UPLOAD_DIR, exist_ok=True)
@@ -53,7 +53,7 @@ def warm_up_rag():
 
 def _safe_stem(filename: str) -> str:
     """Lấy tên file an toàn để đặt tên output (chống path traversal '../')."""
-    base = os.path.basename(filename or "document")   # bỏ mọi thành phần thư mục
+    base = os.path.basename(filename or "document")
     stem = os.path.splitext(base)[0] or "document"
     return "".join(ch if ch.isalnum() or ch in "-_." else "_" for ch in stem)
 

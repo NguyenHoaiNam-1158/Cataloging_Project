@@ -1,4 +1,5 @@
 import datetime
+from datetime import timezone
 import json
 import uuid
 import threading
@@ -65,10 +66,10 @@ class ControlFieldMapper(BaseFieldMapper):
             return current
 
     def _current_transaction_date(self) -> str:
-        return datetime.datetime.utcnow().strftime("%Y%m%d%H%M%S.0")
+        return datetime.datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S.0")
 
     def _build_fixed_length_field(self, raw_data: RawExtractionData) -> str:
-        date_entered = datetime.datetime.utcnow().strftime("%y%m%d")  
+        date_entered = datetime.datetime.now(timezone.utc).strftime("%y%m%d")
         date_type = "s"                                               
 
         date1 = raw_data.publication_year or "    "                   

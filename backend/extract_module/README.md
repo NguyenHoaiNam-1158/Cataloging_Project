@@ -58,7 +58,7 @@ Pipeline trích xuất thư mục từ PDF bằng OCR (PaddleOCR) + AI (Gemini /
 
 ```
 extract_module/
-├── main.py                          # Entrypoint CLI
+├── extract_main.py                  # Entrypoint CLI
 ├── requirements.txt                 # Dependencies
 ├── Dockerfile                       # Docker image
 ├── config/
@@ -85,7 +85,7 @@ extract_module/
 ├── resources/
 │   ├── prompts/
 │   │   ├── extraction_prompt_v3.md
-│   │   ├── lv_la_promtp.md
+│   │   ├── lv_la_prompt.md
 │   │   └── nckh_prompt.md
 │   └── schema/
 │       └── extraction_schema.json
@@ -158,18 +158,18 @@ PADDLE_MODEL_SIZE=tiny
 
 **Chế độ ảnh (mặc định):**
 ```bash
-python main.py
+python extract_main.py
 ```
 
 **Chế độ OCR:**
 ```bash
-python main.py --use-ocr
+python extract_main.py --use-ocr
 ```
 
 Hoặc dùng biến môi trường:
 ```bash
 $env:USE_OCR = "true"
-python main.py
+python extract_main.py
 ```
 
 ### 3. Output
@@ -223,7 +223,7 @@ paddle markdown/
 docker-compose up extract-module
 
 # Hoặc run với OCR
-docker-compose run extract-module python main.py --use-ocr
+docker-compose run extract-module python extract_main.py --use-ocr
 ```
 
 Docker mount:

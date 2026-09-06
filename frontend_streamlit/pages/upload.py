@@ -1,4 +1,3 @@
-# frontend/pages/2_📤_Tai_len.py
 import streamlit as st
 import requests
 import pypdfium2 as pdfium
@@ -48,7 +47,6 @@ if st.button("🚀 Bắt đầu trích xuất hàng loạt", type="primary", use
             status_text.info(f"⏳ Đang xử lý ({idx + 1}/{len(uploaded_files)}): **{file_obj.name}**...")
             
             try:
-                # 1. Gửi file sang Backend FastAPI xử lý dữ liệu chữ và MARC
                 files = {"file": (file_obj.name, file_obj.getvalue(), "application/pdf")}
                 data = {"doc_type": doc_type_mapping[selected_type], "additional_info": additional_info}
                 
@@ -58,22 +56,19 @@ if st.button("🚀 Bắt đầu trích xuất hàng loạt", type="primary", use
                 if response.status_code == 200:
                     result_data = response.json()
                     
-                    # Khởi tạo vùng lưu trữ cho file này
                     st.session_state['processed_batch'][file_obj.name] = {
                         "marc_data": result_data.get("marc21_record", {}),
                         "raw_data": result_data.get("extracted_raw_data", {}),
-                        "preview_image": None  # Nơi sẽ chứa ảnh chân thực
+                        "preview_image": None
                     }
-                    
-                    # 2. [CỐT LÕI SỬA LỖI]: Tự render ảnh trang đầu ngay tại Frontend bằng pypdfium2
+
+                    # Render ảnh trang đầu ngay tại frontend bằng pypdfium2
                     try:
                         pdf_bytes = file_obj.getvalue()
                         doc = pdfium.PdfDocument(pdf_bytes)
-                        page = doc[0]  # Lấy trang đầu tiên (index 0)
-                        bitmap = page.render(scale=2)  # Nhân đôi độ nét ảnh chống vỡ hạt
+                        page = doc[0]
+                        bitmap = page.render(scale=2)  # scale 2 cho ảnh nét
                         pil_img = bitmap.to_pil()
-                        
-                        # Cất tấm ảnh này vào vùng nhớ RAM của file tương ứng
                         st.session_state['processed_batch'][file_obj.name]["preview_image"] = pil_img
                     except Exception as img_err:
                         st.warning(f"⚠️ Không thể trích xuất ảnh xem trước cho {file_obj.name}: {img_err}")

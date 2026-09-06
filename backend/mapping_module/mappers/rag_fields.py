@@ -29,19 +29,16 @@ class RAGFieldMapper(BaseFieldMapper):
     def map_field(self, raw_data: RawExtractionData) -> List[Field]:
         """Tạo các trường MARC 050, 060, 650."""
         fields = []
-        
-        # Field 050 - Library of Congress Classification
+
         if raw_data.lcc_classification and len(raw_data.lcc_classification) > 0:
             fields.extend(self._map_050_field(raw_data.lcc_classification))
-        
-        # Field 060 - National Library of Medicine Classification
+
         if raw_data.nlm_classification and len(raw_data.nlm_classification) > 0:
             fields.extend(self._map_060_field(raw_data.nlm_classification))
-        
-        # Field 650 - Subject Terms
+
         if raw_data.subject_terms and len(raw_data.subject_terms) > 0:
             fields.extend(self._map_650_field(raw_data.subject_terms))
-        
+
         return fields
     
     def _map_050_field(self, lcc_codes: List) -> List[Field]:
@@ -76,8 +73,7 @@ class RAGFieldMapper(BaseFieldMapper):
             
             if not code:
                 continue
-            
-            # Tách cutter nếu có
+
             parts = code.split("-")
             classification = parts[0] if parts else code
             cutter = f"-{parts[1]}" if len(parts) > 1 else ""
@@ -150,7 +146,6 @@ class RAGEnrichedFieldMapper(BaseFieldMapper):
             except Exception as e:
                 print(f"LCC RAG query lỗi: {e}")
         
-        # Query RAG nếu chưa có NLM
         if (not raw_data.nlm_classification or len(raw_data.nlm_classification) == 0):
             try:
                 nlm_results = self.rag.query_nlm(

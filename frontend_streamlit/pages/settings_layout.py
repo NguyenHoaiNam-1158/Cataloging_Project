@@ -1,4 +1,3 @@
-# frontend/pages/4_📝_Bien_tap.py
 import os
 import sys
 
@@ -111,14 +110,14 @@ with main_col_right:
     for idx, field_obj in enumerate(fields):
         tag = field_obj.get("tag", "")
         
-        # TRƯỜNG HỢP 1: Control Fields (001, 005...)
+        # Control fields (001, 005...)
         if "data" in field_obj:
             content = field_obj["data"]
             col1, col2, col3, col4, col5 = st.columns([1.2, 1, 1, 1, 6.8])
             with col1:
                 st.markdown(f"<div class='marc-tag'>{tag}</div>", unsafe_allow_html=True)
             with col2:
-                # [ĐÃ SỬA LỖI]: Gắn selected_file vào key để đảm bảo tính độc lập
+                # key kèm selected_file để mỗi file có widget state độc lập
                 st.text_input("i1", value="", key=f"{selected_file}_i1_{tag}_{idx}", disabled=True, label_visibility="collapsed")
             with col3:
                 st.text_input("i2", value="", key=f"{selected_file}_i2_{tag}_{idx}", disabled=True, label_visibility="collapsed")
@@ -127,7 +126,7 @@ with main_col_right:
             with col5:
                 st.text_input("val", value=str(content), key=f"{selected_file}_val_{tag}_{idx}", label_visibility="collapsed")
                 
-        # TRƯỜNG HỢP 2: Data Fields (040, 090, 245...)
+        # Data fields (040, 090, 245...)
         elif "subfields" in field_obj:
             ind1 = field_obj.get("ind1", " ")
             ind2 = field_obj.get("ind2", " ")
@@ -146,7 +145,6 @@ with main_col_right:
                     display_tag = tag if sub_idx == 0 else ""
                     st.markdown(f"<div class='marc-tag'>{display_tag}</div>", unsafe_allow_html=True)
                 with col2:
-                    # [ĐÃ SỬA LỖI]: Gắn selected_file vào key
                     st.text_input("i1", value="" if no_indicator else (ind1 if sub_idx == 0 else ""), key=f"{selected_file}_i1_{tag}_{idx}_{sub_idx}", disabled=no_indicator, label_visibility="collapsed")
                 with col3:
                     st.text_input("i2", value="" if no_indicator else (ind2 if sub_idx == 0 else ""), key=f"{selected_file}_i2_{tag}_{idx}_{sub_idx}", disabled=no_indicator, label_visibility="collapsed")
@@ -155,9 +153,7 @@ with main_col_right:
                 with col5:
                     st.text_input("val", value=sub_value, key=f"{selected_file}_val_{tag}_{idx}_{sub_idx}", label_visibility="collapsed")
 
-# ==========================================
-# 4. NÚT LƯU BẢN GHI ĐÃ ĐỒNG BỘ THEO FILE ĐANG CHỌN
-# ==========================================
+# Nút Lưu bản ghi (đồng bộ theo file đang chọn)
 st.markdown("---")
 col_space, col_pdf, col_btn = st.columns([6, 2, 2])
 

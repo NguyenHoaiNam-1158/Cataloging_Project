@@ -64,15 +64,8 @@ class RawExtractionData(BaseModel):
     extraction_metadata: Optional[ExtractionMetadataModel] = None
     summary: Optional[str] = None
 
-    # ------------------------------------------------------------------
-    # [VÁ L01] Chấp nhận isbn ở nhiều dạng đầu ra của extract_module:
-    #   - None                              -> []
-    #   - ["9786040078231", ...]  (chuỗi)    -> [{isbn_number: ...}]
-    #   - [{"isbn_number": ..., "price": ...}] (object) -> giữ nguyên
-    #   - "9786040078231" (chuỗi đơn)        -> [{isbn_number: ...}]
-    # Nhờ vậy IdentifierMapper (đọc isbn.isbn_number) luôn hoạt động,
-    # không phải sửa DataParser bên extract_module.
-    # ------------------------------------------------------------------
+    # Chuẩn hoá isbn về [{isbn_number, price?}] dù extract_module trả None / chuỗi /
+    # list chuỗi / list object — để IdentifierMapper luôn đọc được isbn.isbn_number.
     @field_validator('isbn', mode='before')
     @classmethod
     def coerce_isbn(cls, value: Any) -> List[Any]:
@@ -89,15 +82,11 @@ class RawExtractionData(BaseModel):
                 if text:
                     coerced.append({"isbn_number": text})
             else:
-                # dict hoặc IsbnModel -> để pydantic tự validate tiếp
-                coerced.append(item)
+                coerced.append(item)  # dict / IsbnModel -> pydantic validate tiếp
         return coerced
 
-    # ------------------------------------------------------------------
-    # [VÁ L02] Ép các trường boolean một cách khoan dung. DataParser có thể
-    # trả về chuỗi ("true"/"Có"/...) hoặc None. Giá trị không nhận diện
-    # được -> None (thay vì ném ValidationError làm sập cả pipeline).
-    # ------------------------------------------------------------------
+    # Boolean khoan dung: DataParser có thể trả "true"/"Có"/None; giá trị lạ -> None
+    # thay vì ném ValidationError làm sập pipeline.
     @field_validator('has_illustrations', 'has_index', mode='before')
     @classmethod
     def coerce_bool(cls, value: Any) -> Optional[bool]:

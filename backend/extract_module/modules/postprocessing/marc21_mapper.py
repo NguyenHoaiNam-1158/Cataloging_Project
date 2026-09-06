@@ -8,11 +8,9 @@ import unicodedata
 from pymarc import Record, Field, Subfield, Indicators
 from pymarc import JSONWriter
 
-
 def _sf(code: str, value: str) -> Subfield:
     """Tạo Subfield một cách ngắn gọn."""
     return Subfield(code=code, value=value)
-
 
 def _subfields(*pairs: str) -> list[Subfield]:
     """Chuyển đổi cặp code+value phẳng thành list Subfield.
@@ -23,7 +21,6 @@ def _subfields(*pairs: str) -> list[Subfield]:
     for i in range(0, len(pairs), 2):
         result.append(_sf(pairs[i], pairs[i + 1]))
     return result
-
 
 class Marc21Mapper:
     """Lớp chính ánh xạ JSON đầu vào thành biểu ghi MARC21."""
@@ -68,21 +65,14 @@ class Marc21Mapper:
                 return default
         return value if value is not None else default
 
-    # ------------------------------------------------------------------
     # LEADER — Bỏ qua. Hệ thống tự tạo sau khi có biểu ghi hoàn chỉnh.
-    # ------------------------------------------------------------------
     def map_leader(self):
         pass
 
-    # ------------------------------------------------------------------
     # 008 — Bỏ qua. Dữ liệu từ ảnh là các vị trí nhỏ lẻ, hệ thống tự xây dựng sau.
-    # ------------------------------------------------------------------
     def map_008(self):
         pass
 
-    # ------------------------------------------------------------------
-    # 020 – ISBN (KHÔNG dùng dấu chấm kết thúc)
-    # ------------------------------------------------------------------
     def map_020(self):
         """Trường 020: ISBN. KHÔNG dùng dấu chấm kết thúc."""
         isbn_list = self._safe_get("isbn", default=[])
@@ -100,9 +90,6 @@ class Marc21Mapper:
                 Field(tag="020", indicators=Indicators(" ", " "), subfields=sf)
             )
 
-    # ------------------------------------------------------------------
-    # 022 – ISSN (KHÔNG dùng dấu chấm kết thúc)
-    # ------------------------------------------------------------------
     def map_022(self):
         """Trường 022: ISSN."""
         issn = self._safe_get("issn")
@@ -115,9 +102,6 @@ class Marc21Mapper:
                 )
             )
 
-    # ------------------------------------------------------------------
-    # 040 – Nguồn biên mục (mặc định DHYD)
-    # ------------------------------------------------------------------
     def map_040(self):
         """Trường 040: Nguồn biên mục."""
         self.record.add_ordered_field(
@@ -128,9 +112,6 @@ class Marc21Mapper:
             )
         )
 
-    # ------------------------------------------------------------------
-    # 041 – Mã ngôn ngữ (mặc định 'vie')
-    # ------------------------------------------------------------------
     def map_041(self):
         """Trường 041: Mã ngôn ngữ."""
         self.record.add_ordered_field(
@@ -141,9 +122,6 @@ class Marc21Mapper:
             )
         )
 
-    # ------------------------------------------------------------------
-    # 050 – Phân loại LC (chỉ sách, optional)
-    # ------------------------------------------------------------------
     def map_050(self):
         """Trường 050: Phân loại LC theo Thư viện Quốc hội Hoa Kỳ.
         Chỉ xuất trường này nếu đầu vào JSON có chứa mã phân loại LC.
@@ -161,9 +139,6 @@ class Marc21Mapper:
                     subfields=_subfields("a", clean_lcc)
                 )
             )
-    # ------------------------------------------------------------------
-    # 060 – Phân loại NLM (optional)
-    # ------------------------------------------------------------------
     def map_060(self):
         """Trường 060: Phân loại NLM. 
         Hỗ trợ đọc mã NLM trực tiếp từ JSON hoặc thông qua mapping từ chuyên ngành (major).
@@ -189,15 +164,11 @@ class Marc21Mapper:
                     subfields=_subfields("a", nlm_code.strip())
                 )
             )
-    # ------------------------------------------------------------------
-    # 090 – Ký hiệu xếp giá nội bộ (optional)
-    # ------------------------------------------------------------------
     def map_090(self):
         """Trường 090: Ký hiệu xếp giá nội bộ của thư viện.
         $a: Đồng bộ tự động thông tin từ trường 060 $a.
         $b: Lấy 3 chữ cái đầu của Họ tác giả (IN HOA) + Khoảng trắng + 4 số của năm xuất bản.
         """
-        # 1. Lấy thông tin mã phân loại từ trường 060 đã xử lý trước đó
         f060 = self.record.get("060")
         nlm_code = f060.subfields[0].value if f060 and f060.subfields else None
         
@@ -213,13 +184,9 @@ class Marc21Mapper:
             
             name_parts = clean_name.split()
             if name_parts:
-                # Đối với tên người Việt chuẩn, họ nằm ở từ đầu tiên 
+                # Tên người Việt: họ là từ đầu tiên; mã xếp giá = 3 chữ họ IN HOA + năm XB
                 last_name = name_parts[0]
-                
-                # Trích xuất 3 ký tự đầu tiên của họ và chuyển thành chữ IN HOA 
                 short_last_name = last_name[:3].upper()
-                
-                # Cấu trúc mã xếp kệ: 3 chữ cái họ + Khoảng trắng + 4 số năm xuất bản 
                 call_number_b = f"{short_last_name} {pub_year}"
 
                 self.record.add_ordered_field(
@@ -230,9 +197,6 @@ class Marc21Mapper:
                     )
                 )
 
-    # ------------------------------------------------------------------
-    # 100 – Tác giả cá nhân
-    # ------------------------------------------------------------------
     def map_100(self):
         """Trường 100: Tác giả cá nhân (Ind1=1: đảo họ lên trước).
 
@@ -285,9 +249,6 @@ class Marc21Mapper:
                 )
             )
 
-    # ------------------------------------------------------------------
-    # 110 – Tên tập thể
-    # ------------------------------------------------------------------
     def map_110(self):
         """Trường 110: Tên tập thể (Ind1=2)."""
         corporate = self._safe_get("corporate_name")
@@ -300,9 +261,6 @@ class Marc21Mapper:
                 )
             )
 
-    # ------------------------------------------------------------------
-    # 245 – Nhan đề chính
-    # ------------------------------------------------------------------
     def map_245(self):
         """Trường 245: Nhan đề chính.
 
@@ -331,9 +289,6 @@ class Marc21Mapper:
             Field(tag="245", indicators=Indicators("1", "0"), subfields=subfields)
         )
 
-    # ------------------------------------------------------------------
-    # 246 – Dạng nhan đề khác
-    # ------------------------------------------------------------------
     def map_246(self):
         """Trường 246: Các dạng nhan đề khác."""
         title_variants = self._safe_get("title_variant", default=[])
@@ -349,9 +304,6 @@ class Marc21Mapper:
                     )
                 )
 
-    # ------------------------------------------------------------------
-    # 250 – Lần xuất bản
-    # ------------------------------------------------------------------
     def map_250(self):
         """Trường 250: Lần xuất bản. Kết thúc bằng dấu chấm."""
         edition = self._safe_get("edition_statement")
@@ -365,9 +317,6 @@ class Marc21Mapper:
                 )
             )
 
-    # ------------------------------------------------------------------
-    # 260 – Địa chỉ xuất bản
-    # ------------------------------------------------------------------
     def map_260(self):
         """Trường 260: Địa chỉ xuất bản.
 
@@ -395,9 +344,6 @@ class Marc21Mapper:
             Field(tag="260", indicators=Indicators(" ", " "), subfields=subfields)
         )
 
-    # ------------------------------------------------------------------
-    # 300 – Mô tả vật lý
-    # ------------------------------------------------------------------
     def map_300(self):
         """Trường 300: Mô tả vật lý."""
         extent = self._safe_get("extent")
@@ -419,9 +365,6 @@ class Marc21Mapper:
             Field(tag="300", indicators=Indicators(" ", " "), subfields=subfields)
         )
 
-    # ------------------------------------------------------------------
-    # 310 – Định kỳ xuất bản hiện thời (cho tạp chí)
-    # ------------------------------------------------------------------
     def map_310(self):
         """Trường 310: Định kỳ xuất bản hiện thời.
         $a: Tần suất (VD: Hàng tháng), $b: Ngày tháng (VD: 1975-).
@@ -437,9 +380,6 @@ class Marc21Mapper:
                 )
             )
 
-    # ------------------------------------------------------------------
-    # 321 – Định kỳ xuất bản cũ (cho tạp chí)
-    # ------------------------------------------------------------------
     def map_321(self):
         """Trường 321: Định kỳ xuất bản cũ.
         $a: Tần suất cũ, $b: Khoảng thời gian áp dụng.
@@ -454,9 +394,6 @@ class Marc21Mapper:
                 )
             )
 
-    # ------------------------------------------------------------------
-    # 362 – Thời gian xuất bản / Số thứ tự (cho tạp chí)
-    # ------------------------------------------------------------------
     def map_362(self):
         """Trường 362: Thời gian xuất bản/số thứ tự.
         Ind1=1: Phụ chú không định dạng.
@@ -472,9 +409,6 @@ class Marc21Mapper:
                 )
             )
 
-    # ------------------------------------------------------------------
-    # 490 – Thông tin tùng thư (KHÔNG kết thúc bằng dấu chấm)
-    # ------------------------------------------------------------------
     def map_490(self):
         """Trường 490: Thông tin tùng thư."""
         series = self._safe_get("series_statement")
@@ -491,9 +425,6 @@ class Marc21Mapper:
                 )
             )
 
-    # ------------------------------------------------------------------
-    # 500 – Phụ chú chung (Optional)
-    # ------------------------------------------------------------------
     def map_500(self):
         """Trường 500: Phụ chú chung (tạm thời bỏ qua)."""
         notes = self._safe_get("general_notes", default=[])
@@ -510,9 +441,6 @@ class Marc21Mapper:
                     )
                 )
 
-    # ------------------------------------------------------------------
-    # 502 – Phụ chú luận văn/luận án (bắt buộc nếu là LV/LA)
-    # ------------------------------------------------------------------
     def map_502(self):
         """Trường 502: Phụ chú luận văn/luận án."""
         doc_type = self._safe_get("document_type")
@@ -552,9 +480,6 @@ class Marc21Mapper:
                 )
             )
 
-    # ------------------------------------------------------------------
-    # 504 – Phụ chú thư mục
-    # ------------------------------------------------------------------
     def map_504(self):
         """Trường 504: Phụ chú thư mục. Kết thúc bằng dấu chấm."""
         biblio = self._safe_get("bibliography_note")
@@ -574,9 +499,6 @@ class Marc21Mapper:
             Field(tag="504", indicators=Indicators(" ", " "), subfields=subfields)
         )
 
-    # ------------------------------------------------------------------
-    # 505 – Phụ chú nội dung được định dạng (Mục lục)
-    # ------------------------------------------------------------------
     def map_505(self):
         """Trường 505: Phụ chú nội dung (mục lục).
         Ind1=0: Nội dung đầy đủ, Ind2=#: Cơ bản.
@@ -596,9 +518,6 @@ class Marc21Mapper:
                     )
                 )
 
-    # ------------------------------------------------------------------
-    # 520 – Tóm tắt / Chú giải
-    # ------------------------------------------------------------------
     def map_520(self):
         """Trường 520: Tóm tắt hoặc chú giải nội dung.
         Ind1=3: Tóm tắt, Ind2=#.
@@ -615,9 +534,6 @@ class Marc21Mapper:
                 )
             )
 
-    # ------------------------------------------------------------------
-    # 541 – Nguồn tiếp nhận
-    # ------------------------------------------------------------------
     def map_541(self):
         """Trường 541: Nguồn tiếp nhận tài liệu."""
         source = self._safe_get("acquisition_source")
@@ -633,9 +549,6 @@ class Marc21Mapper:
                 )
             )
 
-    # ------------------------------------------------------------------
-    # 630 – Tiêu đề bổ sung cho nhan đề (Nhan đề đồng nhất)
-    # ------------------------------------------------------------------
     def map_630(self):
         """Trường 630: Nhan đề đồng nhất.
         $a: Nhan đề chuẩn hóa.
@@ -651,9 +564,6 @@ class Marc21Mapper:
                 )
             )
 
-    # ------------------------------------------------------------------
-    # 650 – Thuật ngữ chủ đề
-    # ------------------------------------------------------------------
     def map_650(self):
         """Trường 650: Thuật ngữ chủ đề (Ind1=1, Ind2=2 cho MeSH)."""
         subjects = self._safe_get("subject_terms", default=[])
@@ -669,9 +579,6 @@ class Marc21Mapper:
                     )
                 )
 
-    # ------------------------------------------------------------------
-    # 653 – Từ khóa tự do (KHÔNG dùng dấu chấm kết thúc)
-    # ------------------------------------------------------------------
     def map_653(self):
         """Trường 653: Từ khóa tự do không kiểm soát."""
         subjects = self._safe_get("subject_terms", default=[])
@@ -686,9 +593,6 @@ class Marc21Mapper:
                         )
                     )
 
-    # ------------------------------------------------------------------
-    # 720 – Tên chưa kiểm soát (người hướng dẫn)
-    # ------------------------------------------------------------------
     def map_720(self):
         """Trường 720: Tên chưa kiểm soát."""
         advisor_name = self._safe_get("advisor_name")
@@ -701,9 +605,6 @@ class Marc21Mapper:
                 )
             )
 
-    # ------------------------------------------------------------------
-    # 773 – Ấn phẩm chủ (dành cho bài trích tạp chí)
-    # ------------------------------------------------------------------
     def map_773(self):
         """Trường 773: Mục từ ấn phẩm chủ (bài trích).
         Ind1=0, Ind2=8.
@@ -729,9 +630,6 @@ class Marc21Mapper:
                     )
                 )
 
-    # ------------------------------------------------------------------
-    # 856 – Địa chỉ điện tử và truy cập
-    # ------------------------------------------------------------------
     def map_856(self):
         """Trường 856: Địa chỉ điện tử.
         Ind1=4 (HTTP), Ind2=#.
@@ -752,9 +650,6 @@ class Marc21Mapper:
                 )
             )
 
-    # ------------------------------------------------------------------
-    # 915 – Trường cục bộ DHYD
-    # ------------------------------------------------------------------
     def map_915(self):
         """Trường 915 (cục bộ DHYD): $a=chuyên ngành, $c=bậc học,
         $f=người hướng dẫn, $g=học vị."""
@@ -781,9 +676,6 @@ class Marc21Mapper:
                 Field(tag="915", indicators=Indicators(" ", " "), subfields=subfields)
             )
 
-    # ------------------------------------------------------------------
-    # 927 – Dạng tư liệu lưu thông (cục bộ DHYD)
-    # ------------------------------------------------------------------
     def map_927(self):
         """Trường 927 (cục bộ DHYD): Dạng tư liệu lưu thông.
         Ưu tiên từ document_type, fallback dùng nature_of_content.
@@ -815,9 +707,6 @@ class Marc21Mapper:
                 )
             )
 
-    # ------------------------------------------------------------------
-    # 932 – Phụ chú thỏa thuận công khai toàn văn (cục bộ DHYD)
-    # ------------------------------------------------------------------
     def map_932(self):
         """Trường 932 (cục bộ DHYD): Phụ chú về thỏa thuận công khai toàn văn.
         $a: Nội dung thỏa thuận.
@@ -832,9 +721,6 @@ class Marc21Mapper:
                 )
             )
 
-    # ------------------------------------------------------------------
-    # Pipeline chính
-    # ------------------------------------------------------------------
     def to_record(self) -> Record:
         """Thực thi toàn bộ quy trình ánh xạ và trả về biểu ghi MARC21."""
         self.map_leader()
@@ -874,7 +760,6 @@ class Marc21Mapper:
         self.map_932()
         return self.record
 
-
 def main():
     """Điểm chạy chính: đọc JSON, map, xuất .mrc và/hoặc .json."""
     base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -906,7 +791,6 @@ def main():
         print(f"Wrote MARC-in-JSON to: {json_out_path}")
 
     print(record)
-
 
 if __name__ == "__main__":
     main()

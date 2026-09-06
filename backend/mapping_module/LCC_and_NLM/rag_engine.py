@@ -2,10 +2,8 @@ import os
 import json
 from mapping_module.config import settings as config
 
-# [VÁ A03] Các thư viện NẶNG (faiss, numpy, google.generativeai, sentence-transformers)
-# KHÔNG còn import ở cấp module. Chúng được import bên trong phương thức, chỉ khi
-# CatalogingRAG thực sự được khởi tạo/sử dụng -> 'import rag_engine' trở nên rất rẻ,
-# và toàn bộ chi phí nạp model/thư viện dời sang lần phân loại đầu tiên.
+# faiss, numpy, google.generativeai, sentence-transformers được import trong hàm
+# (không ở cấp module) -> 'import rag_engine' rẻ, chi phí nạp model dời sang lần dùng đầu.
 
 
 class CatalogingRAG:

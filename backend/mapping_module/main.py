@@ -14,37 +14,33 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from typing import Any, Dict
 
-# Thêm đường dẫn hiện tại vào hệ thống để Python nhận diện module chính xác
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-# [LÀM GỌN LOG] phải chạy TRƯỚC khi import module nạp faiss/transformers
+# phải chạy trước khi import module nạp faiss/transformers
 from quiet_logging import setup_logging
 setup_logging()
 
 from extract_module.core.orchestrator import CentralOrchestrator
 from mapping_module.core.converters import DocumentConverter
-from dublin_core_module import DublinCoreConverter          # [DC] module ánh xạ Dublin Core
+from dublin_core_module import DublinCoreConverter
 
-# Khởi tạo logger của hệ thống (định dạng do quiet_logging.setup_logging cấu hình)
 logger = logging.getLogger("BACKEND_MAIN")
 
 app = FastAPI(title="Hệ thống Biên mục Tự động")
 
-# Khởi tạo các module lõi
 orchestrator = CentralOrchestrator(use_ocr=False)
 converter = DocumentConverter()
-dc_converter = DublinCoreConverter()                        # [DC] khởi tạo 1 lần, dùng lại
+dc_converter = DublinCoreConverter()
 
-# [VÁ A01] Thư mục chứa file PDF tạm (tên ngẫu nhiên, không dùng tên người dùng)
+# thư mục PDF tạm, tên ngẫu nhiên (chống path traversal)
 TEMP_UPLOAD_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "temp_uploads")
 os.makedirs(TEMP_UPLOAD_DIR, exist_ok=True)
 
 
 def _safe_stem(filename: str) -> str:
     """Lấy tên file an toàn để đặt tên output (chống path traversal '../')."""
-    base = os.path.basename(filename or "document")   # bỏ mọi thành phần thư mục
+    base = os.path.basename(filename or "document")
     stem = os.path.splitext(base)[0] or "document"
-    # chỉ giữ ký tự an toàn cho tên file
     return "".join(ch if ch.isalnum() or ch in "-_." else "_" for ch in stem)
 
 
@@ -54,8 +50,7 @@ async def process_document(
     doc_type: str = Form(None),
     additional_info: str = Form(None)
 ):
-    # [VÁ A01] Ghi ra file tạm với tên NGẪU NHIÊN trong thư mục riêng.
-    # Tránh path traversal (tên chứa '../') và đụng tên khi nhiều request song song.
+    # tên ngẫu nhiên: chống path traversal + trùng tên khi nhiều request song song
     temp_pdf_path = os.path.join(TEMP_UPLOAD_DIR, f"{uuid.uuid4().hex}.pdf")
     with open(temp_pdf_path, "wb") as f:
         f.write(await file.read())
@@ -77,8 +72,7 @@ async def process_document(
         output_json_path = f"output_final/{safe_stem}_marc.json"
         output_dc_path = f"output_final/{safe_stem}_dc.json"
 
-        # [VÁ A04] MARC và Dublin Core chạy ĐỘC LẬP: một nhánh lỗi không kéo
-        # sập nhánh kia, và không làm hỏng cả request.
+        # MARC và DC độc lập: lỗi 1 nhánh không kéo sập nhánh kia
         final_marc_dict = None
         marc_error = None
         try:
@@ -113,7 +107,7 @@ async def process_document(
             "status": "success",
             "extracted_raw_data": extracted_json,
             "marc21_record": final_marc_dict,
-            "marc_error": marc_error,                               # None nếu không lỗi
+            "marc_error": marc_error,
             "dublin_core_record": dublin_core_dict,
             "dc_error": dc_error,
             "file_paths": {
@@ -134,9 +128,9 @@ class SaveRecordRequest(BaseModel):
 
 @app.post("/api/v1/save-record")
 async def save_record(payload: SaveRecordRequest):
-    """[VÁ F04] Nhận biểu ghi đã sửa từ giao diện và ghi đè .mrc/_marc.json.
+    """Nhận biểu ghi thủ thư đã sửa, ghi đè .mrc/_marc.json.
 
-    Dùng cùng _safe_stem như lúc xử lý để trỏ đúng file gốc trong output_final.
+    Dùng cùng _safe_stem như lúc xử lý để trỏ đúng file trong output_final.
     """
     stem = _safe_stem(payload.source_file)
     os.makedirs("output_final", exist_ok=True)
@@ -213,7 +207,7 @@ async def run_batch_processing(use_ocr: bool):
             out_json = os.path.join(output_base_dir, f"{base_name}_marc.json")
             out_dc = os.path.join(output_base_dir, f"{base_name}_dc.json")
 
-            # [VÁ A04] Mỗi nhánh độc lập trong batch
+            # mỗi nhánh độc lập
             try:
                 converter.process_raw_dict(
                     raw_data=response_data,

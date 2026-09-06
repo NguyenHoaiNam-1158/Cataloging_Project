@@ -102,7 +102,6 @@ export default function MarcEditorPage() {
     )
   }
 
-  // ---- cập nhật bất biến ----
   const setControl = (i, v) => setFields((p) => p.map((f, idx) => idx === i ? { ...f, data: v } : f))
   const setInd = (i, which, v) => setFields((p) => p.map((f, idx) => idx === i ? { ...f, [which]: v } : f))
   const setSub = (i, j, key, v) => setFields((p) => p.map((f, idx) => {
